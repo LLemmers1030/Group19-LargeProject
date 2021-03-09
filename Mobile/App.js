@@ -22,10 +22,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 
-
 image: 
 {
- 
   resizeMode: "cover", 
   justifyContent: "center", 
   width: 500, 
@@ -33,11 +31,9 @@ image:
 },  
 logo: 
 { 
-
   opacity: 2, 
   alignItems: 'center', 
   marginLeft: 150, 
   marginBottom: 550
-
 }
 });
