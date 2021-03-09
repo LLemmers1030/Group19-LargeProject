@@ -32,7 +32,7 @@ mongoose.connection.on("error", () => {
 // });
 // const Book = mongoose.model("books", BookSchema);
 
-app.use(express.static(path.join(__dirname, "frontend/build")));
+app.use(express.static(path.join(__dirname, "../frontend/build")));
 
 //  Portion used by knighthacks
 // ////////////////////////////////////////////////////////////////////////////////////////
