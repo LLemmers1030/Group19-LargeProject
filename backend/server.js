@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 mongoose.connect(
   // NEED THE ACTUAL MONGODB LINK
-  "mongodb+srv://LLemmers:group19@cluster0.4hwbi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  process.env.MONGODB_URL,
   { useNewUrlParser: true, useUnifiedTopology: true },
   (error) => {
     console.log(error);
