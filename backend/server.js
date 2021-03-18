@@ -5,6 +5,13 @@ const path = require("path");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 
+
+
+const userRoutes =  require('./routes/users.js')
+app.use('/users', userRoutes)
+
+
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
