@@ -75,6 +75,12 @@ app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
 });
 
+
+const usersRouter = require('./routes/users')
+app.use('/users', usersRouter)
+
+
+
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Our app is running on port ${PORT}`);
