@@ -19,7 +19,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 mongoose.connect(
   // NEED THE ACTUAL MONGODB LINK
   process.env.MONGODB_URL,
-  //"mongodb+srv://LLemmers:group19@cluster0.4hwbi.mongodb.net/myFirstDatabase?retryWrites=true",
   { useNewUrlParser: true, useUnifiedTopology: true },
   (error) => {
     console.log(error);
@@ -86,9 +85,6 @@ app.use('/users', usersRouter)
 // working api?
 const register = require('./api/register')
 register.doWork(app)
-
-
-
 
 
 const PORT = process.env.PORT || 8080;

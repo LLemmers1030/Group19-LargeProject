@@ -118,7 +118,7 @@ class SignInPage extends Component {
                   <i className="fas fa-lock" />
                   <input type="password" placeholder="Password" />
                 </div>
-                <input type="submit" defaultValue="Login" className="btn solid" />
+                <input type="submit" value="Submit" defaultValue="Login" className="btn solid" />
                 <p className="social-text">Sign in with other platforms</p>
                 <div className="social-media">
                   <a href="/#" className="social-icon">
@@ -143,7 +143,7 @@ class SignInPage extends Component {
                   <i className="fas fa-lock" />
                   <input type="password" placeholder="Password" />
                 </div>
-                <input type="submit" defaultValue="Sign up" className="btn solid" />
+                <input type="submit" value="Submit" defaultValue="Sign up" className="btn solid" />
                 <p className="social-text">Sign up with other platforms</p>
                 <div className="social-media">
                   <a href="/#" className="social-icon">
