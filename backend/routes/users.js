@@ -10,12 +10,13 @@ router.route('/').get((req, res) => {
 
 router.route('/register').post((req, res) => {
     const body = req.body
-    const newUser = new User(body)
+    const newUser = new User({ body })
 
     newUser.save()
         .then(() => res.status(200).json('Successfully added new user'))
         .catch((err) => res.status(400).json('Failed to add new user'))
 })
+
 
 
 
