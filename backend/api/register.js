@@ -1,13 +1,6 @@
 const mongoose = require('mongoose')
 const app = require('express')
-
-const UserSchema = mongoose.Schema({
-    Email: 'string',
-    Password: 'string',
-    FirstName: 'string',
-    LastName: 'string'
-})
-const User = mongoose.model('Users', UserSchema, 'Users')
+const User = require('../models/user.model.js')
 
 
 exports.doWork = function (app) {
