@@ -19,7 +19,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 mongoose.connect(
   // NEED THE ACTUAL MONGODB LINK
   process.env.MONGODB_URL,
-  //"mongodb+srv://LLemmers:group19@cluster0.4hwbi.mongodb.net/myFirstDatabase?retryWrites=true",
   { useNewUrlParser: true, useUnifiedTopology: true },
   (error) => {
     console.log(error);
@@ -78,23 +77,17 @@ app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
 });
 
-<<<<<<< HEAD
 // to be deleted later
 const usersRouter = require('./routes/users')
 app.use('/users', usersRouter)
 
-=======
 
 // const usersRouter = require('./routes/users')
 // app.use('/users', usersRouter)
->>>>>>> d4a5da09f697e8706ceedddef63f9b1681a6ede4
 
 // working api?
 const register = require('./api/register')
 register.doWork(app)
-
-
-
 
 
 const PORT = process.env.PORT || 8080;
