@@ -78,16 +78,10 @@ app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
 });
 
-<<<<<<< HEAD
 // to be deleted later
 const usersRouter = require('./routes/users')
 app.use('/users', usersRouter)
 
-=======
-
-// const usersRouter = require('./routes/users')
-// app.use('/users', usersRouter)
->>>>>>> d4a5da09f697e8706ceedddef63f9b1681a6ede4
 
 // working api?
 const register = require('./api/register')
