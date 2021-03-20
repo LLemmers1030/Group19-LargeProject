@@ -1,36 +1,39 @@
-require("dotenv").config();
+require('dotenv').config();
 const express = require("express");
 const app = express();
 const path = require("path");
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
 
 
 
-const userRoutes =  require('./routes/users.js')
-app.use('/users', userRoutes)
+// const userRoutes = require('./routes/users.js')
+// app.use('/users', userRoutes)
 
 
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// process.env.MONGODB_URL
 mongoose.connect(
   // NEED THE ACTUAL MONGODB LINK
   process.env.MONGODB_URL,
+  //"mongodb+srv://LLemmers:group19@cluster0.4hwbi.mongodb.net/myFirstDatabase?retryWrites=true",
   { useNewUrlParser: true, useUnifiedTopology: true },
   (error) => {
     console.log(error);
   }
 );
 
-mongoose.connection.on("open", () => {
+
+/*mongoose.connection.on("open", () => {
   console.log("succesfully connected");
 });
 
 mongoose.connection.on("error", () => {
   console.log("there was an error");
-});
+});*/
 
 // const BookSchema = mongoose.Schema({
 //   title: "string",
@@ -76,9 +79,8 @@ app.get("/*", (req, res) => {
 });
 
 
-const usersRouter = require('./routes/users')
-app.use('/users', usersRouter)
-
+// const usersRouter = require('./routes/users')
+// app.use('/users', usersRouter)
 
 
 const PORT = process.env.PORT || 8080;
