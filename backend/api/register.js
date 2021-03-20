@@ -7,7 +7,7 @@ const UserSchema = mongoose.Schema({
     FirstName: 'string',
     LastName: 'string'
 })
-const User = mongoose.model('Users', UserSchema)
+const User = mongoose.model('Users', UserSchema, 'Users')
 
 
 exports.doWork = function (app) {

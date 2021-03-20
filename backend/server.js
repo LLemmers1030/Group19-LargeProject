@@ -78,8 +78,8 @@ app.get("/*", (req, res) => {
 });
 
 // to be deleted later
-const usersRouter = require('./routes/users')
-app.use('/users', usersRouter)
+// const usersRouter = require('./routes/users')
+// app.use('/users', usersRouter)
 
 
 // working api?
