@@ -12,7 +12,7 @@ padding: 0 30px;
 /* MIGHT BE FIX Below is original*/
 /* height: 970px; */
 /* Original is 800px */
-height: 970px;
+height: 100vh;
 
 position: relative;
 z-index: 1;
