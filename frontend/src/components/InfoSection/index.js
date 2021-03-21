@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from '../ButtonElements';
 import {
     InfoContainer,
     InfoWrapper,
@@ -12,7 +11,8 @@ import {
     Subtitle,
     BtnWrap,
     ImgWrap,
-    Img
+    Img,
+    NavBtnLink
 } from './InfoElements';
 
 const InfoSection = ({
@@ -29,7 +29,8 @@ const InfoSection = ({
     alt,
     primary,
     dark,
-    dark2
+    dark2,
+    page
 }) => {
     return (
         <>
@@ -42,7 +43,8 @@ const InfoSection = ({
                                 <Heading lightText={lightText}>{headline}</Heading>
                                 <Subtitle darkText={darkText}>{description}</Subtitle>
                                 <BtnWrap>
-                                    <Button to="home"
+                                    {/* <Link to="/listings">{buttonLabel}</Link> */}
+                                    <NavBtnLink to={page}
                                         smooth={true}
                                         duration={500}
                                         spy={true}
@@ -51,7 +53,7 @@ const InfoSection = ({
                                         primary={primary ? 1 : 0}
                                         dark={dark ? 1 : 0}
                                         dark2={dark2 ? 1 : 0}
-                                    >{buttonLabel}</Button>
+                                    >{buttonLabel}</NavBtnLink>
                                 </BtnWrap>
                             </TextWrapper>
                         </Column1>

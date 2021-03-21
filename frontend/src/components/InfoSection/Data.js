@@ -16,7 +16,8 @@ export const homeObjOne = {
     alt: 'Car',
     dark: true,
     primary: true,
-    darkText: false
+    darkText: false,
+    page: '/'
 };
 
 export const homeObjTwo = {
@@ -35,7 +36,8 @@ export const homeObjTwo = {
     alt: 'Car',
     dark: true,
     primary: true,
-    darkText: true
+    darkText: true,
+    page: '/listings'
 };
 
 export const homeObjThree = {
@@ -54,5 +56,6 @@ export const homeObjThree = {
     alt: 'Car',
     dark: true,
     primary: true,
-    darkText: true
+    darkText: true,
+    page: '/'
 };
