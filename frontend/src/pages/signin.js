@@ -141,7 +141,15 @@ class SignInPage extends Component {
                 </div>
                 <div className="input-field">
                   <i className="fas fa-lock" />
+                  <input type="phoneNumber" placeholder="Phone Number" />
+                </div>
+                <div className="input-field">
+                  <i className="fas fa-lock" />
                   <input type="password" placeholder="Password" />
+                </div>
+                <div className="input-field">
+                  <i className="fas fa-lock" />
+                  <input type="password" placeholder="Re-Enter Password" />
                 </div>
                 <input type="submit" value="Submit" defaultValue="Sign up" className="btn solid" />
                 <p className="social-text">Sign up with other platforms</p>
@@ -159,16 +167,16 @@ class SignInPage extends Component {
           <div className="panels-container">
             <div className="panel left-panel">
               <div className="content">
-                <h3>New here ?</h3>
-                <p>Welcome</p>
+                <h3>New here?</h3>
+                <p>Register here</p>
                 <button className="btn transparent" id="sign-up-btn">Sign up</button>
               </div>
               <img src={image2} className="image" alt="" />
             </div>
             <div className="panel right-panel">
               <div className="content">
-                <h3>One of us ?</h3>
-                <p>Lorem stuff</p>
+                <h3>One of us?</h3>
+                <p>Login here</p>
                 <button className="btn transparent" id="sign-in-btn">Sign in</button>
               </div>
               <img src={image1} className="image" alt="" />
