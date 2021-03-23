@@ -1,20 +1,48 @@
 const mongoose = require('mongoose')
 const app = require('express')
+const bcrypt = require('bcrypt')
 const User = require('../models/user.model.js')
 
+
+// exports.doWork = function (app) {
+//     app.post('/api/register', async (req, res) => {
+//         const body = req.body;
+//         const user = new User(body)
+//         user.save((error) => {
+//             if (error) {
+//                 res.status(400)
+//                 res.send('Failed to add a user to database')
+//             } else {
+//                 res.status(200)
+//                 res.send('Successfully added a user to database')
+//             }
+//         })
+//     })
+// }
 
 exports.doWork = function (app) {
     app.post('/api/register', async (req, res) => {
         const body = req.body;
-        const user = new User(body)
-        user.save((error) => {
-            if (error) {
-                res.status(400)
-                res.send('Failed to add a user to database')
-            } else {
-                res.status(200)
-                res.send('Successfully added a user to database')
-            }
-        })
+
+        try {
+            const hashedPassword = await bcrypt.hash(body.Password, 10)
+            
+            const user = new User({
+                Email: body.Email,
+                Password: hashedPassword,
+                FirstName: body.FirstName,
+                LastName: body.LastName
+            })
+
+            user.save((error) => {
+                if (error) {
+                    res.status(400).send()
+                } else {
+                    res.status(200).send()
+                }
+            })
+        } catch {
+            res.status(500).send()
+        }
     })
 }
