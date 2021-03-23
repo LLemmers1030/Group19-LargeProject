@@ -31,7 +31,6 @@ exports.doWork = function (app) {
     app.post('/api/login', async (req, res) => {
         const body = req.body
         const Email = body.Email
-        const Password = body.Password
 
         // use findOne() instead of find because there should only be 1 email
         // let's us use result.Password instead of result[0].Password
@@ -40,7 +39,7 @@ exports.doWork = function (app) {
                 res.status(400).send(error)
             } else {
                 try {
-                    if (await bcrypt.compare(Password, result.Password)) {
+                    if (await bcrypt.compare(body.Password, result.Password)) {
                         // make JWT
                         res.status(200).send('Login success')
                     } else {
