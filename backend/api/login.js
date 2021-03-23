@@ -33,22 +33,23 @@ exports.doWork = function (app) {
         const Email = body.Email
         const Password = body.Password
 
-        // await?
-        User.find({ Email }, (error, result) => {
+        // use findOne() instead of find because there should only be 1 email
+        // let's us use result.Password instead of result[0].Password
+        await User.findOne({ Email }, async (error, result) => {
             if (error) {
-                return res.status(400).send(error)
+                res.status(400).send(error)
             } else {
-                //res.send(result[0].Password)
-
                 try {
-                    // await before becrypt compare?
-                    if (bcrypt.compare(Password, result[0].Password)) {
+                    if (await bcrypt.compare(Password, result.Password)) {
+                        // make JWT
                         res.status(200).send('Login success')
                     } else {
-                        res.status(400).send('Not allowed')
+                        // make it vague in production
+                        res.status(400).send('Bad email:password')
                     }
                 } catch {
-                    res.status(500).send()
+                    // make it vague in production
+                    res.status(400).send('Email does not exist')
                 }
             }
         })

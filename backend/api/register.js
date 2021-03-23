@@ -36,7 +36,7 @@ exports.doWork = function (app) {
 
             user.save((error) => {
                 if (error) {
-                    res.status(400).send()
+                    res.status(400).send('Email already in use')
                 } else {
                     res.status(200).send()
                 }
