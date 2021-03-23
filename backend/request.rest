@@ -1,0 +1,22 @@
+// vscode extension: humao.rest-client
+// just click "send request"
+
+POST http://localhost:8080/api/register
+Content-Type: application/json
+
+{
+    "Email" : "salt3@gmail.com",
+    "Password" : "salt3",
+    "FirstName" : "first",
+    "LastName" : "last"
+}
+
+###
+// (this is associated with a valid account)
+POST http://localhost:8080/api/login
+Content-Type: application/json
+
+{
+    "Email": "salt1@gmail.com",
+    "Password": "salt1"
+}
