@@ -1,7 +1,7 @@
 // vscode extension: humao.rest-client
 // just click "send request"
 
-POST http://localhost:8080/api/register
+POST http://localhost:8080/Users/register
 Content-Type: application/json
 
 {
@@ -13,7 +13,7 @@ Content-Type: application/json
 
 ###
 // (this is associated with a valid account)
-POST http://localhost:8080/api/login
+POST http://localhost:8080/Users/login
 Content-Type: application/json
 
 {
