@@ -21,7 +21,8 @@ exports.doWork = function (app) {
                 Email: body.Email,
                 Password: hashedPassword,
                 FirstName: body.FirstName,
-                LastName: body.LastName
+                LastName: body.LastName,
+                Admin: false
             })
 
             user.save((error) => {

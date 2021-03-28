@@ -1,11 +1,10 @@
 const mongoose = require('mongoose')
 
-const UserSchema = mongoose.Schema({
+const JWTSchema = mongoose.Schema({
     Email: 'string',
     Password: 'string',
     FirstName: 'string',
-    LastName: 'string',
-    Admin: false
+    LastName: 'string'
 })
 
 // const UserSchema = new mongoose.Schema({

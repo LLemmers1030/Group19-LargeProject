@@ -5,10 +5,11 @@ POST http://localhost:8080/Users/register
 Content-Type: application/json
 
 {
-    "Email" : "salt3@gmail.com",
-    "Password" : "salt3",
+    "Email" : "salt5@gmail.com",
+    "Password" : "salt5",
     "FirstName" : "first",
-    "LastName" : "last"
+    "LastName" : "last",
+    "Admin": false
 }
 
 ###
@@ -17,6 +18,15 @@ POST http://localhost:8080/Users/login
 Content-Type: application/json
 
 {
-    "Email": "salt1@gmail.com",
-    "Password": "salt1"
+    "Email": "salt5@gmail.com",
+    "Password": "salt5"
+}
+
+###
+
+POST http://localhost:8080/jwt/verify
+Content-Type: application/json
+
+{
+    "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InNhbHQ1QGdtYWlsLmNvbSIsIkFkbWluIjpmYWxzZSwiaWF0IjoxNjE2OTcwMzA5LCJleHAiOjE2MTY5NzM5MDl9.wy8SKziWsG5ASYjYG6SuMSrfbvg8WPdZY5QunTi8DUc"
 }

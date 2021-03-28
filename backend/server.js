@@ -40,9 +40,11 @@ app.get("/*", (req, res) => {
 const register = require('./api/Users/register.js')
 register.doWork(app)
 
-
 const login = require('./api/Users/login.js')
 login.doWork(app)
+
+const verify = require('./api/jwt.Verify.js')
+verify.doWork(app)
 
 
 const PORT = process.env.PORT || 8080;
