@@ -43,8 +43,11 @@ register.doWork(app)
 const login = require('./api/Users/login.js')
 login.doWork(app)
 
-const verify = require('./api/jwt.Verify.js')
+const verify = require('./api/JWT/verify.js')
 verify.doWork(app)
+
+const refresh = require('./api/JWT/refresh.js')
+refresh.doWork(app)
 
 
 const PORT = process.env.PORT || 8080;

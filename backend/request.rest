@@ -24,9 +24,18 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:8080/jwt/verify
+POST http://localhost:8080/JWT/verify
 Content-Type: application/json
 
 {
-    "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InNhbHQ1QGdtYWlsLmNvbSIsIkFkbWluIjpmYWxzZSwiaWF0IjoxNjE2OTcwMzA5LCJleHAiOjE2MTY5NzM5MDl9.wy8SKziWsG5ASYjYG6SuMSrfbvg8WPdZY5QunTi8DUc"
+    "JWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InNhbHQ1QGdtYWlsLmNvbSIsIkFkbWluIjpmYWxzZSwiaWF0IjoxNjE3MjE5OTU2LCJleHAiOjE2MTcyMjM1NTZ9.vkxvxkyOs9l6ECgQPU5lFGmVZDQYg8XrvKkunqb4SHk"
+}
+
+###
+
+POST http://localhost:8080/JWT/refresh
+Content-Type: application/json
+
+{
+    "JWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InNhbHQ1QGdtYWlsLmNvbSIsIkFkbWluIjpmYWxzZSwiaWF0IjoxNjE3MjE5OTU2LCJleHAiOjE2MTcyMjM1NTZ9.vkxvxkyOs9l6ECgQPU5lFGmVZDQYg8XrvKkunqb4SHk"
 }
