@@ -1,5 +1,8 @@
-// vscode extension: humao.rest-client
-// just click "send request"
+//vscode extension: humao.rest-client
+// just click "send request" above each URL
+
+// in the case of JWTs, login with a user and copy paste response JWT
+// JWTs are valid for an hour (subject to change) so you don't need to constantly login
 
 POST http://localhost:8080/Users/register
 Content-Type: application/json
