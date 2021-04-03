@@ -1,16 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.af0b6f9e.chunk.css",
-    "main.js": "/static/js/main.7ae23f36.chunk.js",
-    "main.js.map": "/static/js/main.7ae23f36.chunk.js.map",
+    "main.css": "/static/css/main.5f0182d4.chunk.css",
+    "main.js": "/static/js/main.d1913bb7.chunk.js",
+    "main.js.map": "/static/js/main.d1913bb7.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.ced03c97.js",
     "runtime-main.js.map": "/static/js/runtime-main.ced03c97.js.map",
-    "static/js/2.82d96a3b.chunk.js": "/static/js/2.82d96a3b.chunk.js",
-    "static/js/2.82d96a3b.chunk.js.map": "/static/js/2.82d96a3b.chunk.js.map",
+    "static/js/2.7b8d773c.chunk.js": "/static/js/2.7b8d773c.chunk.js",
+    "static/js/2.7b8d773c.chunk.js.map": "/static/js/2.7b8d773c.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.af0b6f9e.chunk.css.map": "/static/css/main.af0b6f9e.chunk.css.map",
-    "static/js/2.82d96a3b.chunk.js.LICENSE.txt": "/static/js/2.82d96a3b.chunk.js.LICENSE.txt",
+    "static/css/main.5f0182d4.chunk.css.map": "/static/css/main.5f0182d4.chunk.css.map",
+    "static/js/2.7b8d773c.chunk.js.LICENSE.txt": "/static/js/2.7b8d773c.chunk.js.LICENSE.txt",
     "static/media/Parents.jpg": "/static/media/Parents.6b97464d.jpg",
+    "static/media/avatar.1a84bdf0.svg": "/static/media/avatar.1a84bdf0.svg",
+    "static/media/hello.4a9307f4.svg": "/static/media/hello.4a9307f4.svg",
+    "static/media/house.b6f1212f.png": "/static/media/house.b6f1212f.png",
     "static/media/svg-1.a37f7ec8.svg": "/static/media/svg-1.a37f7ec8.svg",
     "static/media/svg-2.svg": "/static/media/svg-2.fe8ebf2b.svg",
     "static/media/svg-5.6cb427d2.svg": "/static/media/svg-5.6cb427d2.svg",
@@ -20,8 +23,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.ced03c97.js",
-    "static/js/2.82d96a3b.chunk.js",
-    "static/css/main.af0b6f9e.chunk.css",
-    "static/js/main.7ae23f36.chunk.js"
+    "static/js/2.7b8d773c.chunk.js",
+    "static/css/main.5f0182d4.chunk.css",
+    "static/js/main.d1913bb7.chunk.js"
   ]
 }
