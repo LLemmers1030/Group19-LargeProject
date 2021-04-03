@@ -22,7 +22,8 @@ import {
     SocialLogo,
     WebsiteRights,
     SocialIcons,
-    SocialIconLink
+    SocialIconLink,
+    FooterHeader
 } from './FooterElements';
 
 const Footer = () => {
@@ -34,46 +35,52 @@ const Footer = () => {
     return (
         <FooterContainer>
             <FooterWrap>
+                <FooterHeader>About The Team</FooterHeader>
                 <FooterLinksContainer>
                     {/* Two columns */}
                     <FooterLinksWrapper>
                         <FooterLinkItems>
                             {/* Customize later with the rest of the group. Definitely need less */}
-                            <FooterLinkTitle>About Us</FooterLinkTitle>
-                            <FooterLink to="/signin">How It Works</FooterLink>
-                            <FooterLink to="/signin">Testimonials</FooterLink>
-                            <FooterLink to="/signin">Careers</FooterLink>
-                            <FooterLink to="/signin">Investors</FooterLink>
-                            <FooterLink to="/signin">Terms of Service</FooterLink>
+                            <FooterLinkTitle>Lyndon-John Lemmers</FooterLinkTitle>
+                            <FooterLink href="https://github.com/LLemmers1030" target="_blank">Github</FooterLink>
+                            <FooterLink href="/signin">Linkedin</FooterLink>
                         </FooterLinkItems>
                         <FooterLinkItems>
-                            <FooterLinkTitle>About Us</FooterLinkTitle>
-                            <FooterLink to="/signin">How It Works</FooterLink>
-                            <FooterLink to="/signin">Testimonials</FooterLink>
-                            <FooterLink to="/signin">Careers</FooterLink>
-                            <FooterLink to="/signin">Investors</FooterLink>
-                            <FooterLink to="/signin">Terms of Service</FooterLink>
+                            <FooterLinkTitle>Andrew Tsai</FooterLinkTitle>
+                            <FooterLink href="https://github.com/Andrew13560" target="_blank">Github</FooterLink>
+                            <FooterLink href="https://www.linkedin.com/in/andrew-kevin-tsai/" target="_blank">Linkedin</FooterLink>
+                        </FooterLinkItems>
+                        <FooterLinkItems>
+                            <FooterLinkTitle>Samantha Perez</FooterLinkTitle>
+                            <FooterLink href="/signin">Github</FooterLink>
+                            <FooterLink href="/signin">Linkedin</FooterLink>
                         </FooterLinkItems>
                     </FooterLinksWrapper>
+
                     <FooterLinksWrapper>
                         <FooterLinkItems>
-                            <FooterLinkTitle>About Us</FooterLinkTitle>
-                            <FooterLink to="/signin">How It Works</FooterLink>
-                            <FooterLink to="/signin">Testimonials</FooterLink>
-                            <FooterLink to="/signin">Careers</FooterLink>
-                            <FooterLink to="/signin">Investors</FooterLink>
-                            <FooterLink to="/signin">Terms of Service</FooterLink>
+                            <FooterLinkTitle>Jeremy Chan</FooterLinkTitle>
+                            <FooterLink href="/signin">Github</FooterLink>
+                            <FooterLink href="/signin">Linkedin</FooterLink>
                         </FooterLinkItems>
                         <FooterLinkItems>
-                            <FooterLinkTitle>About Us</FooterLinkTitle>
+                            <FooterLinkTitle>Zachary Goldsmith</FooterLinkTitle>
                             {/* Use 'a' tag for actual links*/}
-                            <FooterLink to="/signin">How It Works</FooterLink>
-                            <FooterLink to="/signin">Testimonials</FooterLink>
-                            <FooterLink to="/signin">Careers</FooterLink>
-                            <FooterLink to="/signin">Investors</FooterLink>
-                            <FooterLink to="/signin">Terms of Service</FooterLink>
+                            <FooterLink href="https://github.com/WhaleTwoGoat" target="_blank">Github</FooterLink>
+                            <FooterLink href="https://www.linkedin.com/in/zachary-earl-goldsmith/" target="_blank">Linkedin</FooterLink>
+                        </FooterLinkItems>
+                        <FooterLinkItems>
+                            <FooterLinkTitle>Jessica Medina</FooterLinkTitle>
+                            <FooterLink href="/signin">Github</FooterLink>
+                            <FooterLink href="/signin">Linkedin</FooterLink>
+                        </FooterLinkItems>
+                        <FooterLinkItems>
+                            <FooterLinkTitle>Truong Nguyen </FooterLinkTitle>
+                            <FooterLink href="/signin">Github</FooterLink>
+                            <FooterLink href="/signin">Linkedin</FooterLink>
                         </FooterLinkItems>
                     </FooterLinksWrapper>
+
                 </FooterLinksContainer>
                 <SocialMedia>
                     <SocialMediaWrap>

@@ -26,7 +26,8 @@ exports.doWork = function (app) {
                                         async (err, token) => {
                                             if (err) 
                                                 return res.status(500).send("There was a problem making JWT.")
-                                            res.status(200).send(token)
+                                            // res.status(200).send(token)
+                                            res.status(200).json({ JWT: token })
                                             //console.log(token)
                                         });
                     } else {
