@@ -114,4 +114,5 @@ font-size: 24px;
 
 export const FooterHeader = styled.h2`
 color:#fff;
+margin-bottom: 16px;
 `

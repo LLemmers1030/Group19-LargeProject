@@ -43,7 +43,7 @@ const Footer = () => {
                             {/* Customize later with the rest of the group. Definitely need less */}
                             <FooterLinkTitle>Lyndon-John Lemmers</FooterLinkTitle>
                             <FooterLink href="https://github.com/LLemmers1030" target="_blank">Github</FooterLink>
-                            <FooterLink href="/signin">Linkedin</FooterLink>
+                            <FooterLink href="/signin" target="_blank">Linkedin</FooterLink>
                         </FooterLinkItems>
                         <FooterLinkItems>
                             <FooterLinkTitle>Andrew Tsai</FooterLinkTitle>
@@ -52,16 +52,16 @@ const Footer = () => {
                         </FooterLinkItems>
                         <FooterLinkItems>
                             <FooterLinkTitle>Samantha Perez</FooterLinkTitle>
-                            <FooterLink href="/signin">Github</FooterLink>
-                            <FooterLink href="/signin">Linkedin</FooterLink>
+                            <FooterLink href="https://github.com/samantha238" target="_blank">Github</FooterLink>
+                            <FooterLink href="/signin" target="_blank">Linkedin</FooterLink>
                         </FooterLinkItems>
                     </FooterLinksWrapper>
 
                     <FooterLinksWrapper>
                         <FooterLinkItems>
                             <FooterLinkTitle>Jeremy Chan</FooterLinkTitle>
-                            <FooterLink href="/signin">Github</FooterLink>
-                            <FooterLink href="/signin">Linkedin</FooterLink>
+                            <FooterLink href="https://github.com/Scientificmagic" target="_blank">Github</FooterLink>
+                            <FooterLink href="/signin" target="_blank">Linkedin</FooterLink>
                         </FooterLinkItems>
                         <FooterLinkItems>
                             <FooterLinkTitle>Zachary Goldsmith</FooterLinkTitle>
@@ -71,13 +71,13 @@ const Footer = () => {
                         </FooterLinkItems>
                         <FooterLinkItems>
                             <FooterLinkTitle>Jessica Medina</FooterLinkTitle>
-                            <FooterLink href="/signin">Github</FooterLink>
-                            <FooterLink href="/signin">Linkedin</FooterLink>
+                            <FooterLink href="https://github.com/Jess0420" target="_blank">Github</FooterLink>
+                            <FooterLink href="https://www.linkedin.com/in/jessica-medina-5552b8173/" target="_blank">Linkedin</FooterLink>
                         </FooterLinkItems>
                         <FooterLinkItems>
                             <FooterLinkTitle>Truong Nguyen </FooterLinkTitle>
-                            <FooterLink href="/signin">Github</FooterLink>
-                            <FooterLink href="/signin">Linkedin</FooterLink>
+                            <FooterLink href="https://github.com/Truonguyen" target="_blank">Github</FooterLink>
+                            <FooterLink href="https://www.linkedin.com/in/truong-nguyen123/" target="_blank">Linkedin</FooterLink>
                         </FooterLinkItems>
                     </FooterLinksWrapper>
 
