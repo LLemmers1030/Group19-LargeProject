@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node backend/server.js",
-    "build": "webpack"
+    "heroku-prebuild": "npm install --dev",
+    "build": "webpack",
+    "start": "node backend/server.js"
+    
   },
   "repository": {
     "type": "git",
