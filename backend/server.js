@@ -27,13 +27,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 );*/
 
 
-/*mongoose.connect(
+mongoose.connect(
 
   process.env.MONGODB_URL,
   { useNewUrlParser: true, useUnifiedTopology: true, })
   .then((db) => console.log("db is connected"))
   .catch((err) => console.log(err)
-);*/
+);
+
+/*
 var MONGO = process.env.MONGODB_URL;
 mongoose.connect(MONGO, {
   useCreateIndex: true,
@@ -45,7 +47,7 @@ mongoose.connect(MONGO, {
     return console.error('Error connecting to db:', err);
   }
   console.log('Connected successfully to db');
-});
+});*/
   
 
 
@@ -73,7 +75,7 @@ const refresh = require('./api/JWT/refresh.js')
 refresh.doWork(app)
 
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Our app is running on port ${PORT}`);
 });
