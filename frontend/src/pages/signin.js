@@ -163,19 +163,19 @@ class SignInPage extends Component {
                   <i className="fas fa-lock" />
                   <input type="phoneNumber" placeholder="Phone Number" />
                 </div> */}
-                <div className="danger">{this.state.errors.password}</div>
+                
                 <div className="input-field">
                   <i className="fas fa-lock" />
                   <input type="password" name="password" placeholder="Password" 
                   value={this.state.input.password} onChange={this.handleChange} />
                 </div>
-                <div className="danger">{this.state.errors.confirm_password}</div>
+                <div className="danger">{this.state.errors.password}</div>
                 <div className="input-field">
                   <i className="fas fa-lock" />
                   <input type="password" name="confirm_password" placeholder="Re-Enter Password" 
                   value={this.state.input.confirm_password} onChange={this.handleChange} />
                 </div>
-                <div className="danger">{this.state.errors.confirm_password}</div>
+                <p className="danger">{this.state.errors.confirm_password}</p>
                 <input type="submit" value="Submit" defaultValue="Sign up" className="btn solid" />
                 <p className="social-text">Sign up with other platforms</p>
                 <div className="social-media">
