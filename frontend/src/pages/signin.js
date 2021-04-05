@@ -158,6 +158,7 @@ class SignInPage extends Component {
                   <input type="text" name="email" placeholder="Email" 
                   value={this.state.input.email} onChange={this.handleChange}/>
                 </div>
+                <p className="text-danger">{this.state.errors.email}</p>
                 {/* <div className="input-field">
                   <i className="fas fa-lock" />
                   <input type="phoneNumber" placeholder="Phone Number" />
