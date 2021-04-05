@@ -17,14 +17,37 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // process.env.MONGODB_URL
-mongoose.connect(
+/*mongoose.connect(
   // NEED THE ACTUAL MONGODB LINK
   process.env.MONGODB_URL,
   { useNewUrlParser: true, useUnifiedTopology: true },
   (error) => {
-    console.log(error);
+    console.log("Error");
   }
-);
+);*/
+
+
+/*mongoose.connect(
+
+  process.env.MONGODB_URL,
+  { useNewUrlParser: true, useUnifiedTopology: true, })
+  .then((db) => console.log("db is connected"))
+  .catch((err) => console.log(err)
+);*/
+var MONGO = process.env.MONGODB_URL;
+mongoose.connect(MONGO, {
+  useCreateIndex: true,
+  useUnifiedTopology: true,
+  useNewUrlParser: true
+}, function(err, res) {
+
+  if (err) {
+    return console.error('Error connecting to db:', err);
+  }
+  console.log('Connected successfully to db');
+});
+  
+
 
 
 app.use(express.static(path.join(__dirname, "../frontend/build")));
@@ -50,7 +73,7 @@ const refresh = require('./api/JWT/refresh.js')
 refresh.doWork(app)
 
 
-const PORT = process.env.PORT || 8080;
+const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`Our app is running on port ${PORT}`);
 });

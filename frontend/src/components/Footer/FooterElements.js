@@ -54,7 +54,7 @@ font-size: 14px;
 margin-bottom: 16px;
 `;
 
-export const FooterLink = styled(Link)`
+export const FooterLink = styled.a`
 color: #fff;
 text-decoration: none;
 margin-bottom: 0.5rem;
@@ -111,3 +111,8 @@ export const SocialIconLink = styled.a`
 color: #fff;
 font-size: 24px;
 `;
+
+export const FooterHeader = styled.h2`
+color:#fff;
+margin-bottom: 16px;
+`
