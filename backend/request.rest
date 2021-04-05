@@ -1,4 +1,4 @@
-//vscode extension: humao.rest-client
+// vscode extension: humao.rest-client
 // just click "send request" above each URL
 
 // in the case of JWTs, login with a user and copy paste response JWT
@@ -31,7 +31,7 @@ POST http://localhost:8080/JWT/verify
 Content-Type: application/json
 
 {
-    "JWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InNhbHQ1QGdtYWlsLmNvbSIsIkFkbWluIjpmYWxzZSwiaWF0IjoxNjE3MjE5OTU2LCJleHAiOjE2MTcyMjM1NTZ9.vkxvxkyOs9l6ECgQPU5lFGmVZDQYg8XrvKkunqb4SHk"
+    "JWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InNhbHQ1QGdtYWlsLmNvbSIsIkFkbWluIjpmYWxzZSwiaWF0IjoxNjE3NDEyMTgyLCJleHAiOjE2MTc0MTU3ODJ9.39ny2Nb85A3xc1ZJSRdsZoXWa7N1S9b-8mfiRf6uge4"
 }
 
 ###
@@ -40,5 +40,5 @@ POST http://localhost:8080/JWT/refresh
 Content-Type: application/json
 
 {
-    "JWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InNhbHQ1QGdtYWlsLmNvbSIsIkFkbWluIjpmYWxzZSwiaWF0IjoxNjE3MjE5OTU2LCJleHAiOjE2MTcyMjM1NTZ9.vkxvxkyOs9l6ECgQPU5lFGmVZDQYg8XrvKkunqb4SHk"
+    "JWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InNhbHQ1QGdtYWlsLmNvbSIsIkFkbWluIjpmYWxzZSwiaWF0IjoxNjE3NDEyMTgyLCJleHAiOjE2MTc0MTU3ODJ9.39ny2Nb85A3xc1ZJSRdsZoXWa7N1S9b-8mfiRf6uge4"
 }
