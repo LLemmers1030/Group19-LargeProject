@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Navbar from "../components/NavbarD";
 import Sidebar from "../components/SidebarD";
 
-{/* function UserDashboard(props) { */}
+{/* function UserDashboard(props) { */ }
 const UserDashboard = (props) => {
   const [sidebarOpen, setsidebarOpen] = useState(false);
 
