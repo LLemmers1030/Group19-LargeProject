@@ -282,7 +282,7 @@ const HouseListings = () => {
                 </div>
 
             </div>
-            <Footer />
+            {/* <Footer /> */}
 
         </div>
     )
