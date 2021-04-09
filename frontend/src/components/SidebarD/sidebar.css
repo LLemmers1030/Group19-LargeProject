@@ -115,3 +115,8 @@
     display: inline;
   }
 }
+
+/* Added in to fix CSS issues */
+.sidebar_heading {
+  color: #a5aaad;
+}

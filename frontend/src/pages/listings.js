@@ -16,7 +16,7 @@ import GoogleMap from './GoogleMaps'
 import "antd/dist/antd.css";
 import { Collapse, Row, Col } from 'antd';
 import home from '../images/home.jpg';
-// import Navbar from '../components/Navbar';
+import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 // Use state is used for the navbar
 import React, { useState } from 'react';
@@ -30,15 +30,15 @@ const text = `
 
 
 const HouseListings = () => {
-    // const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false)
 
-    // const toggle = () => {
-    //     setIsOpen(!isOpen);
-    // }
+    const toggle = () => {
+        setIsOpen(!isOpen);
+    }
 
     return (
         <div className="App">
-            {/* <Navbar toggle={toggle} /> */}
+            <Navbar toggle={toggle} />
 
 
             {/* <h1 className="header">Listings</h1> */}
