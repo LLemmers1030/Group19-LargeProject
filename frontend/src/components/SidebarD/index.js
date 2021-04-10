@@ -1,6 +1,6 @@
 import "./sidebar.css";
 import logo from "../../images/house.png";
-import { NavLink  } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUserEdit,
@@ -12,16 +12,16 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
-{/* function Sidebar(props, { sidebarOpen, closeSidebar }) { */}
+{/* function Sidebar(props, { sidebarOpen, closeSidebar }) { */ }
 const Sidebar = ({ sidebarOpen, closeSidebar }) => {
 
-  
+
   return (
     <div className={sidebarOpen ? "sidebar_responsive" : ""} id="sidebar">
       <div className="sidebar__title">
         <div className="sidebar__img">
           <img src={logo} alt="logo" />
-          <h1>Jack Mobile Home Park</h1>
+          <h1 className="sidebar_heading">Jack Mobile Home Park</h1>
         </div>
         <FontAwesomeIcon
           icon={faTimes}
