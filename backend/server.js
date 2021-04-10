@@ -61,22 +61,25 @@ app.get("/*", (req, res) => {
 
 
 // working api?
-// https://media1.tenor.com/images/8685b235a52e66b6a3a953aba42334e3/tenor.gif?itemid=9614961
-const register = require('./api/Users/register.js')
-register.doWork(app)
 
-const login = require('./api/Users/login.js')
-login.doWork(app)
+const api = require('./api/routes')
+api(app)
 
-const verify = require('./api/JWT/verify.js')
-verify.doWork(app)
 
-const refresh = require('./api/JWT/refresh.js')
-refresh.doWork(app)
+// const register = require('./api/Users/register.js')
+// register.doWork(app)
+
+// const login = require('./api/Users/login.js')
+// login.doWork(app)
+
+// const verify = require('./api/JWT/verify.js')
+// verify.doWork(app)
+
+// const refresh = require('./api/JWT/refresh.js')
+// refresh.doWork(app)
 
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Our app is running on port ${PORT}`);
 });
-
