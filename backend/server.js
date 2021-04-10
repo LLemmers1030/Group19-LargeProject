@@ -5,6 +5,9 @@ const path = require("path");
 const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
 
+const cors = require('cors')
+app.use(cors())
+
 
 // **** Routers section **** (to be deleted later)
 // const userRoutes = require('./routes/users.js')
