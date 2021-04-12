@@ -9,5 +9,8 @@ module.exports = function (app) {
   app.post('/Users/login', (req, res) =>
     Users.login(req, res)
   )
-  
+  // get User
+  app.post('/Users/', (req, res) =>
+    Users.get(req, res)
+  )
 }
