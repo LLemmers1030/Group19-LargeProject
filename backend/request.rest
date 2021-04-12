@@ -4,7 +4,14 @@
 // in the case of JWTs, login with a user and copy paste response JWT
 // JWTs are valid for an hour (subject to change) so you don't need to constantly login
 
-POST http://localhost:8080/Users/register
+@hostname = http://localhost
+@port = 5000
+@host = {{hostname}}:{{port}}
+
+
+
+
+POST {{host}}/Users/register
 Content-Type: application/json
 
 {
@@ -17,7 +24,7 @@ Content-Type: application/json
 
 ###
 // (this is associated with a valid account)
-POST http://localhost:8080/Users/login
+POST {{host}}/Users/login
 Content-Type: application/json
 
 {
@@ -26,8 +33,16 @@ Content-Type: application/json
 }
 
 ###
+POST {{host}}/Users/
+Content-Type: application/json
 
-POST http://localhost:8080/JWT/verify
+{
+    "JWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InNhbHQ1QGdtYWlsLmNvbSIsIkFkbWluIjpmYWxzZSwiaWF0IjoxNjE4MTkzMTk4LCJleHAiOjE2MTgxOTY3OTh9.L7WeIilitHl96aCauxJ_YcRxqthL-MdGynHEPlujYpM"
+}
+
+###
+
+POST {{host}}/JWT/verify
 Content-Type: application/json
 
 {
@@ -36,7 +51,7 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:8080/JWT/refresh
+POST {{host}}/JWT/refresh
 Content-Type: application/json
 
 {
