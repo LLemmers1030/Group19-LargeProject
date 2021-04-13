@@ -24,6 +24,8 @@ import home15 from '../images/home15.jpg';
 import home16 from '../images/home16.jpg';
 import home17 from '../images/home17.jpg';
 import home18 from '../images/home18.jpg';
+import home19 from '../images/home19.jpg';
+
 const { Panel } = Collapse;
 
 const HouseListings = () => {
@@ -85,7 +87,19 @@ const HouseListings = () => {
                                 </Col>
                             </Row>
                         </Panel>
-                        <Panel className="even" header="House E" key="5">
+                        <Panel className="even" header="House D" key="4">
+
+                            <Row justify="center" align="top" gutter={[48, 16]}>
+                                <Col span={12}>
+                                    <h2 className="house-description">House Description</h2>
+                                    <p className="panel-paragraph"> 2 Bedroom<br /> 1.5 Bathroom<br /> $650/Month</p>
+                                </Col>
+                                <Col span={12}>
+                                    <img className="house" src={home4} alt="house test" ></img>
+                                </Col>
+                            </Row>
+                        </Panel>
+                        <Panel className="odd" header="House E" key="5">
 
                             <Row justify="center" align="top" gutter={[48, 16]}>
                                 <Col span={12}>
@@ -93,12 +107,12 @@ const HouseListings = () => {
                                     <p className="panel-paragraph"> 2 Bedroom<br /> 1 Bathroom<br /> $600/Month</p>
                                 </Col>
                                 <Col span={12}>
-                                    <img className="house" src={home4} alt="house test" ></img>
+                                    <img className="house" src={home5} alt="house test" ></img>
                                 </Col>
                             </Row>
                         </Panel>
 
-                        <Panel className="odd" header="House 1" key="6">
+                        <Panel className="even" header="House 1" key="6">
 
                             <Row justify="center" align="top" gutter={[48, 16]}>
                                 <Col span={12}>
@@ -106,11 +120,11 @@ const HouseListings = () => {
                                     <p className="panel-paragraph"> 2 Bedroom<br /> 1 Bathroom<br /> $675/Month</p>
                                 </Col>
                                 <Col span={12}>
-                                    <img className="house" src={home5} alt="house test" ></img>
+                                    <img className="house" src={home6} alt="house test" ></img>
                                 </Col>
                             </Row>
                         </Panel>
-                        <Panel className="even" header="House 2" key="7">
+                        <Panel className="odd" header="House 2" key="7">
 
                             <Row justify="center" align="top" gutter={[48, 16]}>
                                 <Col span={12}>
@@ -118,12 +132,12 @@ const HouseListings = () => {
                                     <p className="panel-paragraph"> 2 Bedroom<br /> 1 Bathroom<br /> $650/Month</p>
                                 </Col>
                                 <Col span={12}>
-                                    <img className="house" src={home6} alt="house test" ></img>
+                                    <img className="house" src={home7} alt="house test" ></img>
                                 </Col>
                             </Row>
 
                         </Panel>
-                        <Panel className="odd" header="House 5" key="8">
+                        <Panel className="even" header="House 5" key="8">
 
                             <Row justify="center" align="top" gutter={[48, 16]}>
                                 <Col span={12}>
@@ -131,12 +145,12 @@ const HouseListings = () => {
                                     <p className="panel-paragraph"> 2 Bedroom<br /> 1 Bathroom<br /> $600/Month</p>
                                 </Col>
                                 <Col span={12}>
-                                    <img className="house" src={home7} alt="house test" ></img>
+                                    <img className="house" src={home8} alt="house test" ></img>
                                 </Col>
                             </Row>
                         </Panel>
 
-                        <Panel className="even" header="House 6" key="9">
+                        <Panel className="odd" header="House 6" key="9">
 
                             <Row justify="center" align="top" gutter={[48, 16]}>
                                 <Col span={12}>
@@ -144,11 +158,11 @@ const HouseListings = () => {
                                     <p className="panel-paragraph"> 2 Bedroom<br /> 1 Bathroom<br /> $625/Month</p>
                                 </Col>
                                 <Col span={12}>
-                                    <img className="house" src={home8} alt="house test" ></img>
+                                    <img className="house" src={home9} alt="house test" ></img>
                                 </Col>
                             </Row>
                         </Panel>
-                        <Panel className="odd" header="House 7" key="10">
+                        <Panel className="even" header="House 7" key="10">
 
                             <Row justify="center" align="top" gutter={[48, 16]}>
                                 <Col span={12}>
@@ -156,12 +170,12 @@ const HouseListings = () => {
                                     <p className="panel-paragraph"> 2 Bedroom<br /> 1 Bathroom<br /> $675/Month</p>
                                 </Col>
                                 <Col span={12}>
-                                    <img className="house" src={home9} alt="house test" ></img>
+                                    <img className="house" src={home10} alt="house test" ></img>
                                 </Col>
                             </Row>
 
                         </Panel>
-                        <Panel className="even" header="House 8" key="11">
+                        <Panel className="odd" header="House 8" key="11">
 
                             <Row justify="center" align="top" gutter={[48, 16]}>
                                 <Col span={12}>
@@ -169,12 +183,12 @@ const HouseListings = () => {
                                     <p className="panel-paragraph"> 3 Bedroom<br /> 2 Bathroom<br /> $750/Month</p>
                                 </Col>
                                 <Col span={12}>
-                                    <img className="house" src={home10} alt="house test" ></img>
+                                    <img className="house" src={home11} alt="house test" ></img>
                                 </Col>
                             </Row>
                         </Panel>
 
-                        <Panel className="odd" header="House 10" key="12">
+                        <Panel className="even" header="House 10" key="12">
 
                             <Row justify="center" align="top" gutter={[48, 16]}>
                                 <Col span={12}>
@@ -182,11 +196,11 @@ const HouseListings = () => {
                                     <p className="panel-paragraph"> 2 Bedroom<br /> 1 Bathroom<br /> $650/Month</p>
                                 </Col>
                                 <Col span={12}>
-                                    <img className="house" src={home11} alt="house test" ></img>
+                                    <img className="house" src={home12} alt="house test" ></img>
                                 </Col>
                             </Row>
                         </Panel>
-                        <Panel className="even" header="House 11" key="13">
+                        <Panel className="odd" header="House 11" key="13">
 
                             <Row justify="center" align="top" gutter={[48, 16]}>
                                 <Col span={12}>
@@ -194,25 +208,12 @@ const HouseListings = () => {
                                     <p className="panel-paragraph"> 2 Bedroom<br /> 1 Bathroom<br /> $625/Month</p>
                                 </Col>
                                 <Col span={12}>
-                                    <img className="house" src={home12} alt="house test" ></img>
-                                </Col>
-                            </Row>
-
-                        </Panel>
-                        <Panel className="odd" header="House 12" key="14">
-
-                            <Row justify="center" align="top" gutter={[48, 16]}>
-                                <Col span={12}>
-                                    <h2 className="house-description">House Description</h2>
-                                    <p className="panel-paragraph"> 2 Bedroom<br /> 1 Bathroom<br /> $600/Month</p>
-                                </Col>
-                                <Col span={12}>
                                     <img className="house" src={home13} alt="house test" ></img>
                                 </Col>
                             </Row>
-                        </Panel>
 
-                        <Panel className="even" header="House 13" key="15">
+                        </Panel>
+                        <Panel className="even" header="House 12" key="14">
 
                             <Row justify="center" align="top" gutter={[48, 16]}>
                                 <Col span={12}>
@@ -224,7 +225,20 @@ const HouseListings = () => {
                                 </Col>
                             </Row>
                         </Panel>
-                        <Panel className="odd" header="House 14" key="16">
+
+                        <Panel className="odd" header="House 13" key="15">
+
+                            <Row justify="center" align="top" gutter={[48, 16]}>
+                                <Col span={12}>
+                                    <h2 className="house-description">House Description</h2>
+                                    <p className="panel-paragraph"> 2 Bedroom<br /> 1 Bathroom<br /> $600/Month</p>
+                                </Col>
+                                <Col span={12}>
+                                    <img className="house" src={home15} alt="house test" ></img>
+                                </Col>
+                            </Row>
+                        </Panel>
+                        <Panel className="even" header="House 14" key="16">
 
                             <Row justify="center" align="top" gutter={[48, 16]}>
                                 <Col span={12}>
@@ -232,12 +246,12 @@ const HouseListings = () => {
                                     <p className="panel-paragraph"> 3 Bedroom<br /> 1.5 Bathroom<br /> $750/Month</p>
                                 </Col>
                                 <Col span={12}>
-                                    <img className="house" src={home15} alt="house test" ></img>
+                                    <img className="house" src={home16} alt="house test" ></img>
                                 </Col>
                             </Row>
 
                         </Panel>
-                        <Panel className="even" header="House 15" key="17">
+                        <Panel className="odd" header="House 15" key="17">
 
                             <Row justify="center" align="top" gutter={[48, 16]}>
                                 <Col span={12}>
@@ -245,12 +259,12 @@ const HouseListings = () => {
                                     <p className="panel-paragraph"> 2 Bedroom<br /> 1 Bathroom<br /> $650/Month</p>
                                 </Col>
                                 <Col span={12}>
-                                    <img className="house" src={home16} alt="house test" ></img>
+                                    <img className="house" src={home17} alt="house test" ></img>
                                 </Col>
                             </Row>
                         </Panel>
 
-                        <Panel className="odd" header="House 16" key="18">
+                        <Panel className="even" header="House 16" key="18">
 
                             <Row justify="center" align="top" gutter={[48, 16]}>
                                 <Col span={12}>
@@ -258,12 +272,12 @@ const HouseListings = () => {
                                     <p className="panel-paragraph"> 2 Bedroom<br /> 1 Bathroom<br /> $500/Month</p>
                                 </Col>
                                 <Col span={12}>
-                                    <img className="house" src={home17} alt="house test" ></img>
+                                    <img className="house" src={home18} alt="house test" ></img>
                                 </Col>
                             </Row>
                         </Panel>
 
-                        <Panel className="even" header="House 17" key="19">
+                        <Panel className="odd" header="House 17" key="19">
 
                             <Row justify="center" align="top" gutter={[48, 16]}>
                                 <Col span={12}>
@@ -271,7 +285,7 @@ const HouseListings = () => {
                                     <p className="panel-paragraph"> 2 Bedroom<br /> 2 Bathroom<br /> $700/Month</p>
                                 </Col>
                                 <Col span={12}>
-                                    <img className="house" src={home18} alt="house test" ></img>
+                                    <img className="house" src={home19} alt="house test" ></img>
                                 </Col>
                             </Row>
                         </Panel>
