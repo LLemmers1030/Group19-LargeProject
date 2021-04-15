@@ -1,6 +1,8 @@
 import GoogleMap from './GoogleMaps'
 import "antd/dist/antd.css";
 import { Collapse, Row, Col } from 'antd';
+import ListNavBar from '../components/ListNavBar'
+// import Sidebar from '../components/Sidebar'
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 // Use state is used for the navbar
@@ -29,24 +31,23 @@ import home19 from '../images/home19.jpg';
 const { Panel } = Collapse;
 
 const HouseListings = () => {
-    const [isOpen, setIsOpen] = useState(false)
-
-    const toggle = () => {
-        setIsOpen(!isOpen);
-    }
+    // Defaults the scroll at the top of the page
+    window.scrollTo(0, 0);
 
     return (
         <div className="App">
+            <ListNavBar />
             {/* <Navbar toggle={toggle} /> */}
+            {/* <Sidebar isOpen={isOpen} toggle={toggle} /> */}
 
             {/* <h1 className="header">Listings</h1> */}
             <div className="container-1">
 
                 {/* Maybe instead of div use Col/Row from ant design */}
                 <div className="split col-1">
-                    <div>
+                    {/* <div>
                         <h1 className="listings-header">Available Listings</h1>
-                    </div>
+                    </div> */}
 
                     <Collapse className="collapse-main" accordion span={12}>
                         <Panel className="odd" header="House A" key="1">
@@ -298,7 +299,7 @@ const HouseListings = () => {
                 </div>
 
             </div>
-            {/* <Footer /> */}
+            <Footer />
 
         </div>
     )

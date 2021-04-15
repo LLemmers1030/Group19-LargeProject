@@ -49,7 +49,7 @@ cursor: pointer;
 font-size: 1.5rem;
 display: flex;
 align-items: center;
-margin-left: 24 px;
+/* margin-left: -300px; */
 font-weight: bold;
 text-decoration: none;
 `;
@@ -123,6 +123,7 @@ border: none;
 cursor: pointer;
 transition: all 0.2s ease-in-out;
 text-decoration: none;
+/* margin-right: -200px; */
 
 &:hover{
     transition: all 0.2s ease-in-out;
