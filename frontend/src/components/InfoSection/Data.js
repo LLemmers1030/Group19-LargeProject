@@ -17,7 +17,7 @@ export const homeObjOne = {
     dark: true,
     primary: true,
     darkText: false,
-    page: '/'
+    page: '/signin'
 };
 
 export const homeObjTwo = {
@@ -57,5 +57,5 @@ export const homeObjThree = {
     dark: true,
     primary: true,
     darkText: true,
-    page: '/'
+    page: '/signin'
 };
