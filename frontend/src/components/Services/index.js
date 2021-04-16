@@ -9,9 +9,9 @@ import {
     ServicesP
 } from './ServicesElements'
 
-import Icon1 from '../../images/svg-1.svg'
-import Icon2 from '../../images/svg-2.svg'
-import Icon3 from '../../images/svg-5.svg'
+import Icon1 from '../../images/service1.jpg'
+import Icon2 from '../../images/service2.jpg'
+import Icon3 from '../../images/service3.jpg'
 
 
 const Services = () => {
@@ -20,19 +20,19 @@ const Services = () => {
             <ServicesH1>Our Services</ServicesH1>
             <ServicesWrapper>
                 <ServicesCard>
-                    <ServicesIcon src={Icon1} />
                     <ServicesH2>Affordable housing</ServicesH2>
-                    <ServicesP>We help reduce your fees and increase your overall revenue.</ServicesP>
+                    <ServicesIcon src={Icon1} />
+                    <ServicesP>We understand the importance of living in a comfortable home while being able to indulge in your other expenses.</ServicesP>
                 </ServicesCard>
                 <ServicesCard>
-                    <ServicesIcon src={Icon2} />
                     <ServicesH2>Timely Maintenance</ServicesH2>
-                    <ServicesP>You can access our platform anywhere in the world. It is cool.</ServicesP>
+                    <ServicesIcon src={Icon2} />
+                    <ServicesP>Accidents happen, and you can count on us to promptly arrive whenever there are any maintenance issues that occur.</ServicesP>
                 </ServicesCard>
                 <ServicesCard>
-                    <ServicesIcon src={Icon3} />
                     <ServicesH2>Friendly Service</ServicesH2>
-                    <ServicesP>Unlock our special membership card that returns cash back</ServicesP>
+                    <ServicesIcon src={Icon3} />
+                    <ServicesP>Here at Jack Mobile Home Park we value your opinions and we will provide excellent customer service to all of our residents.</ServicesP>
                 </ServicesCard>
             </ServicesWrapper>
         </ServicesContainer>

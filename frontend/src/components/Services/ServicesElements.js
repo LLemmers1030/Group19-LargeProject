@@ -9,7 +9,8 @@ align-items: center;
 /* Background color */
 background: #0B2545;
 
-@media screen and (max-width: 768px){
+/* Fixed reactive issue with the cards */
+@media screen and (max-width: 1000px){
     height: 1100px;
 }
 
@@ -67,6 +68,7 @@ export const ServicesH1 = styled.h1`
 font-size: 2.5rem;
 color: #fff;
 margin-bottom: 64px;
+font-weight: bold;
 
 @media screen and (max-width: 480px){
     font-size: 2rem;
@@ -76,6 +78,8 @@ margin-bottom: 64px;
 export const ServicesH2 = styled.h2`
 font-size: 1rem;
 margin-bottom: 10px;
+font-weight: bold;
+
 `;
 
 export const ServicesP = styled.p`

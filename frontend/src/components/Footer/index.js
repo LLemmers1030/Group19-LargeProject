@@ -43,7 +43,7 @@ const Footer = () => {
                             {/* Customize later with the rest of the group. Definitely need less */}
                             <FooterLinkTitle>Lyndon-John Lemmers</FooterLinkTitle>
                             <FooterLink href="https://github.com/LLemmers1030" target="_blank">Github</FooterLink>
-                            <FooterLink href="/signin" target="_blank">Linkedin</FooterLink>
+                            {/* <FooterLink href="/signin" target="_blank">Linkedin</FooterLink> */}
                         </FooterLinkItems>
                         <FooterLinkItems>
                             <FooterLinkTitle>Andrew Tsai</FooterLinkTitle>
@@ -53,7 +53,7 @@ const Footer = () => {
                         <FooterLinkItems>
                             <FooterLinkTitle>Samantha Perez</FooterLinkTitle>
                             <FooterLink href="https://github.com/samantha238" target="_blank">Github</FooterLink>
-                            <FooterLink href="/signin" target="_blank">Linkedin</FooterLink>
+                            {/* <FooterLink href="/signin" target="_blank">Linkedin</FooterLink> */}
                         </FooterLinkItems>
                     </FooterLinksWrapper>
 
@@ -61,7 +61,7 @@ const Footer = () => {
                         <FooterLinkItems>
                             <FooterLinkTitle>Jeremy Chan</FooterLinkTitle>
                             <FooterLink href="https://github.com/Scientificmagic" target="_blank">Github</FooterLink>
-                            <FooterLink href="/signin" target="_blank">Linkedin</FooterLink>
+                            {/* <FooterLink href="/signin" target="_blank">Linkedin</FooterLink> */}
                         </FooterLinkItems>
                         <FooterLinkItems>
                             <FooterLinkTitle>Zachary Goldsmith</FooterLinkTitle>

@@ -2,8 +2,8 @@ import './index.css';
 import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faGoogle } from '@fortawesome/free-brands-svg-icons'
-import image1 from '../images/svg-6.svg'
-import image2 from '../images/svg-7.svg'
+import image1 from '../images/svg-login.svg'
+import image2 from '../images/svg-reg.svg'
 // import ListNavBar from '../components/ListNavBar';
 //import rpng from './register.png';
 //import './hook.js';

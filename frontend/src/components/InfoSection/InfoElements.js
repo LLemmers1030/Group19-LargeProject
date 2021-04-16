@@ -95,6 +95,9 @@ justify-content: flex-start;
 export const ImgWrap = styled.div`
 max-width: 555px;
 height: 100%;
+
+/* @media screen and (max-width: 768px){
+    height: 200px;} */
 `;
 
 export const Img = styled.img`

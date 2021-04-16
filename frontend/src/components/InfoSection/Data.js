@@ -6,7 +6,7 @@ export const homeObjOne = {
     lightText: true,
     // lightTextDesc: true,
     topLine: 'About Us',
-    headline: 'Meet The Family Behind Jack Mobile Home Park',
+    headline: 'The Family Behind Jack Mobile Home Park',
     description: 'Being in the mobile home business for over 20 years, we strive to provide affordable housing and a friendly relationship between us and our tennants.',
     buttonLabel: 'Get Started',
     // true: image will be on the left and text will be on the right
@@ -18,7 +18,7 @@ export const homeObjOne = {
     primary: true,
     darkText: false,
     page: '/signin',
-    topLight: true
+    // topLight: true
 };
 
 export const homeObjTwo = {
@@ -39,7 +39,7 @@ export const homeObjTwo = {
     primary: true,
     darkText: true,
     page: '/listings',
-    topLineColor: true
+    // topLineColor: true
 };
 
 export const homeObjThree = {
@@ -48,7 +48,7 @@ export const homeObjThree = {
     lightText: false,
     // lightTextDesc: true,
     topLine: 'Contact Us',
-    headline: 'Get Started With Moving In By Contacting Us',
+    headline: 'Get Started By Creating An Account Or Contacting Us',
     description: 'Phone Number: (352)-390-7495',
     buttonLabel: 'Get Started',
     // true: image will be on the left and text will be on the right
