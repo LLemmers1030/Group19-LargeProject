@@ -135,12 +135,12 @@ margin-right: auto;
 }
 `;
 
-export const NavPageHeader = styled.h1`
+export const NavPageHeader = styled.div`
 align-items: center;
 color: white;
 font-size: 2rem;
 display: flex;
 margin-left: auto;
 margin-right: auto;
-
+font-weight: bold;
 `

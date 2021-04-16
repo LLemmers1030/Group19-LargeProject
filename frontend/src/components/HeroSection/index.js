@@ -32,7 +32,7 @@ const HeroSection = () => {
                 <HeroContent>
                     <HeroH1>It's Another Day In Paradise</HeroH1>
                     <HeroP>
-                        Sign up for a new account today and view our wonderful trailer homes
+                        Sign up for a new account today or view our wonderful trailer homes
                     </HeroP>
                     <HeroBtnWrapper>
                         <Button to="signup"

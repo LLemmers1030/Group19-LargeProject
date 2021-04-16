@@ -1,16 +1,11 @@
 import React, { useState, useEffect } from 'react';
 // https://react-icons.github.io/react-icons/
-import { FaBars } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
 import { animateScroll as scroll } from 'react-scroll';
 import {
     Nav,
     NavbarContainer,
     NavLogo,
-    MobileIcon,
-    NavMenu,
-    NavItem,
-    NavLinks,
     NavBtn,
     NavBtnLink,
     NavPageHeader
@@ -45,7 +40,7 @@ const ListNavBar = ({ toggle }) => {
                         <NavLogo to='/' onClick={toggleHome}>
                             Jack Mobile Home Park
                     </NavLogo>
-                        <NavPageHeader>Listings Page</NavPageHeader>
+                        <NavPageHeader>Listings</NavPageHeader>
                         {/* The buttons will use React router */}
                         <NavBtn>
                             <NavBtnLink to="signin">Login/Register</NavBtnLink>

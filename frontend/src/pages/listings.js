@@ -1,12 +1,11 @@
 import GoogleMap from './GoogleMaps'
 import "antd/dist/antd.css";
+import React from 'react';
 import { Collapse, Row, Col } from 'antd';
 import ListNavBar from '../components/ListNavBar'
 // import Sidebar from '../components/Sidebar'
-import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 // Use state is used for the navbar
-import React, { useState } from 'react';
 // Houses
 import home1 from '../images/home1.jpg';
 import home2 from '../images/home2.jpg';

@@ -63,6 +63,8 @@ letter-spacing: 1.4px;
 text-transform: uppercase;
 margin-bottom: 16px;
 font-weight: bold;
+/* color: ${({ topLight }) => (topLight ? '#01bf71' : '#0B2545')}; */
+-webkit-text-stroke:0.4px #0B2545
 `;
 
 export const Heading = styled.h1`

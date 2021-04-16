@@ -17,7 +17,8 @@ export const homeObjOne = {
     dark: true,
     primary: true,
     darkText: false,
-    page: '/signin'
+    page: '/signin',
+    topLight: true
 };
 
 export const homeObjTwo = {
@@ -37,7 +38,8 @@ export const homeObjTwo = {
     dark: true,
     primary: true,
     darkText: true,
-    page: '/listings'
+    page: '/listings',
+    topLineColor: true
 };
 
 export const homeObjThree = {

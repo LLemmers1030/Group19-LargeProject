@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faGoogle } from '@fortawesome/free-brands-svg-icons'
 import image1 from '../images/svg-6.svg'
 import image2 from '../images/svg-7.svg'
+// import ListNavBar from '../components/ListNavBar';
 //import rpng from './register.png';
 //import './hook.js';
 
@@ -118,6 +119,7 @@ class SignInPage extends Component {
         {/* <meta charSet="UTF-8" />
                 <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" /> */}
+        {/* <ListNavBar /> */}
         <title>Sign In &amp; Sign Up</title>
         <link rel="stylesheet" href="style.css" />
         <div className="container">
