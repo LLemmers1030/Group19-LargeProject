@@ -5,7 +5,7 @@ export const InfoContainer = styled.div`
 color: #fff;
 background: ${({ lightBg }) => (lightBg ? '#8DA9C4' : '#0B2545')};
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 168px){
     padding: 100px 0;
 }
 `;
@@ -15,7 +15,7 @@ display: grid;
 z-index: 1;
 /* Originally height is 860 */
 /* Original is 800px */
-height: 100vh;
+height: 92vh;
 width: 100%;
 max-width: 1100px;
 margin-right: auto;
@@ -96,6 +96,7 @@ export const ImgWrap = styled.div`
 max-width: 555px;
 height: 100%;
 
+/* May need or not need to keep */
 /* @media screen and (max-width: 768px){
     height: 200px;} */
 `;
