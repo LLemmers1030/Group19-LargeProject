@@ -98,15 +98,20 @@ margin-top: 32px;
 display: flex;
 flex-direction: column;
 align-items: center;
+/* color: black !important; */
 `;
 
 export const ArrowForward = styled(MdArrowForward)`
 margin-left: 8px;
 font-size: 20px;
+/* color: black !important; */
+
 `;
 
 export const ArrowRight = styled(MdKeyboardArrowRight)`
 margin-left: 8px;
 font-size: 20px;
+/* color: black !important; */
+
 `;
 

@@ -118,10 +118,11 @@ border: none;
 cursor: pointer;
 transition: all 0.2s ease-in-out;
 text-decoration: none;
+/* font-weight: bold; */
 
 &:hover{
     transition: all 0.2s ease-in-out;
     background: #fff;
-    color: #010606
+    color: #4481eb !important;
 }
 `;

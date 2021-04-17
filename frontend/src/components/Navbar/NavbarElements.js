@@ -52,6 +52,12 @@ align-items: center;
 /* margin-left: -300px; */
 font-weight: bold;
 text-decoration: none;
+
+/* &:hover{
+    transition: all 0.2s ease-in-out;
+    background: #fff;
+    color: red !important;
+} */
 `;
 
 // Mobile dropdown
@@ -128,6 +134,6 @@ text-decoration: none;
 &:hover{
     transition: all 0.2s ease-in-out;
     background: #fff;
-    color: #010606;
+    color: #4481eb !important;
 }
 `;
