@@ -8,6 +8,7 @@ const bodyParser = require("body-parser");
 const cors = require('cors')
 app.use(cors())
 
+// let app = express();
 
 // **** Routers section **** (to be deleted later)
 // const userRoutes = require('./routes/users.js')
@@ -36,7 +37,7 @@ mongoose.connect(
   { useNewUrlParser: true, useUnifiedTopology: true, })
   .then((db) => console.log("db is connected"))
   .catch((err) => console.log(err)
-);
+  );
 
 /*
 var MONGO = process.env.MONGODB_URL;
@@ -51,7 +52,7 @@ mongoose.connect(MONGO, {
   }
   console.log('Connected successfully to db');
 });*/
-  
+
 
 
 
@@ -68,6 +69,8 @@ app.get("/*", (req, res) => {
 const api = require('./api/routes')
 api(app)
 
+app.use('/routes', require('./api/routes'));
+
 
 // const register = require('./api/Users/register.js')
 // register.doWork(app)
@@ -82,7 +85,7 @@ api(app)
 // refresh.doWork(app)
 
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Our app is running on port ${PORT}`);
 });

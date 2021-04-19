@@ -15,22 +15,24 @@ exports.login = async (req, res) => {
     await User.findOne({ Email }, async (error, result) => {
         if (error) {
             res.status(400).send(error)
+
         } else {
             try {
                 if (await bcrypt.compare(body.Password, result.Password)) {
                     // make JWT
-                    await jwt.sign({ Email: Email, Admin: result.Admin }, 
-                                    process.env.JWT_SECRET,
-                                    {expiresIn: '1h'},
-                                    async (err, token) => {
-                                        if (err) 
-                                            return res.status(500).send("There was a problem making JWT.")
-                                        // res.status(200).send(token)
-                                        res.status(200).json({ JWT: token })
-                                        //console.log(token)
-                                    });
+                    await jwt.sign({ Email: Email, Admin: result.Admin },
+                        process.env.JWT_SECRET,
+                        { expiresIn: '1h' },
+                        async (err, token) => {
+                            if (err)
+                                return res.status(500).send("There was a problem making JWT.")
+                            // res.status(200).send(token)
+                            res.status(200).json({ JWT: token })
+                            //console.log(token)
+                        });
                 } else {
                     // make it vague in production
+                    console.log("is this it?")
                     res.status(400).send('Bad email:password')
                 }
             } catch {
