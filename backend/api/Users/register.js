@@ -7,6 +7,8 @@ const User = require('../../models/user.model.js')
 exports.register = async (req, res) => {
     const body = req.body
     const Email = body.Email
+    const uniquString = randString()
+    const isValid = false
 
     try {
         let user = await User.findOne({ Email })
@@ -21,7 +23,9 @@ exports.register = async (req, res) => {
             Password: hashedPassword,
             FirstName: body.FirstName,
             LastName: body.LastName,
-            Admin: false
+            Admin: false,
+            isValid: isValid,
+            uniquString: uniquString
         })
 
         user.save((error) => {
@@ -34,6 +38,46 @@ exports.register = async (req, res) => {
     } catch {
         res.status(500).send()
     }
+    sendEmail(email)
+    res.redirect('back')
+}
+
+const randString = () => {
+    const len = 8
+    let randStr = ''
+    for (let i = 0; i < len; i++) {
+        const ch = Math.floor((math.random() * 10) + 1)
+        randStr += ch
+    }
+
+    return randStr
+}
+
+const sendMail = (email, uniqueString) => {
+    var Transport = nodemailer.createTransport({
+        service: "Gmail",
+        auth: {
+            user: process.env.EMAIL_ADDRESS,
+            pass: process.env.EMAIL_PASSWORD
+        }
+    });
+
+    var mailOptions;
+    let sender = "Jack's Mobile Homepark";
+    mailOptions = {
+        from: sender,
+        to: email,
+        subject: "Email Confirmation",
+        html: `Press <a href=http://localhost:3000/verify/${uniqueString}> here </a> to verity your email. Thanks`
+    };
+
+    Transport.sendMail(mailOptions, function(error, respnse) {
+        if (error){
+            console.log(error);
+        } else {
+            console.log("Message sent");
+        }
+    });
 }
 
 // exports.doWork = function (app) {

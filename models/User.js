@@ -24,6 +24,13 @@ const UserSchema = new mongoose.Schema({
         minlength: 6,
         select: false,
     },
+    isValid:{
+        type: Boolean,
+    },
+    uniquString:{
+        type: String,
+    },
+
     resetPasswordToken: String,
     resetPasswordExpire: Date,
 });
