@@ -1,6 +1,6 @@
 import "./sidebar.css";
 import logo from "../../images/house.png";
-import { NavLink } from "react-router-dom";
+import { useHistory, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUserEdit,
@@ -14,7 +14,13 @@ import React from "react";
 
 {/* function Sidebar(props, { sidebarOpen, closeSidebar }) { */ }
 const Sidebar = ({ sidebarOpen, closeSidebar }) => {
+  let history = useHistory();
 
+  const logoutHandler = () => {
+    localStorage.removeItem("authToken");
+    // or /login
+    history.push("/");
+  }
 
   return (
     <div className={sidebarOpen ? "sidebar_responsive" : ""} id="sidebar">
@@ -50,10 +56,10 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
           <p>Contact Us</p>
         </NavLink>
         {/* need to actually log user out */}
-        <NavLink to="/" activeClassName="sidebar__logout">
+        <button onClick={logoutHandler} className="sidebar__logout">
           <FontAwesomeIcon icon={faPowerOff} />
           <p>Logout</p>
-        </NavLink>
+        </button>
       </div>
     </div>
   );

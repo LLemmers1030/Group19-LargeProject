@@ -12,11 +12,21 @@ import { useState, useEffect } from 'react';
 
 const SignInPage = ({ history }) => {
     //class SignInPage extends Component {
-    const [Email, setEmail] = useState("");
+    const [regEmail, setRegEmail] = useState("");
+    const [loginEmail, setLoginEmail] = useState("");
+    const [regUsername, setRegUsername] = useState("");
+    const [loginUsername, setLoginUsername] = useState("");
+
     const [Password, setPassword] = useState("");
-    const [username, setUsername] = useState("");
     const [confirmpassword, setConfirmPassword] = useState("");
-    const [error, setError] = useState("");
+    const [errors, setErrors] = useState("");
+
+    // constructor(props){
+    //     super(props);
+    //     this.state = {
+    //         errors: {}
+    //     };
+    // }
 
 
     useEffect(() => {
@@ -37,10 +47,78 @@ const SignInPage = ({ history }) => {
         }
     }, [history]);
 
+    const validate = () => {
+        //let isValid = true;
+        const errors = {};
+
+        //if ({ loginEmail } == undefined) {
+        if (!{ loginEmail }) {
+            console.log("no email");
+            errors.loginEmail = "Please enter email";
+        }
+
+        if (Password !== confirmpassword) {
+            setPassword("");
+            setConfirmPassword("");
+            errors.password = "Passwords do not match";
+        }
+
+
+
+        return errors;
+
+        // if (!input["email"]) {
+        //     isValid = false;
+        //     errors["email"] = "Please enter email";
+        //     //errors["email"] = alert("Please enter email");
+        // }
+
+        // if (typeof input["email"] !== "undefined") {
+
+        //     var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+
+        //     if (!pattern.test(input["email"])) {
+        //         isValid = false;
+        //         errors["email"] = "Please enter valid email address.";
+        //         //errors["email"] = alert("Please enter valid email address.");
+        //     }
+        // }
+
+        // if (!input["password"]) {
+        //     isValid = false;
+        //     errors["password"] = "Please enter your password";
+        //     //errors["password"] = alert("Please enter your password");
+        // }
+
+        // if (!input["confirm_password"]) {
+        //     isValid = false;
+        //     errors["confirm_password"] = "Please confirm your password";
+        //     //errors["confirm_password"] = alert("Please enter your confirm password");
+        // }
+
+        // if (typeof input["password"] != "undefined" && typeof input["confirm_password"] !== "undefined") {
+        //     if (input["password"] !== input["confirm_password"]) {
+        //         isValid = false;
+        //         errors["password"] = "Passwords don't match";
+        //         //errors["password"] = alert("Passwords don't match");
+        //     }
+        // }
+
+        // this.setState({
+        //     errors: errors
+        // });
+
+        //return isValid;
+    };
+
     const LoginHandler = async (e) => {
         e.preventDefault();
-        console.log(Email);
-        console.log(Password);
+        //if (validate()) {
+        //    console.log("yay?");
+        //}
+        //const validationErrors = validate();
+        //const noErrors = Object.keys(validationErrors).length === 0;
+        //setErrors(validationErrors);
 
         const config = {
             headers: {
@@ -50,15 +128,18 @@ const SignInPage = ({ history }) => {
 
         try {
             const { data } = await axios.post("http://localhost:8080/Users/login",
-                { Email, Password },
+                { loginEmail, Password },
                 config);
 
             localStorage.setItem("authToken", data.token);
             history.push("/dashboard");
         } catch (error) {
-            setError(error.response.data.error);
+            //console.log(error);
+            //console.log(error.response);
+            //console.log(error.response.data);
+            setErrors(error.response.data);
             setTimeout(() => {
-                setError("");
+                setErrors("");
             }, 5000)
         }
     };
@@ -76,25 +157,22 @@ const SignInPage = ({ history }) => {
             setPassword("");
             setConfirmPassword("");
             setTimeout(() => {
-                setError("")
+                setErrors("")
             }, 5000);
-            return setError("passwords do not match");
+            return setErrors("Passwords do not match");
         }
 
         try {
-            //console.log({ username });
-            //console.log({ email });
-            //console.log({ password });
-            const { data } = await axios.post("http://localhost:8080/Users/register", { username, Email, Password },
+            const { data } = await axios.post("http://localhost:8080/Users/register", { regUsername, loginEmail, Password },
                 config);
 
             localStorage.setItem("authToken", data.token);
             // push to login page ?
             history.push("/dashboard");
         } catch (error) {
-            setError(error.response.data.error);
+            setErrors(error.response.data);
             setTimeout(() => {
-                setError("");
+                setErrors("");
             }, 5000)
         }
     };
@@ -119,11 +197,12 @@ const SignInPage = ({ history }) => {
                                     type="email"
                                     required id="email"
                                     placeholder="Enter email"
-                                    value={Email}
-                                    onChange={(e) => setEmail(e.target.value)}
+                                    value={loginEmail}
+                                    onChange={(e) => setLoginEmail(e.target.value)}
                                     tabIndex={1}
                                 />
                             </div>
+                            {/* {errors.email && <p className="text-danger">{errors.email}</p>} */}
                             {/* <p className="text-danger">{this.state.errors.email}</p> */}
                             <div className="input-field">
                                 <i className="fas fa-lock" />
@@ -136,6 +215,7 @@ const SignInPage = ({ history }) => {
                                     tabIndex={2}
                                 />
                             </div>
+                            {errors && <p className="danger">{errors}</p>}
                             {/* <div className="danger">{this.state.errors.password}</div> */}
                             {/* <input type="submit" value="Submit" defaultValue="Login" className="btn solid" /> */}
                             <button type="submit" className="btn btn-primary" tabIndex={3}>Login</button>
@@ -161,9 +241,8 @@ const SignInPage = ({ history }) => {
                                     type="text"
                                     required id="name"
                                     placeholder="Enter username"
-                                    value={username}
-                                    onChange={(e) => setUsername(e.target.value)}
-
+                                    value={regUsername}
+                                    onChange={(e) => setRegUsername(e.target.value)}
                                 />
                             </div>
 
@@ -173,8 +252,8 @@ const SignInPage = ({ history }) => {
                                     type="email"
                                     required id="email"
                                     placeholder="Enter email"
-                                    value={Email}
-                                    onChange={(e) => setEmail(e.target.value)}
+                                    value={regEmail}
+                                    onChange={(e) => setRegEmail(e.target.value)}
 
                                 />
                             </div>
@@ -202,14 +281,14 @@ const SignInPage = ({ history }) => {
 
                                 <input
                                     type="password"
-                                    required id="confirmpassword"
+                                    required id="name"
                                     placeholder="Enter confirm password"
                                     value={confirmpassword}
                                     onChange={(e) => setConfirmPassword(e.target.value)}
 
                                 />
                             </div>
-                            {/* <div className="danger">{this.state.errors.password}</div> */}
+                            {errors && <p className="danger">{errors}</p>}
                             {/* <div className="input-field">
                                 <i className="fas fa-lock" />
                                 <input type="password" name="confirm_password" placeholder="Re-Enter Password"
