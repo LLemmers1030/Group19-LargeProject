@@ -13,4 +13,8 @@ module.exports = function (app) {
   app.post('/Users/', (req, res) =>
     Users.get(req, res)
   )
+
+  app.post('/Users/edit', (req, res) =>
+    Users.edit(req, res)
+  )
 }

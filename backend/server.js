@@ -29,6 +29,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
   }
 );*/
 
+mongoose.set('useFindAndModify', false);
 
 mongoose.connect(
 
