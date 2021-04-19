@@ -9,6 +9,7 @@ import image2 from '../images/svg-reg.svg'
 //import './hook.js';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 
 const SignInPage = ({ history }) => {
     //class SignInPage extends Component {
@@ -62,8 +63,6 @@ const SignInPage = ({ history }) => {
             setConfirmPassword("");
             errors.password = "Passwords do not match";
         }
-
-
 
         return errors;
 
@@ -129,7 +128,8 @@ const SignInPage = ({ history }) => {
         };
 
         try {
-            const { data } = await axios.post("/Users/login",
+            // For production: /Users/login 
+            const { data } = await axios.post("http://localhost:8080/Users/login",
                 { Email, Password },
                 config);
 
@@ -167,7 +167,8 @@ const SignInPage = ({ history }) => {
         }
 
         try {
-            const { data } = await axios.post("/Users/register", { Username, Email, Password },
+            // For production: /Users/register 
+            const { data } = await axios.post("http://localhost:8080/Users/register", { Username, Email, Password },
                 config);
 
             localStorage.setItem("authToken", data.JWT);
@@ -224,6 +225,12 @@ const SignInPage = ({ history }) => {
                             {/* <input type="submit" value="Submit" defaultValue="Login" className="btn solid" /> */}
                             <button type="submit" className="btn btn-primary" tabIndex={3}>Login</button>
                             <p className="social-text">Sign in with other platforms</p>
+
+                            {/* Forgot password */}
+                            {/* <a href="https://www.youtube.com/watch?v=2AIL1c-cJM0" className="forgot-password">Forgot password?</a> */}
+                            <NavLink to="/forgotpassword"><p>Forgot password?</p></NavLink>
+                            {/* <NavLink to="/dashboard" className="sidebar__link" activeClassName="active_menu_link" exact={true}> */}
+
                             <div className="social-media">
                                 <a href="/#" className="social-icon">
                                     <FontAwesomeIcon icon={faGoogle} />

@@ -26,6 +26,7 @@ const Navbar = ({ sidebarOpen, openSidebar }) => {
       // const { data } = await axios.get("http://localhost:8080/Users/get",
       //   { JWT },
       //   config);
+      // For production: /Users/get 
       const response = await axios.get("http://localhost:8080/Users/get",
         { JWT },
         config);
