@@ -129,11 +129,11 @@ const SignInPage = ({ history }) => {
         };
 
         try {
-            const { data } = await axios.post("http://localhost:8080/Users/login",
+            const { data } = await axios.post("/Users/login",
                 { Email, Password },
                 config);
 
-            localStorage.setItem("authToken", data.token);
+            localStorage.setItem("authToken", data.JWT);
             history.push("/dashboard");
         } catch (error) {
             //console.log(error);
@@ -167,10 +167,10 @@ const SignInPage = ({ history }) => {
         }
 
         try {
-            const { data } = await axios.post("http://localhost:8080/Users/register", { Username, Email, Password },
+            const { data } = await axios.post("/Users/register", { Username, Email, Password },
                 config);
 
-            localStorage.setItem("authToken", data.token);
+            localStorage.setItem("authToken", data.JWT);
             // push to login page ?
             history.push("/dashboard");
         } catch (error) {
