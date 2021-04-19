@@ -113,6 +113,8 @@ const SignInPage = ({ history }) => {
 
     const LoginHandler = async (e) => {
         e.preventDefault();
+        const Email = loginEmail;
+        console.log(Email);
         //if (validate()) {
         //    console.log("yay?");
         //}
@@ -128,7 +130,7 @@ const SignInPage = ({ history }) => {
 
         try {
             const { data } = await axios.post("http://localhost:8080/Users/login",
-                { loginEmail, Password },
+                { Email, Password },
                 config);
 
             localStorage.setItem("authToken", data.token);
@@ -146,6 +148,8 @@ const SignInPage = ({ history }) => {
 
     const registerHandler = async (e) => {
         e.preventDefault();
+        const Username = regUsername;
+        const Email = regEmail;
 
         const config = {
             headers: {
@@ -163,7 +167,7 @@ const SignInPage = ({ history }) => {
         }
 
         try {
-            const { data } = await axios.post("http://localhost:8080/Users/register", { regUsername, loginEmail, Password },
+            const { data } = await axios.post("http://localhost:8080/Users/register", { Username, Email, Password },
                 config);
 
             localStorage.setItem("authToken", data.token);

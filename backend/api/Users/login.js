@@ -32,8 +32,7 @@ exports.login = async (req, res) => {
                         });
                 } else {
                     // make it vague in production
-                    console.log("is this it?")
-                    res.status(400).send('Bad email:password')
+                    res.status(400).send('Invalid email or password')
                 }
             } catch {
                 // make it vague in production
