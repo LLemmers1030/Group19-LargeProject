@@ -22,7 +22,6 @@ const Navbar = (props, { sidebarOpen, openSidebar }) => {
         "Content-Type": "application/json"
       },
     };
-
     try {
       // For production: /Users/get 
       const { data } = await axios.post("http://localhost:8080/Users",
