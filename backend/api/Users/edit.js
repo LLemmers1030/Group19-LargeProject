@@ -2,6 +2,9 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const User = require('../../models/user.model')
 
+
+// in: Password, FirstName, LastName, JWT
+// out: Updated user, refreshed JWT, error bool
 exports.edit = async (req, res) => {
     const body = req.body
     const JWT = body.JWT
