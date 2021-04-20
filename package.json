@@ -37,7 +37,8 @@
     "google-maps-react": "^2.0.6",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "react-bootstrap": "^1.5.2"
   },
   "devDependencies": {
     "concurrently": "^6.0.0",

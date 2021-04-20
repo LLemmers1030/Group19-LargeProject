@@ -54,16 +54,23 @@ mongoose.connect(MONGO, {
   console.log('Connected successfully to db');
 });*/
 
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static(path.join(__dirname, "/frontend/build")));
 
-
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.join(__dirname, "client", "build", "index.html"))
+//   });
+// }else {
+//   app.get("/", (req, res) => {
+//     res.send("Api running");
+//   })
+// }
 
 app.use(express.static(path.join(__dirname, "../frontend/build")));
-
 
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
 });
-
 
 // working api?
 
@@ -71,7 +78,6 @@ const api = require('./api/routes')
 api(app)
 
 app.use('/routes', require('./api/routes'));
-
 
 // const register = require('./api/Users/register.js')
 // register.doWork(app)
@@ -84,7 +90,6 @@ app.use('/routes', require('./api/routes'));
 
 // const refresh = require('./api/JWT/refresh.js')
 // refresh.doWork(app)
-
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
