@@ -27,7 +27,7 @@ const UserSchema = new mongoose.Schema({
     isValid:{
         type: Boolean,
     },
-    uniquString:{
+    uniqueString:{
         type: String,
     },
 

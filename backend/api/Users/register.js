@@ -1,14 +1,14 @@
 // const mongoose = require('mongoose')
 // const app = require('express')
 const bcrypt = require('bcrypt')
+const nodemailer = require('nodemailer')
 const User = require('../../models/user.model.js')
 
 
 exports.register = async (req, res) => {
     const body = req.body
     const Email = body.Email
-    const uniquString = randString()
-    const isValid = false
+    const uniqueString = randString()
 
     try {
         let user = await User.findOne({ Email })
@@ -24,13 +24,13 @@ exports.register = async (req, res) => {
             FirstName: body.FirstName,
             LastName: body.LastName,
             Admin: false,
-            isValid: isValid,
-            uniquString: uniquString
+            isValid: false,
+            uniqueString: uniqueString
         })
-
+        
         user.save((error) => {
             if (error) {
-                res.status(400).send(error)
+                res.status(400).send('User is not saving')
             } else {
                 res.status(200).send('Registered')
             }
@@ -38,22 +38,22 @@ exports.register = async (req, res) => {
     } catch {
         res.status(500).send()
     }
-    sendEmail(email)
-    res.redirect('back')
+    sendEmail(Email, uniqueString)
+//    res.redirect('back')
 }
 
 const randString = () => {
     const len = 8
     let randStr = ''
     for (let i = 0; i < len; i++) {
-        const ch = Math.floor((math.random() * 10) + 1)
+        const ch = Math.floor((Math.random() * 10) + 1)
         randStr += ch
     }
 
     return randStr
 }
 
-const sendMail = (email, uniqueString) => {
+const sendEmail = (email, uniqueString) => {
     var Transport = nodemailer.createTransport({
         service: "Gmail",
         auth: {
@@ -68,7 +68,8 @@ const sendMail = (email, uniqueString) => {
         from: sender,
         to: email,
         subject: "Email Confirmation",
-        html: `Press <a href=http://localhost:3000/verify/${uniqueString}> here </a> to verity your email. Thanks`
+        // html: `Press <a href=http://localhost:3000/Users/verify/${uniqueString}> here </a> to verity your email. Thanks`
+        html: `Copy paste this cool token into the login page for the first time: ${uniqueString}`
     };
 
     Transport.sendMail(mailOptions, function(error, respnse) {

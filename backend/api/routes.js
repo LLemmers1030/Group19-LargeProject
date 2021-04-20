@@ -18,4 +18,16 @@ module.exports = function (app) {
   app.post('/Users/edit', (req, res) =>
     Users.edit(req, res)
   )
+
+  // app.post('/Users/verify', (req, res) => {
+  //   console.log('Did it even succeed???')
+  //   Users.verify(req, res)
+  // })
+
+  app.get('/Users/verify/:uniqueString', (req, res) => {
+    console.log('Did it even succeed???')
+    Users.verify(req, res)
+  })
+    
+  
 }
