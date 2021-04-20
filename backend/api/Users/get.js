@@ -32,7 +32,7 @@ exports.get = async (req, res) => {
 
                     res.status(200).json({
                         Email: result.Email,
-                        Username: result.Username
+                        Username: result.Username,
                         //Password: result.Password,
                         FirstName: result.FirstName,
                         LastName: result.LastName,
