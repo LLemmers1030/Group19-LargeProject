@@ -8,10 +8,10 @@ justify-content: center;
 align-items: center;
 /* Background color */
 background: #0B2545;
-
+padding-bottom: 100px;
 /* Fixed reactive issue with the cards */
 @media screen and (max-width: 1000px){
-    height: 1100px;
+    height: 150vh;
 }
 
 @media screen and (max-width: 480px){
@@ -28,6 +28,7 @@ grid-template-columns: 1fr 1fr 1fr;
 align-items: center;
 grid-gap: 16px;
 padding: 0 50px;
+/* margin-top: 40px; */
 
 @media screen and (max-width: 1000px){
     grid-template-columns: 1fr 1fr;
@@ -55,7 +56,12 @@ transition: all 0.2s ease-in-out;
     transform: scale(1.02);
     transition: all 0.2s ease-in-out;
     cursor: pointer;
-}
+};
+
+/* @media screen and (max-width: 768px){
+    padding: 0 20px;
+    height: 400px;
+} */
 `;
 
 export const ServicesIcon = styled.img`
@@ -69,6 +75,8 @@ font-size: 2.5rem;
 color: #fff;
 margin-bottom: 64px;
 font-weight: bold;
+align-items: center;
+/* margin-top: 128px; */
 
 @media screen and (max-width: 480px){
     font-size: 2rem;
