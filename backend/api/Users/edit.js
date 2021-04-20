@@ -27,7 +27,21 @@ exports.edit = async (req, res) => {
                 if (error) {
                     res.status(400).json({ Error: true })
                 } else {
-                    res.status(200).json({ result, Error: false })
+                    var Admin = decoded.Admin
+                    var newJWT
+
+                    await jwt.sign({ Email: Email, Admin: Admin }, 
+                        process.env.JWT_SECRET,
+                        {expiresIn: '1h'},
+                        (err, token) => {
+                            if (err) {
+                                newJWT = null
+                            } else {
+                                newJWT = token
+                            }
+                        })
+
+                    res.status(200).json({ result, JWT: newJWT, Error: false })
                 }
             })
         }
