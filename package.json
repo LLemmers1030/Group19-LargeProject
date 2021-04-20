@@ -37,8 +37,13 @@
     "google-maps-react": "^2.0.6",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.1",
+<<<<<<< HEAD
     "nodemailer": "^6.5.0",
     "path": "^0.12.7"
+=======
+    "path": "^0.12.7",
+    "react-bootstrap": "^1.5.2"
+>>>>>>> 375d2c51677c3b9c686aa60baacc3c0c493d0bd6
   },
   "devDependencies": {
     "concurrently": "^6.0.0",
