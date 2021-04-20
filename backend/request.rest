@@ -37,7 +37,7 @@ POST {{host}}/Users/
 Content-Type: application/json
 
 {
-    "JWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InNhbHQyQGdtYWlsLmNvbSIsImlhdCI6MTYxODg2NjU3NiwiZXhwIjoxNjE4ODcwMTc2fQ.0O7IEAEQJsaLvmHqPZDhfZiWwMvqCtXw_itO8NV-pk0"
+    "JWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InNhbHQyQGdtYWlsLmNvbSIsImlhdCI6MTYxODg4NDIzMiwiZXhwIjoxNjE4ODg3ODMyfQ.wTTUuiwlaoLaD5KK7ipt1Vchv428PE3H8fbMuveYDr8"
 }
 
 ###
