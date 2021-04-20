@@ -5,16 +5,17 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-const Navbar = ({ sidebarOpen, openSidebar }) => {
-  const [errors, setErrors] = useState("");
-  useEffect(() => {
-    LoadPage();
-  });
+const Navbar = (props, { sidebarOpen, openSidebar }) => {
 
-  const LoadPage = async (e) => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
+  const [errors, setErrors] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const loadName = async (e) => {
 
     const JWT = localStorage.getItem("authToken");
-    console.log(JWT);
 
     const config = {
       headers: {
@@ -23,20 +24,19 @@ const Navbar = ({ sidebarOpen, openSidebar }) => {
     };
 
     try {
-      // const { data } = await axios.get("http://localhost:8080/Users/get",
-      //   { JWT },
-      //   config);
       // For production: /Users/get 
       const { data } = await axios.post("http://localhost:8080/Users",
         { JWT },
         config);
 
-      console.log(data);
-      //console.log(response);
-      //console.log(response.data);
+      localStorage.setItem("authToken", data.JWT);
 
-      //localStorage.setItem("authToken", data.token);
-      //history.push("/dashboard");
+      setEmail(data.Email);
+
+      if (email !== "") {
+        setName(email.substring(0, email.lastIndexOf("@")));
+      }
+
     } catch (error) {
       setErrors(error.response.data);
       setTimeout(() => {
@@ -45,10 +45,20 @@ const Navbar = ({ sidebarOpen, openSidebar }) => {
     }
   }
 
-  //var displayName = localStorage.getItem("authToken");
+  useEffect(() => {
+    loadName();
+    setLoading(true);
 
-  return (
-    <nav className="navbar">
+
+    console.log(name);
+  }, [name, []]);
+
+
+
+  return loading ? (
+    // <div>
+    <nav className="navbar" >
+      { () => loadName()}
       <div className="nav_icon" onClick={() => openSidebar()}>
         <FontAwesomeIcon icon={faBars} />
       </div>
@@ -57,13 +67,16 @@ const Navbar = ({ sidebarOpen, openSidebar }) => {
       </div>
       <div className="navbar__right">
         <a>
-          <i>{ }</i>
+          <i >{name}</i>
         </a>
         <a>
           <img width="30" src={avatar} alt="avatar" />
         </a>
       </div>
-    </nav>
+    </ nav>
+    // </div>
+  ) : (
+    <div></div>
   );
 };
 

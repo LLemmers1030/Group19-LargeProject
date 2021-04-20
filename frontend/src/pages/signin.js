@@ -72,7 +72,8 @@ const SignInPage = ({ history }) => {
 
         try {
             // For production: /Users/login 
-            const { data } = await axios.post("http://localhost:8080/Users/login",
+            // For local: http://localhost:8080/Users/Login
+            const { data } = await axios.post("/Users/login",
                 { Email, Password },
                 config);
 
