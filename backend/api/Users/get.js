@@ -19,9 +19,9 @@ exports.get = async (req, res) => {
                     var Admin = decoded.Admin
                     var newJWT
 
-                    await jwt.sign({ Email: Email, Admin: Admin }, 
+                    await jwt.sign({ Email: Email, Admin: Admin },
                         process.env.JWT_SECRET,
-                        {expiresIn: '1h'},
+                        { expiresIn: '1h' },
                         (err, token) => {
                             if (err) {
                                 newJWT = null
@@ -29,19 +29,14 @@ exports.get = async (req, res) => {
                                 newJWT = token
                             }
                         })
-                        
+
                     res.status(200).json({
                         Email: result.Email,
                         Username: result.Username
                         //Password: result.Password,
-<<<<<<< HEAD
                         FirstName: result.FirstName,
                         LastName: result.LastName,
                         JWT: newJWT
-=======
-                        //FirstName: result.FirstName,
-                        //LastName: result.LastName
->>>>>>> bootstrap_branch
                     })
                 }
             })
