@@ -27,16 +27,18 @@ const Navbar = ({ sidebarOpen, openSidebar }) => {
       //   { JWT },
       //   config);
       // For production: /Users/get 
-      const response = await axios.get("http://localhost:8080/Users/get",
+      const { data } = await axios.post("http://localhost:8080/Users",
         { JWT },
         config);
 
-      console.log(response.data);
+      console.log(data);
+      //console.log(response);
+      //console.log(response.data);
 
       //localStorage.setItem("authToken", data.token);
       //history.push("/dashboard");
     } catch (error) {
-      //setErrors(error.response.data);
+      setErrors(error.response.data);
       setTimeout(() => {
         setErrors("");
       }, 5000)

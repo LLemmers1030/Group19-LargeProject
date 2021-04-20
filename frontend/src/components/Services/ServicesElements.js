@@ -84,7 +84,7 @@ align-items: center;
 `;
 
 export const ServicesH2 = styled.h2`
-font-size: 1rem;
+font-size: 1.3rem;
 margin-bottom: 10px;
 font-weight: bold;
 
