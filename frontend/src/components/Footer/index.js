@@ -85,22 +85,27 @@ const Footer = () => {
                 <SocialMedia>
                     <SocialMediaWrap>
                         <SocialLogo to='/' onClick={toggleHome}>Jack Mobile Home Park</SocialLogo>
-                        <WebsiteRights>Jack Mobile Home Park © {new Date().getFullYear()} All rights reserved.</WebsiteRights>
+                        <WebsiteRights>Jack Mobile Home Park {new Date().getFullYear()}</WebsiteRights>
                         <SocialIcons>
                             {/* Must have // in front of href for link to work */}
-                            <SocialIconLink href="//" target="_blank" aria-label="Facebook">
+                            {/* <SocialIconLink href="//" target="_blank" aria-label="Facebook"> */}
+                            <SocialIconLink aria-label="Facebook">
                                 <FaFacebook />
                             </SocialIconLink>
-                            <SocialIconLink href="//" target="_blank" aria-label="Instagram">
+                            {/* <SocialIconLink href="//" target="_blank" aria-label="Instagram"> */}
+                            <SocialIconLink aria-label="Instagram">
                                 <FaInstagram />
                             </SocialIconLink>
-                            <SocialIconLink href="//" target="_blank" aria-label="YouTube">
+                            {/* <SocialIconLink href="//" target="_blank" aria-label="YouTube"> */}
+                            <SocialIconLink aria-label="YouTube">
                                 <FaYoutube />
                             </SocialIconLink>
-                            <SocialIconLink href="//" target="_blank" aria-label="Twitter">
+                            {/* <SocialIconLink href="//" target="_blank" aria-label="Twitter"> */}
+                            <SocialIconLink aria-label="Twitter">
                                 <FaTwitter />
                             </SocialIconLink>
-                            <SocialIconLink href="//www.linkedin.com/in/andrew-kevin-tsai/" target="_blank" aria-label="Linkedin">
+                            {/* <SocialIconLink href="//" target="_blank" aria-label="Linkedin"> */}
+                            <SocialIconLink aria-label="Linkedin">
                                 <FaLinkedin />
                             </SocialIconLink>
                         </SocialIcons>

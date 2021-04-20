@@ -12,7 +12,7 @@
   justify-content: space-between;
   align-items: center;
   color: #f3f4f6;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
 .sidebar__img {
@@ -38,10 +38,11 @@
 .sidebar__menu > h2 {
   color: #5bc0be;
   font-size: 16px;
-  margin-top: 15px;
+  margin-top: 5px;
   margin-bottom: 5px;
   padding: 0 10px;
   font-weight: 700;
+
 }
 
 .sidebar__link {
@@ -51,6 +52,9 @@
   margin-bottom: 5px;
   display: flex;
   text-decoration: none;
+  align-items: center;
+
+  height: 50px;
 }
 
 .active_menu_link {
@@ -67,6 +71,7 @@
   color: #a5aaad;
   font-weight: 700;
   font-size: 18px;
+  margin-top: 20px;
 }
 
 /* svg is for font awesome styling, margins are a little off though? */
@@ -80,6 +85,12 @@
   color: #e65061;
   display: flex;
   text-decoration: none;
+  align-items: center;
+  height: 40px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0);
+  outline: none;
+  border-style: none;
 }
 
 .sidebar__logout > p {
@@ -88,6 +99,7 @@
   font-weight: 700;
   text-transform: uppercase;
   font-size: 18px;
+  margin-top: 20px;
 }
 
 .sidebar__logout svg {
@@ -119,4 +131,5 @@
 /* Added in to fix CSS issues */
 .sidebar_heading {
   color: #a5aaad;
+  margin-top: 10px;
 }

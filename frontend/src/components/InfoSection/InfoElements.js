@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 
 export const InfoContainer = styled.div`
 color: #fff;
+height: 100vh;
 background: ${({ lightBg }) => (lightBg ? '#8DA9C4' : '#0B2545')};
 
 @media screen and (max-width: 168px){
     padding: 100px 0;
+    /* height: 100vh; */
 }
 `;
 
@@ -102,7 +104,8 @@ height: 100%;
 `;
 
 export const Img = styled.img`
-width: 100%;
+width: 90%;
+height: 100%;
 margin: 0 0 10px 0;
 padding-right: 0;
 `;

@@ -15,8 +15,8 @@ POST {{host}}/Users/register
 Content-Type: application/json
 
 {
-    "Email" : "salt5@gmail.com",
-    "Password" : "salt5",
+    "Email" : "a33f09f2@bvmtk.com",
+    "Password" : "testing123",
     "FirstName" : "first",
     "LastName" : "last",
     "Admin": false
