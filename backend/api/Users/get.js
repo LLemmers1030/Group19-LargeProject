@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken')
 const User = require('../../models/user.model')
 
+
 // in: JWT
 // out: Users data, refreshed JWT, error bool
 exports.get = async (req, res) => {

@@ -1,11 +1,10 @@
-// const mongoose = require('mongoose')
-// const app = require('express')
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 const User = require('../../models/user.model.js')
 
-const jwt = require('jsonwebtoken')
 
-
+// in: email, password
+// out: JWT
 exports.login = async (req, res) => {
     const body = req.body
     const Email = body.Email

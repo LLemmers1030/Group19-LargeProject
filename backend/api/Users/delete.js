@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken')
 const User = require('../../models/user.model')
 
+
 // in: JWT
 // out: error bool
 exports.delete = async (req, res) => {
