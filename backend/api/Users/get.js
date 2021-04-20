@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken')
 const User = require('../../models/user.model')
 
 // in: JWT
-// out: Users data
+// out: Users data, refreshed JWT, error bool
 exports.get = async (req, res) => {
     const JWT = req.body.JWT
 
@@ -10,16 +10,31 @@ exports.get = async (req, res) => {
         if (error) {
             res.status(400).json({ Error:true })
         } else {
-            const Email = decoded.Email
+            var Email = decoded.Email
             await User.findOne({ Email }, async (error, result) => {
                 if (error) {
                     res.status(400).json({Error: true})
                 } else {
+                    var Admin = decoded.Admin
+                    var newJWT
+
+                    await jwt.sign({ Email: Email, Admin: Admin }, 
+                        process.env.JWT_SECRET,
+                        {expiresIn: '1h'},
+                        (err, token) => {
+                            if (err) {
+                                newJWT = null
+                            } else {
+                                newJWT = token
+                            }
+                        })
+                        
                     res.status(200).json({
                         Email: result.Email,
                         //Password: result.Password,
                         FirstName: result.FirstName,
-                        LastName: result.LastName
+                        LastName: result.LastName,
+                        JWT: newJWT
                     })
                 }
             })
