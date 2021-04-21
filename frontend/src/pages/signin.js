@@ -143,7 +143,7 @@ const SignInPage = ({ history }) => {
                                 <input
                                     type="email"
                                     required id="email"
-                                    placeholder="Enter email"
+                                    placeholder="Email"
                                     value={loginEmail}
                                     onChange={(e) => setLoginEmail(e.target.value)}
                                     tabIndex={1}
@@ -154,7 +154,7 @@ const SignInPage = ({ history }) => {
                                 <input
                                     type="password"
                                     required id="name"
-                                    placeholder="Enter password"
+                                    placeholder="Password"
                                     value={loginPassword}
                                     onChange={(e) => setLoginPassword(e.target.value)}
                                     tabIndex={2}
@@ -183,7 +183,7 @@ const SignInPage = ({ history }) => {
                                 <input
                                     type="email"
                                     required id="email"
-                                    placeholder="Enter email"
+                                    placeholder="Email"
                                     value={regEmail}
                                     onChange={(e) => setRegEmail(e.target.value)}
 
@@ -196,7 +196,7 @@ const SignInPage = ({ history }) => {
                                 <input
                                     type="password"
                                     required id="name"
-                                    placeholder="Enter password"
+                                    placeholder="Password"
                                     value={Password}
                                     onChange={(e) => setPassword(e.target.value)}
 
@@ -209,7 +209,7 @@ const SignInPage = ({ history }) => {
                                 <input
                                     type="password"
                                     required id="name"
-                                    placeholder="Enter confirm password"
+                                    placeholder="Confirm password"
                                     value={confirmpassword}
                                     onChange={(e) => setConfirmPassword(e.target.value)}
 
