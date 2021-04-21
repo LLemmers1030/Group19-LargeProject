@@ -6,7 +6,6 @@ const User = require('../../models/user.model')
 // out: Users data, refreshed JWT, error bool
 exports.get = async (req, res) => {
     const JWT = req.body.JWT
-    console.log(JWT);
 
     jwt.verify(JWT, process.env.JWT_SECRET, async (error, decoded) => {
         if (error) {
