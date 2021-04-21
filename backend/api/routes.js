@@ -1,5 +1,6 @@
 
 const Users = require('./Users/modules')
+const Passwords = require('./Passwords/modules')
 
 module.exports = function (app) {
   // register
@@ -26,6 +27,16 @@ module.exports = function (app) {
   // app.get('/Users/verify/:uniqueString', (req, res) => {
   //   Users.verify(req, res)
   // })
-    
+   
+  // *** PASSWORD RELATED ***
+
+  app.post('/Passwords/reset', (req, res) =>
+    Passwords.reset(req, res)
+  )
   
+  app.post('/Passwords/resetValidate', (req, res) =>
+    Passwords.resetValidate(req, res)
+  )
+
+
 }
