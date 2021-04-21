@@ -10,6 +10,8 @@ import Maintenance from './components/Maintenance';
 import Settings from './components/Settings';
 import Contact from './components/Contact';
 import ForgotPasswordScreen from './pages/ForgotPasswordScreen';
+import ResetPasswordScreen from './pages/ResetPasswordScreen';
+import VerificationScreen from './pages/verificationPage';
 
 // Potential zoom fix issue
 // var scale = 'scale(1)';
@@ -26,7 +28,9 @@ function App() {
         {/* Takes the route towards the sign in page */}
         <Route path="/signin" component={SignInPage} exact />
         <Route path="/listings" component={HouseListings} exact />
+        <Route path="/resetpassword" component={ResetPasswordScreen} exact />
         <Route path="/forgotpassword" component={ForgotPasswordScreen} exact />
+        <Route path="/verification" component={VerificationScreen} exact />
         <Route render={(props) => (
           <UserDashboard {...props}>
             <Switch>

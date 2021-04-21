@@ -10,7 +10,7 @@
 
 
 
-
+# Register
 POST {{host}}/Users/register
 Content-Type: application/json
 
@@ -21,14 +21,14 @@ Content-Type: application/json
     "LastName" : "last"
 }
 
-###
+### This is where we paste the verification code when logging in 1st time
 // (this is associated with a valid account)
 POST {{host}}/Users/login
 Content-Type: application/json
 
 {
-    "Email": "a1c68b75@bvmtk.com",
-    "Password": "test",
+    "Email": "andrew13560@gmail.com",
+    "Password": "andrew123",
     "Verification": ""
 }
 
@@ -37,7 +37,7 @@ POST {{host}}/Users/
 Content-Type: application/json
 
 {
-    "JWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InNhbHQyQGdtYWlsLmNvbSIsImlhdCI6MTYxODg4NTM5NCwiZXhwIjoxNjE4ODg4OTk0fQ.3oE9PLLGvr4pKY6zg5IHQyZLk-jqrBhpCE5a8uYPlUw"
+    "JWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6I…AyMn0._NcvRQHIpk3e1qpMH17Q6Sp16G_jdVqtRZK-PDg2j_0"
 }
 
 ###

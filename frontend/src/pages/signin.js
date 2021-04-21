@@ -16,10 +16,10 @@ const SignInPage = ({ history }) => {
     const [regEmail, setRegEmail] = useState("");
     const [loginEmail, setLoginEmail] = useState("");
     const [regUsername, setRegUsername] = useState("");
+    const [loginPassword, setLoginPassword] = useState("");
     // const [loginUsername, setLoginUsername] = useState("");
 
     const [Password, setPassword] = useState("");
-    // const [loginPassword, setLoginPassword] = useState("");
     const [confirmpassword, setConfirmPassword] = useState("");
     const [errors, setErrors] = useState("");
 
@@ -63,6 +63,7 @@ const SignInPage = ({ history }) => {
     const LoginHandler = async (e) => {
         e.preventDefault();
         const Email = loginEmail;
+        const Password = loginPassword;
         console.log(Email);
 
         const config = {
@@ -84,9 +85,6 @@ const SignInPage = ({ history }) => {
             localStorage.setItem("authToken", data.JWT);
             history.push("/dashboard");
         } catch (error) {
-            //console.log(error);
-            //console.log(error.response);
-            //console.log(error.response.data);
             setErrors(error.response.data);
             setTimeout(() => {
                 setErrors("");
@@ -120,8 +118,8 @@ const SignInPage = ({ history }) => {
                 config);
 
             localStorage.setItem("authToken", data.JWT);
-            // push to login page ?
-            history.push("/dashboard");
+            // push to enter verification code page
+            history.push("/verify");
         } catch (error) {
             setErrors(error.response.data);
             setTimeout(() => {
@@ -157,8 +155,8 @@ const SignInPage = ({ history }) => {
                                     type="password"
                                     required id="name"
                                     placeholder="Enter password"
-                                    value={Password}
-                                    onChange={(e) => setPassword(e.target.value)}
+                                    value={loginPassword}
+                                    onChange={(e) => setLoginPassword(e.target.value)}
                                     tabIndex={2}
                                 />
                             </div>
@@ -181,7 +179,7 @@ const SignInPage = ({ history }) => {
                         </form>
                         <form className="sign-up-form" onSubmit={registerHandler}>
                             <h2 className="title">Sign up</h2>
-                            <div className="input-field">
+                            {/* <div className="input-field">
                                 <i className="fas fa-user" />
                                 <input
                                     type="text"
@@ -190,7 +188,7 @@ const SignInPage = ({ history }) => {
                                     value={regUsername}
                                     onChange={(e) => setRegUsername(e.target.value)}
                                 />
-                            </div>
+                            </div> */}
 
                             <div className="input-field">
                                 <i className="fas fa-user" />
