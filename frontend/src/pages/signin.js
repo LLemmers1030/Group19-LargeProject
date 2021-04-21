@@ -16,9 +16,10 @@ const SignInPage = ({ history }) => {
     const [regEmail, setRegEmail] = useState("");
     const [loginEmail, setLoginEmail] = useState("");
     const [regUsername, setRegUsername] = useState("");
-    const [loginUsername, setLoginUsername] = useState("");
+    // const [loginUsername, setLoginUsername] = useState("");
 
     const [Password, setPassword] = useState("");
+    // const [loginPassword, setLoginPassword] = useState("");
     const [confirmpassword, setConfirmPassword] = useState("");
     const [errors, setErrors] = useState("");
 
@@ -76,6 +77,9 @@ const SignInPage = ({ history }) => {
             const { data } = await axios.post("/Users/login",
                 { Email, Password },
                 config);
+
+            // console.log(loginPassword);
+            console.log(Email);
 
             localStorage.setItem("authToken", data.JWT);
             history.push("/dashboard");
@@ -150,7 +154,7 @@ const SignInPage = ({ history }) => {
                             <div className="input-field">
                                 <i className="fas fa-lock" />
                                 <input
-                                    type="text"
+                                    type="password"
                                     required id="name"
                                     placeholder="Enter password"
                                     value={Password}
@@ -204,7 +208,7 @@ const SignInPage = ({ history }) => {
                                 <i className="fas fa-lock" />
 
                                 <input
-                                    type="text"
+                                    type="password"
                                     required id="name"
                                     placeholder="Enter password"
                                     value={Password}
