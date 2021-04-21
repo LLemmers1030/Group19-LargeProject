@@ -4,20 +4,28 @@ const User = require('../../models/user.model.js')
 
 
 // in: email, password
-// out: JWT
+// out: JWT, error bool
 exports.login = async (req, res) => {
     const body = req.body
     const Email = body.Email
+    const Verification = body.Verification
 
-    // use findOne() instead of find because there should only be 1 email
-    // let's us use result.Password instead of result[0].Password
     await User.findOne({ Email }, async (error, result) => {
         if (error) {
-            res.status(400).send(error)
+            res.status(400).json({ Error: true })
 
         } else {
             try {
                 if (await bcrypt.compare(body.Password, result.Password)) {
+                    if (result.isValid == false) {
+                        if (result.uniqueString == Verification) {
+                            result.isValid = true
+                            await result.save()
+                        } else {
+                            return res.status(400).send('Account is not verified')
+                        }
+                    }
+
                     // make JWT
                     await jwt.sign({ Email: Email, Admin: result.Admin },
                         process.env.JWT_SECRET,

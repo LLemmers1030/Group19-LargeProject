@@ -15,11 +15,10 @@ POST {{host}}/Users/register
 Content-Type: application/json
 
 {
-    "Email" : "test10@gmail.com",
-    "Password" : "test10",
+    "Email" : "a1c68b75@bvmtk.com",
+    "Password" : "test",
     "FirstName" : "first",
-    "LastName" : "last",
-    "Admin": false
+    "LastName" : "last"
 }
 
 ###
@@ -28,8 +27,9 @@ POST {{host}}/Users/login
 Content-Type: application/json
 
 {
-    "Email": "test10@gmail.com",
-    "Password": "test10"
+    "Email": "a1c68b75@bvmtk.com",
+    "Password": "test",
+    "Verification": ""
 }
 
 ###
@@ -58,5 +58,5 @@ POST {{host}}/Users/delete
 Content-Type: application/json
 
 {
-    "JWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InRlc3QxMEBnbWFpbC5jb20iLCJBZG1pbiI6ZmFsc2UsImlhdCI6MTYxODk1ODMwMSwiZXhwIjoxNjE4OTYxOTAxfQ.tzvniqHQtTWcRSCeGXVH9towueeRsYCJU70g3dFSdlk"
+    "JWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImExYzY4Yjc1QGJ2bXRrLmNvbSIsIkFkbWluIjpmYWxzZSwiaWF0IjoxNjE4OTY0MTA5LCJleHAiOjE2MTg5Njc3MDl9.749ymgFoxxrRqV7b3y__I71rES-OSlivYKb5C7FeG9I"
 }

@@ -23,10 +23,9 @@ module.exports = function (app) {
     Users.delete(req, res)
   )
 
-  app.get('/Users/verify/:uniqueString', (req, res) => {
-    console.log('Did it even succeed???')
-    Users.verify(req, res)
-  })
+  // app.get('/Users/verify/:uniqueString', (req, res) => {
+  //   Users.verify(req, res)
+  // })
     
   
 }
