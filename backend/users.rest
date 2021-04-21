@@ -37,11 +37,7 @@ POST {{host}}/Users/
 Content-Type: application/json
 
 {
-<<<<<<< HEAD
-    "JWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6I…AyMn0._NcvRQHIpk3e1qpMH17Q6Sp16G_jdVqtRZK-PDg2j_0"
-=======
     "JWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InNhbHQzQGdtYWlsLmNvbSIsImlhdCI6MTYxODk4MTM4MiwiZXhwIjoxNjE4OTg0OTgyfQ.b3nXJt6BauUetC-6ewXVCAo76DUvXuP2Ym5OoayYJjI"
->>>>>>> 4d9622be236be8c46ad92a9ba235179f3ebe85e3
 }
 
 ###
@@ -74,7 +70,7 @@ Content-Type: application/json
     "Email" : "ttt@ttt.com"
 }
 
-###
+### Punch in email and give it a password to reset
 
 POST {{host}}/Users/devPassword
 Content-Type: application/json

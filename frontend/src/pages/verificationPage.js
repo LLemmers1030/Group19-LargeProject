@@ -1,13 +1,23 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import "./ResetPasswordScreen.css";
 
 const VerificationScreen = ({ }) => {
     // const [password, setPassword] = useState("");
     // const [confirmPassword, setConfirmPassword] = useState("");
-    // const [error, setError] = useState("");
+    const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
+    const [code, setCode] = useState("");
+
+    const verificationHandler = async (e) => {
+        e.preventDefault();
+
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+            },
+        };
+    }
 
     // const resetPasswordHandler = async (e) => {
     //     e.preventDefault();
@@ -66,13 +76,13 @@ const VerificationScreen = ({ }) => {
                 <div className="form-group">
                     <label htmlFor="password">New Password:</label>
                     <input
-                        type="password"
+                        type="text"
                         required
-                        id="password"
-                        placeholder="Enter new password"
+                        id="code"
+                        placeholder="Enter code"
                         autoComplete="true"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        value={code}
+                        onChange={(e) => setCode(e.target.value)}
                     />
                 </div>
                 {/* <div className="form-group">

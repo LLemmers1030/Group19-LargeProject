@@ -4,8 +4,8 @@ import hello from "../../images/hello.svg";
 // import InputGroup from 'react-bootstrap/InputGroup';
 // import FormControl from 'react-bootstrap/FormControl';
 // import Form from 'react-bootstrap/Form'
-import { NavLink } from 'react-router-dom';
-import { Form, Input, Button, Checkbox } from 'antd';
+// import { NavLink } from 'react-router-dom';
+import { Form, Input, Button } from 'antd';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -32,6 +32,8 @@ const tailLayout = {
 };
 
 const Settings = () => {
+  const [infoMessage, setInfoMessage] = useState("");
+  const [passMessage, setPassMessage] = useState("");
   const [errors, setErrors] = useState("");
   //const [JWT, setJWT] = useState("");
   const [loading, setLoading] = useState(false);
@@ -44,13 +46,21 @@ const Settings = () => {
 
   // For first name and last name
   const onFinish = async (values) => {
-    //console.log('Success:', values);
-    //console.log(values.firstName)
-    //console.log(values.lastName)
+    var FirstName;
+    var LastName;
 
-    //e.preventDefault();
-    const FirstName = values.firstName;
-    const LastName = values.lastName;
+    if (values.firstName == null) {
+      FirstName = first;
+    } else {
+      FirstName = values.firstName;
+    }
+
+    if (values.lastName == null) {
+      LastName = last;
+    } else {
+      LastName = values.lastName;
+    }
+
     const Password = pass;
     //const JWT = localStorage.getItem("authToken");
     //console.log(JWT);
@@ -69,9 +79,8 @@ const Settings = () => {
         { Password, FirstName, LastName, JWT },
         config);
 
-
-
       localStorage.setItem("authToken", data.JWT);
+      setInfoMessage("User information has been updated.");
       //history.push("/dashboard");
     } catch (error) {
       setErrors(error.response.data);
@@ -79,13 +88,10 @@ const Settings = () => {
         setErrors("");
       }, 5000)
     }
-
-
   };
 
 
   const loadUser = async (e) => {
-
     JWT = localStorage.getItem("authToken");
 
     const config = {
@@ -106,29 +112,18 @@ const Settings = () => {
       setFirst(data.FirstName);
       setLast(data.LastName);
 
-
     } catch (error) {
       setErrors(error.response.data);
       setTimeout(() => {
         setErrors("");
       }, 5000)
     }
-  }
+  };
 
   useEffect(() => {
     loadUser();
     setLoading(true);
-
-
-    //console.log(userData);
   }, [pass, first, last, []]);
-
-
-  // Pre population
-  // useEffect(() => {
-  //   form.resetFields();
-  // }, [props.initialValues]);
-
 
   // For first name and last name
   const onFinishFailed = (errorInfo) => {
@@ -136,10 +131,49 @@ const Settings = () => {
   };
 
   // For password and confirm password
-  const onFinish2 = (passwords) => {
+  const onFinish2 = async (passwords) => {
+    const newPass = passwords.password;
+    const newPassConfirm = passwords.confirmPassword;
 
-    console.log(passwords.password)
-    console.log(passwords.confirmPassword)
+    var Password = "";
+    var FirstName = "";
+    var LastName = "";
+
+
+    if (newPass !== newPassConfirm) {
+      // setPassword("");
+      // setConfirmPassword("");
+      setPassMessage("Passwords do not match");
+    } else {
+      Password = newPass;
+      FirstName = first;
+      LastName = last;
+      setPassMessage("Your password has been updated.");
+    }
+
+
+    const config = {
+      headers: {
+        "Content-Type": "application/json"
+      },
+    };
+
+    try {
+      // need to send in password, first name, last name, and jwt
+      // For production: /Users/login 
+      // For local: http://localhost:8080/Users/edit
+      const { data } = await axios.post("/Users/edit",
+        { Password, FirstName, LastName, JWT },
+        config);
+
+      localStorage.setItem("authToken", data.JWT);
+      //history.push("/dashboard");
+    } catch (error) {
+      setErrors(error.response.data);
+      setTimeout(() => {
+        setErrors("");
+      }, 5000)
+    }
 
   };
 
@@ -156,11 +190,11 @@ const Settings = () => {
           <img src={hello} alt="hello" />
           <div className="main__greeting">
             <h1>User Settings Page</h1>
-            <p>Enter first name and last name</p>
+            <p>Update first name or last name</p>
 
             <Form
               {...layout}
-              name="basic"
+              name="basic1"
               initialValues={{
                 remember: true,
               }}
@@ -172,7 +206,7 @@ const Settings = () => {
                 name="firstName"
                 rules={[
                   {
-                    required: true,
+                    required: false,
                     message: 'Please input your username!',
                   },
                 ]}
@@ -185,13 +219,15 @@ const Settings = () => {
                 name="lastName"
                 rules={[
                   {
-                    required: true,
+                    required: false,
                     message: 'Please input your last name!',
                   },
                 ]}
               >
                 <Input placeholder={last} />
               </Form.Item>
+              {infoMessage && <p>{infoMessage}</p>}
+
               <Form.Item {...tailLayout}>
                 <Button type="primary" htmlType="submit">
                   Submit
@@ -203,7 +239,7 @@ const Settings = () => {
             <p>Reset password</p>
             <Form
               {...layout}
-              name="basic"
+              name="basic2"
               initialValues={{
                 remember: true,
               }}
@@ -235,6 +271,7 @@ const Settings = () => {
               >
                 <Input.Password />
               </Form.Item>
+              {passMessage && <p>{passMessage}</p>}
 
               <Form.Item {...tailLayout}>
                 <Button type="primary" htmlType="submit">
