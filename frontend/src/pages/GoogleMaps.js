@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Map, Marker, GoogleApiWrapper, InfoWindow } from 'google-maps-react';
 import './map.css';
+import office from '../images/office.jpg'
 import home1 from '../images/home1.jpg';
 import home2 from '../images/home2.jpg';
 import home3 from '../images/home3.jpg';
@@ -82,6 +83,20 @@ export class MapContainer extends Component {
                         lng: this.state.mapCenter.lng,
                     }}
                     mapType={this.state.mapTypeId}>
+
+                    {/* Office */}
+                    <Marker
+                        name="Office"
+                        bed="Contact Information:"
+                        bath="(352)-390-7495"
+                        rent="tsaikevin94@yahoo.com"
+                        homePicture={office}
+                        position={{
+                            lat: 29.118695412565625,
+                            lng: -82.10115706843973
+                        }}
+                        clickable
+                        onClick={this.onMarkerClick} />
 
                     {/* House A */}
                     <Marker
