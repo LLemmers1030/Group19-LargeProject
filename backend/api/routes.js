@@ -24,6 +24,10 @@ module.exports = function (app) {
     Users.delete(req, res)
   )
 
+  app.post('/Users/devDelete', (req, res) =>
+    Users.devDelete(req, res)
+  )
+
   // app.get('/Users/verify/:uniqueString', (req, res) => {
   //   Users.verify(req, res)
   // })

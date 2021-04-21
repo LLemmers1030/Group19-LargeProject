@@ -60,3 +60,12 @@ Content-Type: application/json
 {
     "JWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImExYzY4Yjc1QGJ2bXRrLmNvbSIsIkFkbWluIjpmYWxzZSwiaWF0IjoxNjE4OTY0MTA5LCJleHAiOjE2MTg5Njc3MDl9.749ymgFoxxrRqV7b3y__I71rES-OSlivYKb5C7FeG9I"
 }
+
+###
+
+POST {{host}}/Users/devDelete
+Content-Type: application/json
+
+{
+    "Email" : "a33f09f2@bvmtk.com"
+}
