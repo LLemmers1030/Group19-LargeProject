@@ -5,14 +5,12 @@ import hello from "../../images/hello.svg";
 // import FormControl from 'react-bootstrap/FormControl';
 // import Form from 'react-bootstrap/Form'
 // import { NavLink } from 'react-router-dom';
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button, Row, Col } from 'antd';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-
+// import styled from 'styled-components';
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
-
-
 
 {/* just a copy of main dashboard landing for now */ }
 
@@ -21,15 +19,23 @@ const layout = {
     span: 10,
   },
   wrapperCol: {
-    span: 19,
+    span: 18,
   },
 };
 const tailLayout = {
   wrapperCol: {
     offset: 8,
-    span: 19,
+    span: 10,
   },
 };
+
+const tailLayout2 = {
+  wrapperCol: {
+    offset: 7,
+    span: 10,
+  },
+};
+
 
 const Settings = () => {
   const [infoMessage, setInfoMessage] = useState("");
@@ -143,12 +149,12 @@ const Settings = () => {
     if (newPass !== newPassConfirm) {
       // setPassword("");
       // setConfirmPassword("");
-      setPassMessage("Passwords do not match");
+      setPassMessage("The passwords do not match");
     } else {
       Password = newPass;
       FirstName = first;
       LastName = last;
-      setPassMessage("Your password has been updated.");
+      setPassMessage("Password has been updated");
     }
 
 
@@ -186,104 +192,121 @@ const Settings = () => {
     <main>
       <div className="main__container">
 
+        <h1 className="user_settings">User Settings</h1>
         <div className="main__title">
           <img src={hello} alt="hello" />
-          <div className="main__greeting">
-            <h1>User Settings Page</h1>
-            <p>Update first name or last name</p>
 
-            <Form
-              {...layout}
-              name="basic1"
-              initialValues={{
-                remember: true,
-              }}
-              onFinish={onFinish}
-              onFinishFailed={onFinishFailed}
-            >
-              <Form.Item
-                label="First Name"
-                name="firstName"
-                rules={[
-                  {
-                    required: false,
-                    message: 'Please input your username!',
-                  },
-                ]}
-              >
-                <Input placeholder={first} />
-              </Form.Item>
+          <Row className="main__greeting" >
+            <Col>
+              <Form
+                {...layout}
+                name="basic1"
+                initialValues={{
+                  remember: true,
+                }}
+                onFinish={onFinish}
+                onFinishFailed={onFinishFailed}>
 
-              <Form.Item
-                label="Last Name"
-                name="lastName"
-                rules={[
-                  {
-                    required: false,
-                    message: 'Please input your last name!',
-                  },
-                ]}
-              >
-                <Input placeholder={last} />
-              </Form.Item>
-              {infoMessage && <p>{infoMessage}</p>}
 
-              <Form.Item {...tailLayout}>
-                <Button type="primary" htmlType="submit">
-                  Submit
+                <p className="form-name-title">Update first name or last name</p>
+                <Col span={13}>
+                  {/* First name*/}
+                  <Form.Item
+                    label="First Name"
+                    name="firstName"
+                    rules={[
+                      {
+                        required: false,
+                        message: 'Please input your username!',
+                      },
+                    ]}>
+                    <Input placeholder={first} />
+                  </Form.Item>
+                </Col>
+
+                <Col span={13}>
+
+                  {/* Last name */}
+                  <Form.Item
+                    label="Last Name"
+                    name="lastName"
+                    rules={[
+                      {
+                        required: false,
+                        message: 'Please input your last name!',
+                      },
+                    ]}>
+                    <Input placeholder={last} />
+                  </Form.Item>
+                </Col>
+                {infoMessage && <p className="info-message">{infoMessage}</p>}
+
+                <Form.Item {...tailLayout}>
+                  <Button type="primary" htmlType="submit" className="name-butt">
+                    Change Name
                 </Button>
-              </Form.Item>
+                </Form.Item>
 
-              {/* need message here telling user they can reset password if they'd like */}
-            </Form>
-            <p>Reset password</p>
-            <Form
-              {...layout}
-              name="basic2"
-              initialValues={{
-                remember: true,
-              }}
-              onFinish={onFinish2}
-              onFinishFailed={onFinishFailed2}
-            >
-              <Form.Item
-                label="New Password"
-                name="password"
-                rules={[
-                  {
-                    required: true,
-                    message: 'Please input your new password!',
-                  },
-                ]}
+                {/* need message here telling user they can reset password if they'd like */}
+              </Form>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col>
+              <Form
+                {...layout}
+                name="basic2"
+                initialValues={{
+                  remember: true,
+                }}
+                onFinish={onFinish2}
+                onFinishFailed={onFinishFailed2}
               >
-                <Input.Password />
-              </Form.Item>
+                <p className="form-password-title">Reset password</p>
 
-              <Form.Item
-                label="Confirm Password"
-                name="confirmPassword"
-                rules={[
-                  {
-                    required: true,
-                    message: 'Please confirm your password!',
-                  },
-                ]}
-              >
-                <Input.Password />
-              </Form.Item>
-              {passMessage && <p>{passMessage}</p>}
+                <Col span={22}>
+                  {/* New password */}
+                  <Form.Item
+                    label="New Password"
+                    name="password"
+                    rules={[
+                      {
+                        required: true,
+                        message: 'Please input your new password!',
+                      },
+                    ]}
+                  >
+                    <Input.Password />
+                  </Form.Item>
+                </Col>
+                <Col span={22}>
 
-              <Form.Item {...tailLayout}>
-                <Button type="primary" htmlType="submit">
-                  Reset Password
+                  {/* Confirm password */}
+                  <Form.Item
+                    label="Confirm Password"
+                    name="confirmPassword"
+                    rules={[
+                      {
+                        required: true,
+                        message: 'Please confirm your password!',
+                      },
+                    ]}
+                  >
+                    <Input.Password />
+                  </Form.Item>
+                </Col>
+                {passMessage && <p className="pass-message">{passMessage}</p>}
+
+                <Form.Item {...tailLayout2}>
+                  <Button type="primary" htmlType="submit">
+                    Reset Password
                 </Button>
-              </Form.Item>
-            </Form>
-
-          </div>
+                </Form.Item>
+              </Form>
+            </Col>
+          </Row>
         </div>
-        {/* <NavLink to="/resetpassword"><p>Reset Password</p></NavLink> */}
-        {/* <Button variant="primary" to="/ResetPasswordScreen">Reset Password</Button>{' '} */}
       </div>
     </main>
   ) : (

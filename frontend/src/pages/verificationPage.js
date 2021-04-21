@@ -19,47 +19,6 @@ const VerificationScreen = ({ }) => {
         };
     }
 
-    // const resetPasswordHandler = async (e) => {
-    //     e.preventDefault();
-
-    //     const config = {
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //         },
-    //     };
-
-    //     if (password !== confirmPassword) {
-    //         setPassword("");
-    //         setConfirmPassword("");
-    //         setTimeout(() => {
-    //             setError("");
-    //         }, 5000);
-    //         return setError("Passwords don't match");
-    //     }
-
-    //     console.log(match.params.resetToken);
-    //     console.log(match.params);
-    //     console.log(match);
-
-    //     try {
-    //         const { data } = await axios.put(
-    //             `/api/auth/resetpassword/${match.params.resetToken}`,
-    //             {
-    //                 password,
-    //             },
-    //             config
-    //         );
-
-    //         //console.log(data);
-    //         setSuccess(data.data);
-    //     } catch (error) {
-    //         setError(error.response.data.error);
-    //         setTimeout(() => {
-    //             setError("");
-    //         }, 5000);
-    //     }
-    // };
-
     return (
         <div className="resetpassword-screen">
             <form
@@ -85,18 +44,6 @@ const VerificationScreen = ({ }) => {
                         onChange={(e) => setCode(e.target.value)}
                     />
                 </div>
-                {/* <div className="form-group">
-                    <label htmlFor="confirmpassword">Confirm New Password:</label>
-                    <input
-                        type="password"
-                        required
-                        id="confirmpassword"
-                        placeholder="Confirm new password"
-                        autoComplete="true"
-                        value={confirmPassword}
-                        onChange={(e) => setConfirmPassword(e.target.value)}
-                    />
-                </div> */}
                 <button type="submit" className="btn btn-primary">
                     Verify Email
         </button>

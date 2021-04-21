@@ -6,11 +6,42 @@ main {
   
   .main__container {
     padding: 20px 35px;
+    /* border-style: solid; */
+    /* height: 80vh;
+    width: 70vw; */
+  }
+
+  .ant-form-horizontal{
+    margin-left: 30px;
+    padding-right: 50px;
+  }
+  
+  .form-name-title{
+    font-weight: bold;
+    margin-left: 158px;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 20px;
+  }
+
+  .form-password-title{
+    margin-left: 52px;
+    font-weight: bold;
+    padding-top: 20px;
+
+    /* padding: 50px; */
+    /* padding-top: 50px; */
+  }
+
+  .user_settings{
+    margin-left: 635px;
+    margin-bottom: 30px;
+    font-weight: bold;
   }
   
   .main__title {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
   }
   
   .main__title > img {
@@ -23,10 +54,25 @@ main {
     font-size: 24px;
     color: #2e4a66;
     margin-bottom: 5px;
+    text-align: center;
   }
   
   .main__greeting > p {
+    text-align: center;
     font-size: 14px;
     font-weight: 700;
     color: #a5aaad;
+  }
+
+  .pass-message{
+    color: red;
+    margin-left: 125px;
+    text-align: left;
+  }
+
+  .info-message{
+    color: red;
+    margin-left: 180px;
+    text-align: justify;
+
   }
