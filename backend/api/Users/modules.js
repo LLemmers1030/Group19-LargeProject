@@ -5,6 +5,7 @@ module.exports = Object.assign(
     require('./get.js'),
     require('./edit.js'),
     require('./delete.js'),
+    require('./verify.js'),
     require('./devDelete.js'),
-    require('./verify.js')
+    require('./devPassword.js')
 );

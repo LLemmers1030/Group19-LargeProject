@@ -7,7 +7,7 @@ const VerificationScreen = ({ }) => {
     // const [password, setPassword] = useState("");
     // const [confirmPassword, setConfirmPassword] = useState("");
     // const [error, setError] = useState("");
-    // const [success, setSuccess] = useState("");
+    const [success, setSuccess] = useState("");
 
     // const resetPasswordHandler = async (e) => {
     //     e.preventDefault();
