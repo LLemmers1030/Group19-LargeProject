@@ -98,7 +98,7 @@ const VerificationScreen = ({ }) => {
                     />
                 </div> */}
                 <button type="submit" className="btn btn-primary">
-                    Reset Password
+                    Verify Email
         </button>
             </form>
         </div>
