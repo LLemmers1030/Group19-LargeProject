@@ -45,8 +45,8 @@ const ForgotPasswordScreen = () => {
         {success && <span className="success-message">{success}</span>}
         <div className="form-group">
           <p className="forgotpassword-screen__subtext">
-            Please enter the email address you register your account with. We
-            will send you reset password confirmation to this email
+            Please enter the email address you registered your account with.
+            You will receive an email to reset your password.
           </p>
           <label htmlFor="email" className="forgot-email">Email:</label>
           <input
