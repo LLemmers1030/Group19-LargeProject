@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import "./ResetPasswordScreen.css";
+import "./verification.css";
 
 const VerificationScreen = ({ }) => {
     // const [password, setPassword] = useState("");
@@ -20,12 +20,12 @@ const VerificationScreen = ({ }) => {
     }
 
     return (
-        <div className="resetpassword-screen">
+        <div className="verifypassword-screen">
             <form
                 onSubmit={verificationHandler}
-                className="resetpassword-screen__form"
+                className="verifypassword-screen__form"
             >
-                <h3 className="resetpassword-screen__title">Verify Your Account</h3>
+                <h3 className="verifypassword-screen__title">Verify Your Account</h3>
                 {error && <span className="error-message">{error} </span>}
                 {success && (
                     <span className="success-message">
@@ -33,7 +33,7 @@ const VerificationScreen = ({ }) => {
                     </span>
                 )}
                 <div className="form-group">
-                    <label htmlFor="password">New Password:</label>
+                    <label htmlFor="password"></label>
                     <input
                         type="text"
                         required
