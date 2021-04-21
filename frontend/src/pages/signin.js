@@ -161,34 +161,22 @@ const SignInPage = ({ history }) => {
                                 />
                             </div>
                             {errors && <p className="danger">{errors}</p>}
-                            {/* <div className="danger">{this.state.errors.password}</div> */}
-                            {/* <input type="submit" value="Submit" defaultValue="Login" className="btn solid" /> */}
                             <button type="submit" className="btn btn-primary" tabIndex={3}>Login</button>
-                            <p className="social-text">Sign in with other platforms</p>
+                            {/* <p className="social-text">Sign in with other platforms</p> */}
 
                             {/* Forgot password */}
                             <NavLink to="/forgotpassword"><p>Forgot password?</p></NavLink>
-                            <div className="social-media">
+                            {/* <div className="social-media">
                                 <a href="/#" className="social-icon">
                                     <FontAwesomeIcon icon={faGoogle} />
                                 </a>
                                 <a href="/#" className="social-icon">
                                     <FontAwesomeIcon icon={faFacebookF} />
                                 </a>
-                            </div>
+                            </div> */}
                         </form>
                         <form className="sign-up-form" onSubmit={registerHandler}>
                             <h2 className="title">Sign up</h2>
-                            {/* <div className="input-field">
-                                <i className="fas fa-user" />
-                                <input
-                                    type="text"
-                                    required id="name"
-                                    placeholder="Enter username"
-                                    value={regUsername}
-                                    onChange={(e) => setRegUsername(e.target.value)}
-                                />
-                            </div> */}
 
                             <div className="input-field">
                                 <i className="fas fa-user" />
@@ -230,15 +218,15 @@ const SignInPage = ({ history }) => {
                             {errors && <p className="danger">{errors}</p>}
 
                             <input type="submit" value="Submit" defaultValue="Sign up" className="btn solid" />
-                            <p className="social-text">Sign up with other platforms</p>
-                            <div className="social-media">
+                            {/* <p className="social-text">Sign up with other platforms</p> */}
+                            {/* <div className="social-media">
                                 <a href="/#" className="social-icon">
                                     <FontAwesomeIcon icon={faGoogle} />
                                 </a>
                                 <a href="/#" className="social-icon">
                                     <FontAwesomeIcon icon={faFacebookF} />
                                 </a>
-                            </div>
+                            </div> */}
                         </form>
                     </div>
                 </div>
@@ -246,7 +234,7 @@ const SignInPage = ({ history }) => {
                     <div className="panel left-panel">
                         <div className="content">
                             <h3 className="top-title">New here?</h3>
-                            <p>Register here</p>
+                            {/* <p>Register here</p> */}
                             <button className="btn transparent" id="sign-up-btn">Sign up</button>
                         </div>
                         <img src={image2} className="image" alt="" />
@@ -254,7 +242,7 @@ const SignInPage = ({ history }) => {
                     <div className="panel right-panel">
                         <div className="content">
                             <h3 className="top-title">One of us?</h3>
-                            <p>Login here</p>
+                            {/* <p>Login here</p> */}
                             <button className="btn transparent" id="sign-in-btn">Sign in</button>
                         </div>
                         <img src={image1} className="image" alt="" />
