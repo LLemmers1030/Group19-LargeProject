@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt')
-const crypto = requrie('crypto')
+const crypto = require('crypto')
 const nodemailer = require('nodemailer')
 const User = require('../../models/user.model.js')
 const Token = require('../../models/token.model.js')
