@@ -28,11 +28,7 @@ Content-Type: application/json
 
 {
     "Email": "andrew13560@gmail.com",
-<<<<<<< HEAD
-    "Password": "andrew123",
-=======
     "Password": "123",
->>>>>>> 4d9622be236be8c46ad92a9ba235179f3ebe85e3
     "Verification": ""
 }
 
