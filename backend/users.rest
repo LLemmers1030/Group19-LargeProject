@@ -15,8 +15,8 @@ POST {{host}}/Users/register
 Content-Type: application/json
 
 {
-    "Email" : "a1c68b75@bvmtk.com",
-    "Password" : "test",
+    "Email" : "andrew13560@gmail.com",
+    "Password" : "123",
     "FirstName" : "first",
     "LastName" : "last"
 }
@@ -27,8 +27,8 @@ POST {{host}}/Users/login
 Content-Type: application/json
 
 {
-    "Email": "a1c68b75@bvmtk.com",
-    "Password": "test",
+    "Email": "andrew13560@gmail.com",
+    "Password": "123",
     "Verification": ""
 }
 
@@ -37,7 +37,7 @@ POST {{host}}/Users/
 Content-Type: application/json
 
 {
-    "JWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InNhbHQyQGdtYWlsLmNvbSIsImlhdCI6MTYxODg4NTM5NCwiZXhwIjoxNjE4ODg4OTk0fQ.3oE9PLLGvr4pKY6zg5IHQyZLk-jqrBhpCE5a8uYPlUw"
+    "JWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InNhbHQzQGdtYWlsLmNvbSIsImlhdCI6MTYxODk4MTM4MiwiZXhwIjoxNjE4OTg0OTgyfQ.b3nXJt6BauUetC-6ewXVCAo76DUvXuP2Ym5OoayYJjI"
 }
 
 ###
@@ -67,5 +67,15 @@ POST {{host}}/Users/devDelete
 Content-Type: application/json
 
 {
-    "Email" : "a33f09f2@bvmtk.com"
+    "Email" : "ttt@ttt.com"
+}
+
+###
+
+POST {{host}}/Users/devPassword
+Content-Type: application/json
+
+{
+    "Email" : "andrew13560@gmail.com",
+    "Password": "123"
 }
