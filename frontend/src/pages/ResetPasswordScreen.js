@@ -30,7 +30,7 @@ const ResetPasswordScreen = ({ match }) => {
 
     try {
       const { data } = await axios.put(
-        `/api/auth/resetpassword/${match.params.resetToken}`,
+        `/api/auth/reset/${match.params.resetToken}`,
         {
           password,
         },
@@ -53,7 +53,7 @@ const ResetPasswordScreen = ({ match }) => {
         onSubmit={resetPasswordHandler}
         className="resetpassword-screen__form"
       >
-        <h3 className="resetpassword-screen__title">Forgot Password</h3>
+        <h3 className="resetpassword-screen__title">Reset Password</h3>
         {error && <span className="error-message">{error} </span>}
         {success && (
           <span className="success-message">
