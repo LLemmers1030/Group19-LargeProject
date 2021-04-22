@@ -32,7 +32,7 @@ exports.register = async (req, res) => {
             if (error) {
                 res.status(400).send('User is not saving')
             } else {
-                res.status(200).send('Registered')
+                res.status(200).send('Check email to verify account')
             }
         })
     } catch {

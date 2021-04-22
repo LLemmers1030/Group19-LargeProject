@@ -110,7 +110,7 @@ const SignInPage = ({ history }) => {
 
             localStorage.setItem("authToken", data.JWT);
             // push to enter verification code page
-            history.push("/verification");
+            //history.push("/verify");
         } catch (error) {
             setErrors(error.response.data);
             setTimeout(() => {
