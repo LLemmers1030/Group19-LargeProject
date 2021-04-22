@@ -56,7 +56,7 @@ const SignInPage = ({ history }) => {
         e.preventDefault();
         const Email = loginEmail;
         const Password = loginPassword;
-        console.log(Email);
+        //console.log(Email);
 
         const config = {
             headers: {
@@ -72,7 +72,7 @@ const SignInPage = ({ history }) => {
                 config);
 
             // console.log(loginPassword);
-            console.log(Email);
+            //console.log(Email);
 
             localStorage.setItem("authToken", data.JWT);
             history.push("/dashboard");
@@ -110,7 +110,7 @@ const SignInPage = ({ history }) => {
                 config);
 
             localStorage.setItem("authToken", data.JWT);
-            setSuccess(data.error);
+            setSuccess("Check email to verify account");
             // push to enter verification code page
             //history.push("/verify");
         } catch (error) {

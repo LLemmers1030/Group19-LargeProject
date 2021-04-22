@@ -5,7 +5,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-const Navbar = (props, { sidebarOpen, openSidebar }) => {
+const Navbar = ({ sidebarOpen, openSidebar }) => {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -47,12 +47,8 @@ const Navbar = (props, { sidebarOpen, openSidebar }) => {
   useEffect(() => {
     loadName();
     setLoading(true);
-
-
-    console.log(name);
+    //console.log(name);
   }, [name, []]);
-
-
 
   return loading ? (
     <nav className="navbar" >

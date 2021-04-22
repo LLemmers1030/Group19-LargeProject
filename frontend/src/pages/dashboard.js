@@ -5,9 +5,6 @@ import Sidebar from "../components/SidebarD";
 {/* function UserDashboard(props) { */ }
 const UserDashboard = (props) => {
   const [sidebarOpen, setsidebarOpen] = useState(false);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [errors, setErrors] = useState("");
 
   const openSidebar = () => {
     setsidebarOpen(true);

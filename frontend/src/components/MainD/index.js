@@ -32,17 +32,11 @@ function Main(props) {
       const first = data.FirstName;
       const last = data.LastName;
 
-      if (first != null || last != null) {
-        setMessage('"Hello " + first + " " + last');
+      if ((first != null && last != null) && (first != "" && last != "")) {
+        setMessage(`Hello ${first} ${last}`);
       } else {
         setMessage("Hello!");
       }
-
-      //setEmail(data.Email);
-
-      //if (email !== "") {
-        //setName(email.substring(0, email.lastIndexOf("@")));
-      //}
 
     } catch (error) {
       setErrors(error.response.data);
@@ -55,7 +49,6 @@ function Main(props) {
   useEffect(() => {
     loadName();
     setLoading(true);
-    //console.log(name);
   }, []);
 
 
