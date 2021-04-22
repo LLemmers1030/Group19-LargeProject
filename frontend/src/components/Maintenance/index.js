@@ -1,7 +1,4 @@
 import "./maintenance.css";
-import hello from "../../images/hello.svg";
-
-{/* just a copy of main dashboard landing for now */ }
 
 const Maintenance = () => {
   return (
@@ -10,9 +7,6 @@ const Maintenance = () => {
 
         <div className="main__title">
           <div className="main__greeting">
-            {/* <h1>Maintenance Request</h1>
-            <p>Maintenance page testing</p> */}
-            {/* Todo Later: Switch Accounts */}
             <iframe
               className="google-form"
               title="maintennance-form"

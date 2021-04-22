@@ -55,7 +55,6 @@ const Navbar = (props, { sidebarOpen, openSidebar }) => {
 
 
   return loading ? (
-    // <div>
     <nav className="navbar" >
       { () => loadName()}
       <div className="nav_icon" onClick={() => openSidebar()}>
@@ -73,7 +72,6 @@ const Navbar = (props, { sidebarOpen, openSidebar }) => {
         </a>
       </div>
     </ nav>
-    // </div>
   ) : (
     <div></div>
   );

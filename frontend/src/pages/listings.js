@@ -3,7 +3,6 @@ import "antd/dist/antd.css";
 import React from 'react';
 import { Collapse, Row, Col } from 'antd';
 import ListNavBar from '../components/ListNavBar'
-// import Sidebar from '../components/Sidebar'
 import Footer from '../components/Footer';
 // Use state is used for the navbar
 // Houses
@@ -36,18 +35,8 @@ const HouseListings = () => {
     return (
         <div className="App">
             <ListNavBar />
-            {/* <Navbar toggle={toggle} /> */}
-            {/* <Sidebar isOpen={isOpen} toggle={toggle} /> */}
-
-            {/* <h1 className="header">Listings</h1> */}
             <div className="container-1">
-
-                {/* Maybe instead of div use Col/Row from ant design */}
                 <div className="split col-1">
-                    {/* <div>
-                        <h1 className="listings-header">Available Listings</h1>
-                    </div> */}
-
                     <Collapse className="collapse-main" accordion span={12}>
                         <Panel className="odd" header="House A" key="1">
 

@@ -7,13 +7,11 @@ main {
   .main__container {
     padding: 20px 35px;
     align-items: center;
-    /* height: 100vh; */
   }
   
   .main__title {
     display: flex;
     align-items: center;
-    /* height: 100vh; */
   }
   
   .main__title > img {
@@ -28,7 +26,6 @@ main {
     color: #2e4a66;
     margin-bottom: 5px;
     align-items: center;
-    /* height: 100vh; */
   }
   
   .main__greeting > p {

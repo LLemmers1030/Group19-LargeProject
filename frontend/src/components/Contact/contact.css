@@ -12,6 +12,11 @@ main {
     display: flex;
     align-items: center;
   }
+
+  .contact-title {
+    margin-left: 350px;
+    padding-top: 20px;
+  }
   
   .main__title > img {
     max-height: 100px;

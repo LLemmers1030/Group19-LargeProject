@@ -5,8 +5,15 @@ import {getVerifyUser} from "./getVerifyUser";
 import axios from 'axios';
 import "./verification.css";
 
+<<<<<<< HEAD
 class VerificationScreen extends Component {
     //const [errors, setErrors] = useState("");
+=======
+const VerificationScreen = ({ }) => {
+    const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
+    const [code, setCode] = useState("");
+>>>>>>> d3789688fb85c9281caf7398cf4f9aa3ae2a0e3b
 
     // constructor(props) {
     //     super(props);
