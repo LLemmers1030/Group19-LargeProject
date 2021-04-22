@@ -106,6 +106,33 @@
   margin-right: 8px;
 }
 
+.sidebar__delete {
+  margin-top: 480px;
+  padding: 10px;
+  color: #e65061;
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  height: 40px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0);
+  outline: none;
+  border-style: none;
+}
+
+.sidebar__delete > p {
+  text-decoration: none;
+  color: #e65061;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.sidebar__delete svg {
+  margin-right: 8px;
+}
+
 .sidebar_responsive {
   display: inline !important;
   z-index: 9999 !important;
