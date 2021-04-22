@@ -61,7 +61,7 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
           <p>Logout</p>
         </button>
         {/* Delete Account Button */}
-        <button onClick={logoutHandler} className="sidebar__logout">
+        <button onClick={logoutHandler} className="sidebar__delete">
           <FontAwesomeIcon icon={faPowerOff} />
           <p>Delete Account</p>
         </button>
