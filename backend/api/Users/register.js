@@ -5,6 +5,8 @@ const nodemailer = require('nodemailer')
 const User = require('../../models/user.model.js')
 
 
+// in: email, password, firstName, lastName
+// out: JWT, error bool
 exports.register = async (req, res) => {
     const body = req.body
     const Email = body.Email
@@ -12,10 +14,10 @@ exports.register = async (req, res) => {
 
     try {
         let user = await User.findOne({ Email })
-        if (user)
+        if (user) {
             return res.status(400).send('Email already in use')
-
-        
+        }
+            
         const hashedPassword = await bcrypt.hash(body.Password, 10)
         
         user = new User({
@@ -35,11 +37,11 @@ exports.register = async (req, res) => {
                 res.status(200).send('Check email to verify account')
             }
         })
+
     } catch {
         res.status(500).send()
     }
     sendEmail(Email, uniqueString)
-//    res.redirect('back')
 }
 
 const randString = () => {
@@ -80,37 +82,3 @@ const sendEmail = (email, uniqueString) => {
         }
     });
 }
-
-// exports.doWork = function (app) {
-//     app.post('/Users/register', async (req, res) => {
-//         const body = req.body
-//         const Email = body.Email
-
-//         try {
-//             let user = await User.findOne({ Email })
-//             if (user)
-//                 return res.status(400).send('Email already in use')
-
-            
-//             const hashedPassword = await bcrypt.hash(body.Password, 10)
-            
-//             user = new User({
-//                 Email: body.Email,
-//                 Password: hashedPassword,
-//                 FirstName: body.FirstName,
-//                 LastName: body.LastName,
-//                 Admin: false
-//             })
-
-//             user.save((error) => {
-//                 if (error) {
-//                     res.status(400).send(error)
-//                 } else {
-//                     res.status(200).send('Registered')
-//                 }
-//             })
-//         } catch {
-//             res.status(500).send()
-//         }
-//     })
-// }

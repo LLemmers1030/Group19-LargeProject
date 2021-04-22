@@ -1,38 +1,27 @@
 const bcrypt = require('bcrypt')
 const User = require('../../models/user.model.js')
 
+
+// in: uniqueString
+// out: JWT, error bool
 exports.verify = async (req, res) => {
-    console.log(req.body)
-    // const uniqueString = req.body.uniqueString
-    //const { uniqueString } = req.params
-    //console.log(req);
     const uniqueString = req.body.uniqueString;
-    console.log(uniqueString);
-    console.log("pee pee poop poop")
-
-    // const update = {
-    //     isValid: true
-    // }
-
-    // await User.findOneAndUpdate({ uniqueString }, update, (error, result) => {         
-    //     if (error) {        
-    //         res.status(400).json({ Error: true })
-    //     } else {
-    //         console.log(result)
-    //         res.status(200).json({ Error: false })
-    //     }    
-    // })
-    
-
 
      const user = await User.findOne({ uniqueString: uniqueString })
      if (user) {
          user.isValid = true
          await user.save()
-         console.log(user)
-         //        res.redirect('/')
-         res.json({ Error: false })
+
+         // make JWT
+        await jwt.sign({ Email: Email, Admin: user.Admin },
+            process.env.JWT_SECRET,
+            { expiresIn: '1h' },
+            async (err, token) => {
+                if (err)
+                    return res.status(500).send("There was a problem making JWT.")
+                res.status(200).json({ JWT: token , Error: false})
+            });
      } else {
-         res.json({ Error: true})
+         res.status(400).json({ Error: true})
      }
 }

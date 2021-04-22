@@ -34,7 +34,6 @@ exports.reset = async (req, res) => {
         createdAt: Date.now(),
     }).save();
 
-    console.log(resetToken)
     res.send(resetToken)
     sendEmail(Email, resetToken)
 }
