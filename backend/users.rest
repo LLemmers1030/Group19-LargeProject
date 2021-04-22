@@ -36,7 +36,7 @@ POST {{host}}/Users/login
 Content-Type: application/json
 
 {
-    "Email": "andrew13560@gmail.com",
+    "Email": "thechanman.potato@gmail.com",
     "Password": "123",
     "Verification": ""
 }

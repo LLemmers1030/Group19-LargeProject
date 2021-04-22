@@ -11,35 +11,31 @@ exports.reset = async (req, res) => {
     const body = req.body
     const Email = body.Email
 
+    var user
     try {
-        let user = await User.findOne({ Email })
+        user = await User.findOne({ Email })
         if (!user) // change to 200 later for security
             return res.status(400).send('Email not in use')
     } catch {
         return res.status(500).send()
     }
     // delete old token if it exists
-    let token = await Token.findOne({ Email });
+    let token = await Token.findOne({ email: Email });
     if (token) { 
         await token.deleteOne()
-    };
+    }
 
     let resetToken = crypto.randomBytes(32).toString("hex")
     const hash = await bcrypt.hash(resetToken, 10)
 
     await new Token({
-        userId: user._id,
+        email: user.Email,
         token: hash,
         createdAt: Date.now(),
-      }).save();
+    }).save();
 
-
-
-    
-    
-    
-    
-    
+    console.log(resetToken)
+    res.send(resetToken)
     sendEmail(Email, resetToken)
 }
 

@@ -3,12 +3,9 @@ const mongoose = require('mongoose')
 const TokenSchema = mongoose.Schema({
     email: {
         type: String,
-        required: true,
-        ref: "user"
       },
       token: {
         type: String,
-        required: true
       },
       createdAt: {
         type: Date,

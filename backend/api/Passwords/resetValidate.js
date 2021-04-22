@@ -8,28 +8,35 @@ const Token = require('../../models/token.model.js')
 exports.resetValidate = async (req, res) => {
     const body = req.body
     const Email = body.Email
+    const { email } = body.Email
     const resetToken = body.Token
     const Password = body.Password
 
     var token
-    try {        
-        // delete old token if it exists
-        token = await Token.findOne({ Email });
-        if (token) {
+    try {
+        token = await Token.findOne({ email: Email })
+        if (!token) {
             return res.status(400).send('Invalid or expired reset token')
         }
     } catch {
         return res.status(500).send()
     }
     
-    const isValid = await bcrypt.compare(token, resetToken.token);
-    if (!isValid) {
-        return res.status(400).send('Invalid or expired password reset token')
-    }
+    console.log(token)
+    await bcrypt.compare(resetToken, token.token, async (error, result) => {
+        if (error) {
+            return res.status(400).send('Error')
+        }
+        else if (result != true) {
+            return res.status(400).send('Not true')
+        }
+        else {
+            const hash = await bcrypt.hash(Password, 10)
+            await User.updateOne({ Email }, { Password: hash })
 
-    const hash = await bcrypt.hash(Password, 10)
-    await User.updateOne({ Email }, { Password: hash })
+            token.deleteOne()
+            res.status(200).json({ Error: false })
+        }
+    })
 
-
-    res.status(200).json({ Error: false })
 }
