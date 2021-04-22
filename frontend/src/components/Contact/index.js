@@ -1,5 +1,4 @@
 import "./contact.css";
-import hello from "../../images/hello.svg";
 import { Card, Row, Col } from 'antd';
 import kevin from '../../images/kevin.PNG'
 import tiffany from '../../images/tiffany.PNG'
@@ -9,10 +8,10 @@ const Contact = () => {
     <main>
       <div className="main__container">
 
-        <div className="main__title">
+        <div className="contact-title">
           <Row gutter={16}>
 
-            <Col>
+            <Col >
               <Card className="contact-card" title="Contact Kevin" bordered={false} style={{ width: 300 }}>
                 <img className="pic" src={kevin} />
                 <p>Phone number:  352-200-4273</p>

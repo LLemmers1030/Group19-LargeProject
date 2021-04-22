@@ -1,12 +1,7 @@
 import './index.css';
-import React, { Component } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebookF, faGoogle } from '@fortawesome/free-brands-svg-icons'
+import React from "react";
 import image1 from '../images/svg-login.svg'
 import image2 from '../images/svg-reg.svg'
-// import ListNavBar from '../components/ListNavBar';
-//import rpng from './register.png';
-//import './hook.js';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
@@ -17,8 +12,6 @@ const SignInPage = ({ history }) => {
     const [loginEmail, setLoginEmail] = useState("");
     const [regUsername, setRegUsername] = useState("");
     const [loginPassword, setLoginPassword] = useState("");
-    // const [loginUsername, setLoginUsername] = useState("");
-
     const [Password, setPassword] = useState("");
     const [confirmpassword, setConfirmPassword] = useState("");
     const [errors, setErrors] = useState("");
@@ -42,10 +35,8 @@ const SignInPage = ({ history }) => {
     }, [history]);
 
     const validate = () => {
-        //let isValid = true;
         const errors = {};
 
-        //if ({ loginEmail } == undefined) {
         if (!{ loginEmail }) {
             console.log("no email");
             errors.loginEmail = "Please enter email";
@@ -128,7 +119,6 @@ const SignInPage = ({ history }) => {
         }
     };
 
-    // render() {
     return (
         <div>
             <title>Sign In &amp; Sign Up</title>
@@ -162,18 +152,7 @@ const SignInPage = ({ history }) => {
                             </div>
                             {errors && <p className="danger">{errors}</p>}
                             <button type="submit" className="btn btn-primary" tabIndex={3}>Login</button>
-                            {/* <p className="social-text">Sign in with other platforms</p> */}
-
-                            {/* Forgot password */}
                             <NavLink to="/forgotpassword"><p>Forgot password?</p></NavLink>
-                            {/* <div className="social-media">
-                                <a href="/#" className="social-icon">
-                                    <FontAwesomeIcon icon={faGoogle} />
-                                </a>
-                                <a href="/#" className="social-icon">
-                                    <FontAwesomeIcon icon={faFacebookF} />
-                                </a>
-                            </div> */}
                         </form>
                         <form className="sign-up-form" onSubmit={registerHandler}>
                             <h2 className="title">Sign up</h2>
@@ -186,7 +165,6 @@ const SignInPage = ({ history }) => {
                                     placeholder="Email"
                                     value={regEmail}
                                     onChange={(e) => setRegEmail(e.target.value)}
-
                                 />
                             </div>
 
@@ -218,15 +196,6 @@ const SignInPage = ({ history }) => {
                             {errors && <p className="danger">{errors}</p>}
 
                             <input type="submit" value="Submit" defaultValue="Sign up" className="btn solid" />
-                            {/* <p className="social-text">Sign up with other platforms</p> */}
-                            {/* <div className="social-media">
-                                <a href="/#" className="social-icon">
-                                    <FontAwesomeIcon icon={faGoogle} />
-                                </a>
-                                <a href="/#" className="social-icon">
-                                    <FontAwesomeIcon icon={faFacebookF} />
-                                </a>
-                            </div> */}
                         </form>
                     </div>
                 </div>
@@ -234,7 +203,6 @@ const SignInPage = ({ history }) => {
                     <div className="panel left-panel">
                         <div className="content">
                             <h3 className="top-title">New here?</h3>
-                            {/* <p>Register here</p> */}
                             <button className="btn transparent" id="sign-up-btn">Sign up</button>
                         </div>
                         <img src={image2} className="image" alt="" />
@@ -242,7 +210,6 @@ const SignInPage = ({ history }) => {
                     <div className="panel right-panel">
                         <div className="content">
                             <h3 className="top-title">One of us?</h3>
-                            {/* <p>Login here</p> */}
                             <button className="btn transparent" id="sign-in-btn">Sign in</button>
                         </div>
                         <img src={image1} className="image" alt="" />

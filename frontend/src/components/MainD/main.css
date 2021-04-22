@@ -4,7 +4,7 @@ main {
   overflow-y: auto;
 }
 
-.main__container {
+.maint__container {
   padding: 20px 35px;
 }
 
@@ -29,4 +29,30 @@ main {
   font-size: 14px;
   font-weight: 700;
   color: #a5aaad;
+  margin-left: 300px;
+}
+
+.dashboardImg {
+  border-radius: 10px;
+  height: 450px;
+  width: 700px;
+  margin-bottom: 20px;
+}
+
+.dash-blurb {
+  font-size: 17px;
+  width: 37vw;
+}
+
+.main-container {
+  padding: 20px 35px;
+
+}
+
+.d-row {
+  margin-left: 350px;
+}
+
+.d-title {
+  text-align: center;
 }

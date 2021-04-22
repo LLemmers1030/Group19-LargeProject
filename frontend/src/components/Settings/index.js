@@ -1,18 +1,8 @@
 import "./settings.css";
 import hello from "../../images/hello.svg";
-// import Button from 'react-bootstrap/Button';
-// import InputGroup from 'react-bootstrap/InputGroup';
-// import FormControl from 'react-bootstrap/FormControl';
-// import Form from 'react-bootstrap/Form'
-// import { NavLink } from 'react-router-dom';
 import { Form, Input, Button, Row, Col } from 'antd';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-// import styled from 'styled-components';
-
-// import 'bootstrap/dist/css/bootstrap.min.css';
-
-{/* just a copy of main dashboard landing for now */ }
 
 const layout = {
   labelCol: {
