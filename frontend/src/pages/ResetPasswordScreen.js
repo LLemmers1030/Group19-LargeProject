@@ -1,15 +1,32 @@
-import { useState } from "react";
+import { useState, Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./ResetPasswordScreen.css";
 
-const ResetPasswordScreen = ({ match }) => {
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
+//const ResetPasswordScreen = ({ match }) => {
+class ResetPasswordScreen extends Component {
 
-  const resetPasswordHandler = async (e) => {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      email: "",
+      token: "",
+      password: "",
+      confirmPassword: "",
+      error: ""
+    }
+  }
+
+  componentDidMount = async () => {
+
+    this.setState({
+      email: this.props.match.params.email,
+      token: this.props.match.params.token
+    });
+  }
+
+  resetPasswordHandler = async (e) => {
     e.preventDefault();
 
     const config = {
@@ -18,81 +35,87 @@ const ResetPasswordScreen = ({ match }) => {
       },
     };
 
-    if (password !== confirmPassword) {
-      setPassword("");
-      setConfirmPassword("");
+    if (this.state.password !== this.state.confirmPassword) {
+      this.setState({ password: this.state.password });
+      this.setState({ confirmPassword: this.state.confirmPassword });
       setTimeout(() => {
-        setError("");
+        this.setState({ error: "" });
       }, 5000);
-      return setError("Passwords don't match");
+      return this.setState({ error: "Passwords don't match" });
     }
 
-    console.log(match.params.resetToken);
-    console.log(match.params);
-    console.log(match);
+    const Password = this.state.password;
+    const Email = this.state.email;
+    const Token = this.state.token;
 
     try {
-      const { data } = await axios.put(
-        `/api/auth/resetpassword/${match.params.resetToken}`,
+      // need to send email, new password, and email specific token
+      const { data } = await axios.post(
+        "http://localhost:8080/Passwords/resetValidate",
         {
-          password,
+          Email, Password, Token
         },
         config
       );
 
       //console.log(data);
-      setSuccess(data.data);
+      localStorage.removeItem("authToken");
+      this.props.history.push({ pathname: "/signin" });
+      //setSuccess(data.data);
     } catch (error) {
-      setError(error.response.data.error);
+      this.setState({ error: error.response.data })
       setTimeout(() => {
-        setError("");
+        this.setState({ error: "" })
       }, 5000);
     }
   };
 
-  return (
-    <div className="resetpassword-screen">
-      <form
-        onSubmit={resetPasswordHandler}
-        className="resetpassword-screen__form"
-      >
-        <h3 className="resetpassword-screen__title">Reset Password</h3>
-        {error && <span className="error-message">{error} </span>}
-        {success && (
-          <span className="success-message">
-            {success} <Link to="/login">Login</Link>
-          </span>
-        )}
-        <div className="form-group">
-          <label htmlFor="password">New Password:</label>
-          <input
-            type="password"
-            required
-            id="password"
-            placeholder="Enter new password"
-            autoComplete="true"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="confirmpassword">Confirm New Password:</label>
-          <input
-            type="password"
-            required
-            id="confirmpassword"
-            placeholder="Confirm new password"
-            autoComplete="true"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
-        </div>
-        <button type="submit" className="btn btn-primary">
-          Reset Password
+  render() {
+    return (
+      <div className="resetpassword-screen">
+        <form
+          onSubmit={this.resetPasswordHandler}
+          className="resetpassword-screen__form"
+        >
+          <h3 className="resetpassword-screen__title">Reset Password</h3>
+
+          <div className="form-group1">
+            <label htmlFor="password">New Password:</label>
+            <input
+              type="password"
+              required
+              id="password"
+              placeholder="Enter new password"
+              autoComplete="true"
+              value={this.state.password}
+              onChange={(e) => this.setState({ password: e.target.value })}
+            />
+          </div>
+          <div className="form-group2">
+            <label htmlFor="confirmpassword">Confirm New Password:</label>
+            <input
+              type="password"
+              required
+              id="confirmpassword"
+              placeholder="Confirm new password"
+              autoComplete="true"
+              value={this.state.confirmPassword}
+              onChange={(e) => this.setState({ confirmPassword: e.target.value })}
+            />
+          </div>
+          {this.state.error && <span className="error-message">{this.state.error} </span>}
+          {this.state.success && (
+            <span className="success-message">
+              {this.state.success} <Link to="/signin">Login</Link>
+            </span>
+          )}
+          <button type="submit" className="btn btn-primary">
+            Reset Password
         </button>
-      </form>
-    </div>
-  );
-};
+        </form>
+      </div>
+    );
+  };
+}
 
 export default ResetPasswordScreen;

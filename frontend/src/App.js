@@ -12,12 +12,21 @@ import Contact from './components/Contact';
 import ForgotPasswordScreen from './pages/ForgotPasswordScreen';
 import ResetPasswordScreen from './pages/ResetPasswordScreen';
 import VerificationScreen from './pages/verificationPage';
+// import url from ('url')
 
 // Potential zoom fix issue
 // var scale = 'scale(1)';
 // document.body.style.webkitTransform = scale;    // Chrome, Opera, Safari
 // document.body.style.msTransform = scale;       // IE 9
 // document.body.style.transform = scale;     // General
+
+function getUrlVars() {
+  var vars = {};
+  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+    vars[key] = value;
+  });
+  return vars;
+}
 
 function App() {
   return (
@@ -31,6 +40,7 @@ function App() {
         <Route path="/resetpassword" component={ResetPasswordScreen} exact />
         <Route path="/forgotpassword" component={ForgotPasswordScreen} exact />
         <Route path="/verify/:token" component={VerificationScreen} exact />
+        <Route path="/Passwords/reset/:token/:email" component={ResetPasswordScreen} exact />
         <Route render={(props) => (
           <UserDashboard {...props}>
             <Switch>
