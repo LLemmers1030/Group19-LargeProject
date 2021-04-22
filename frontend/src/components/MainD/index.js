@@ -41,7 +41,7 @@ function Main(props) {
       //setEmail(data.Email);
 
       //if (email !== "") {
-         //setName(email.substring(0, email.lastIndexOf("@")));
+        //setName(email.substring(0, email.lastIndexOf("@")));
       //}
 
     } catch (error) {
