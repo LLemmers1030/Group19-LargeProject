@@ -15,6 +15,7 @@ const SignInPage = ({ history }) => {
     const [Password, setPassword] = useState("");
     const [confirmpassword, setConfirmPassword] = useState("");
     const [errors, setErrors] = useState("");
+    const [success, setSuccess] = useState("");
 
     useEffect(() => {
         const sign_in_btn = document.querySelector("#sign-in-btn");
@@ -109,6 +110,7 @@ const SignInPage = ({ history }) => {
                 config);
 
             localStorage.setItem("authToken", data.JWT);
+            setSuccess(data.error);
             // push to enter verification code page
             //history.push("/verify");
         } catch (error) {
@@ -194,6 +196,7 @@ const SignInPage = ({ history }) => {
                                 />
                             </div>
                             {errors && <p className="danger">{errors}</p>}
+                            {success && <p className="danger">{success}</p>}
 
                             <input type="submit" value="Submit" defaultValue="Sign up" className="btn solid" />
                         </form>

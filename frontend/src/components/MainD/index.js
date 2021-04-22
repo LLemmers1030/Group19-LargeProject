@@ -1,15 +1,73 @@
 import "./main.css";
 import welcome from '../../images/welcome.jpg';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 
 function Main(props) {
-  return (
+
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
+  //const [email, setEmail] = useState("");
+
+  const [errors, setErrors] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const loadName = async (e) => {
+
+    const JWT = localStorage.getItem("authToken");
+
+    const config = {
+      headers: {
+        "Content-Type": "application/json"
+      },
+    };
+    try {
+      // For production: /Users/get 
+      const { data } = await axios.post("http://localhost:8080/Users",
+        { JWT },
+        config);
+
+      localStorage.setItem("authToken", data.JWT);
+
+      const first = data.FirstName;
+      const last = data.LastName;
+
+      if (first != null || last != null) {
+        setMessage('"Hello " + first + " " + last');
+      } else {
+        setMessage("Hello!");
+      }
+
+      //setEmail(data.Email);
+
+      //if (email !== "") {
+        //setName(email.substring(0, email.lastIndexOf("@")));
+      //}
+
+    } catch (error) {
+      setErrors(error.response.data);
+      setTimeout(() => {
+        setErrors("");
+      }, 5000)
+    }
+  }
+
+  useEffect(() => {
+    loadName();
+    setLoading(true);
+    //console.log(name);
+  }, []);
+
+
+  return loading ? (
     <main>
+      { () => loadName()}
       <div className="main-container">
 
         <div className="main__title">
           <div>
             <div className="d-row">
-              <h1 className="d-title">Hello *NAME HERE*</h1>
+              <h1 className="d-title">{message}</h1>
             </div>
 
             <div className="d-row">
@@ -29,6 +87,8 @@ function Main(props) {
         </div>
       </div>
     </main>
+  ) : (
+    <div></div>
   );
 };
 
