@@ -24,12 +24,6 @@ const UserDashboard = (props) => {
 
       <Sidebar sidebarOpen={sidebarOpen} closeSidebar={closeSidebar} />
 
-      {/* <form>
-        <label>Name:<input type="text" name="name" />
-        </label>
-        <input type="submit" value="Submit" />
-      </form> */}
-
     </div>
   );
 };

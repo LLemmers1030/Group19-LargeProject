@@ -21,7 +21,7 @@ exports.reset = async (req, res) => {
     }
     // delete old token if it exists
     let token = await Token.findOne({ email: Email });
-    if (token) { 
+    if (token) {
         await token.deleteOne()
     }
 
@@ -54,11 +54,12 @@ const sendEmail = (email, resetToken) => {
         from: sender,
         to: email,
         subject: "Password Reset",
-        html: `Click <a href=http://localhost:3000/Passwords/reset?token=${resetToken}&email=${email}> here </a> to reset your password`
+        html: `Click <a href=http://localhost:3000/Passwords/reset/${resetToken}/${email}> here </a> to reset your password`
+        //html: `Click <a href=http://localhost:3000/Passwords/reset_token=${resetToken}> here </a> to reset your password`
     };
 
-    Transport.sendMail(mailOptions, function(error, respnse) {
-        if (error){
+    Transport.sendMail(mailOptions, function (error, respnse) {
+        if (error) {
             console.log(error);
         } else {
             console.log("Message sent");

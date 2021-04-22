@@ -49,7 +49,7 @@ class VerificationScreen extends Component {
 
             <div className="verifypassword-screen">
                 <form>
-
+                    om
                     <div className="verifypassword-screen__form">
                         <h3 className="verifypassword-screen__title">Your account has been verified. Proceed to login.</h3>
 
