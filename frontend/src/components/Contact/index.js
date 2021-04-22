@@ -1,7 +1,8 @@
 import "./contact.css";
 import hello from "../../images/hello.svg";
-
-{/* just a copy of main dashboard landing for now */}
+import { Card, Row, Col } from 'antd';
+import kevin from '../../images/kevin.PNG'
+import tiffany from '../../images/tiffany.PNG'
 
 const Contact = () => {
   return (
@@ -9,15 +10,25 @@ const Contact = () => {
       <div className="main__container">
 
         <div className="main__title">
-          <img src={hello} alt="hello" />
-          <div className="main__greeting">
-            <h1>Contact Us!</h1>
-            <p>Contact page testing</p>
-            <h1>Email</h1>
-            <p>tsaikevin94@yahoo.com</p>
-            <h1>Phone</h1>
-            <p>352-390-7495</p>
-          </div>
+          <Row gutter={16}>
+
+            <Col>
+              <Card className="contact-card" title="Contact Kevin" bordered={false} style={{ width: 300 }}>
+                <img className="pic" src={kevin} />
+                <p>Phone number:  352-200-4273</p>
+                <p>Email address: kevin13560@yahoo.com.tw</p>
+              </Card>
+            </Col>
+
+            <Col>
+              <Card className="contact-card" title="Contact Tiffany" bordered={false} style={{ width: 300 }}>
+                <img className="pic" src={tiffany} />
+                <p>Phone number: 352-390-7495</p>
+                <p>Email address: tsaikevin94@yahoo.com</p>
+              </Card>
+            </Col>
+          </Row>
+
         </div>
       </div>
     </main>
