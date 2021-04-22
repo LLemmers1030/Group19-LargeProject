@@ -30,7 +30,7 @@ function App() {
         <Route path="/listings" component={HouseListings} exact />
         <Route path="/resetpassword" component={ResetPasswordScreen} exact />
         <Route path="/forgotpassword" component={ForgotPasswordScreen} exact />
-        <Route path="/verification" component={VerificationScreen} exact />
+        <Route path="/verify/:token" component={VerificationScreen} exact />
         <Route render={(props) => (
           <UserDashboard {...props}>
             <Switch>

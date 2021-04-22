@@ -68,8 +68,8 @@ const sendEmail = (email, uniqueString) => {
         from: sender,
         to: email,
         subject: "Email Confirmation",
-        //html: `Press <a href=http://localhost:3000/Users/verify/${uniqueString}> here </a> to verity your email. Thanks`
-        html: `Paste this token into the login page for the first time: ${uniqueString}`
+        html: `Press <a href=http://localhost:3000/verify/${uniqueString}> here </a> to verity your email. Thanks`
+        //html: `Paste this token into the login page for the first time: ${uniqueString}`
     };
 
     Transport.sendMail(mailOptions, function(error, respnse) {

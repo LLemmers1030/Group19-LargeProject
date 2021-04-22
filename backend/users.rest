@@ -15,10 +15,19 @@ POST {{host}}/Users/register
 Content-Type: application/json
 
 {
-    "Email" : "andrew13560@gmail.com",
+    "Email" : "6b2e2ade@bvmtk.com",
     "Password" : "123",
     "FirstName" : "first",
     "LastName" : "last"
+}
+
+###
+
+POST {{host}}/Users/verify/
+Content-Type: application/json
+
+{
+    "uniqueString" : "831065728"
 }
 
 ### This is where we paste the verification code when logging in 1st time
