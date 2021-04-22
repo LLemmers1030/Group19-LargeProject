@@ -11,15 +11,48 @@ import {
   faHouseUser,
 } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
+import axios from "axios";
+import { useState } from "react";
 
 {/* function Sidebar(props, { sidebarOpen, closeSidebar }) { */ }
 const Sidebar = ({ sidebarOpen, closeSidebar }) => {
+  const [errors, setErrors] = useState("");
+
   let history = useHistory();
 
   const logoutHandler = () => {
     localStorage.removeItem("authToken");
     // or /login
     history.push("/");
+  }
+
+  const deleteHandler = async () => {
+    const JWT = localStorage.getItem("authToken");
+
+    const config = {
+      headers: {
+        "Content-Type": "application/json"
+      },
+    };
+
+    try {
+      // need to send in jwt
+      // For production: /Users/delete 
+      // For local: http://localhost:8080/Users/delete
+      const { data } = await axios.post("/Users/delete",
+        { JWT },
+        config);
+
+      localStorage.removeItem("authToken");
+      history.push("/");
+
+    } catch (error) {
+      setErrors(error.response.data);
+      setTimeout(() => {
+        setErrors("");
+      }, 5000)
+    }
+
   }
 
   return (
@@ -61,7 +94,7 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
           <p>Logout</p>
         </button>
         {/* Delete Account Button */}
-        <button onClick={logoutHandler} className="sidebar__delete">
+        <button onClick={deleteHandler} className="sidebar__delete">
           <FontAwesomeIcon icon={faPowerOff} />
           <p>Delete Account</p>
         </button>
