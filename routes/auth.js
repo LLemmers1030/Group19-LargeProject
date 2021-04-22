@@ -12,6 +12,6 @@ router.route("/forgotpassword").post(forgotpassword);
 router.route("/resetpassword/:resetToken").put(resetpassword);
 
 //router.route("/verify/:uniquString").put()
-
+ 
 
 module.exports = router;
