@@ -22,9 +22,18 @@
     margin-bottom: 20px;
     font-size: 25px;
     font-weight: bold;
+    margin-top: 20px;
   }
 
   .form-group{
     padding-bottom: 20px;
     font-size: 15px;
+  }
+
+  .button-area {
+    align-items: center;
+  }
+
+  .btn-primary {
+    margin-left: 150px;
   }
