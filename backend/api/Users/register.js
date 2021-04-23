@@ -1,5 +1,3 @@
-// const mongoose = require('mongoose')
-// const app = require('express')
 const bcrypt = require('bcrypt')
 const nodemailer = require('nodemailer')
 const User = require('../../models/user.model.js')
@@ -41,7 +39,7 @@ exports.register = async (req, res) => {
     } catch {
         res.status(500).send()
     }
-    sendEmail(Email, uniqueString)
+    sendEmail(Email, uniqueString, req)
 }
 
 const randString = () => {
@@ -55,7 +53,7 @@ const randString = () => {
     return randStr
 }
 
-const sendEmail = (email, uniqueString) => {
+const sendEmail = (email, uniqueString, req) => {
     var Transport = nodemailer.createTransport({
         service: "Gmail",
         auth: {
@@ -64,15 +62,17 @@ const sendEmail = (email, uniqueString) => {
         }
     });
 
-    var mailOptions;
-    let sender = "Jack's Mobile Homepark";
-    mailOptions = {
-        from: sender,
+    const PORT = process.env.PORT || 3000;
+    var url = req.protocol + '://' + req.host + ':' + PORT + '/verify/' + uniqueString
+    // console.log(url)
+
+    var mailOptions = {
+        from: "Jack's Mobile Homepark",
         to: email,
         subject: "Email Confirmation",
-        html: `Press <a href=https://group19-housingmanager.herokuapp.com/verify/${uniqueString}> here </a> to verity your email. Thanks`
+        html: `Press <a href=${url}> here </a> to verity your email. Thanks`
+        //html: `Press <a href=https://group19-housingmanager.herokuapp.com/verify/${uniqueString}> here </a> to verity your email. Thanks`
         // Local html: `Press <a href=http://localhost:3000/verify/${uniqueString}> here </a> to verity your email. Thanks`
-        //html: `Paste this token into the login page for the first time: ${uniqueString}`
     };
 
     Transport.sendMail(mailOptions, function(error, respnse) {
