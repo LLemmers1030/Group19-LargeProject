@@ -22,7 +22,7 @@ class VerificationScreen extends Component {
         };
 
         try {
-            // For production:  
+            // For production: group19-housingmanager.herokuapp.com 
             // For local: http://localhost:8080/Users/verify
             const { data } = await axios.post("http://localhost:8080/Users/verify",
                 { uniqueString },
