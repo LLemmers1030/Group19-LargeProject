@@ -15,10 +15,10 @@ POST {{host}}/Users/register
 Content-Type: application/json
 
 {
-    "Email" : "6b2e2ade@bvmtk.com",
+    "Email" : "thechanman.potato@gmail.com",
     "Password" : "123",
-    "FirstName" : "first",
-    "LastName" : "last"
+    "FirstName" : "jj",
+    "LastName" : "chan"
 }
 
 ###
@@ -27,7 +27,7 @@ POST {{host}}/Users/verify/
 Content-Type: application/json
 
 {
-    "uniqueString" : "831065728"
+    "uniqueString" : "58211676"
 }
 
 ### This is where we paste the verification code when logging in 1st time
@@ -37,7 +37,7 @@ Content-Type: application/json
 
 {
     "Email": "thechanman.potato@gmail.com",
-    "Password": "123",
+    "Password": "123"
 }
 
 ###
@@ -45,7 +45,7 @@ POST {{host}}/Users/
 Content-Type: application/json
 
 {
-    "JWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InNhbHQzQGdtYWlsLmNvbSIsImlhdCI6MTYxODk4MTM4MiwiZXhwIjoxNjE4OTg0OTgyfQ.b3nXJt6BauUetC-6ewXVCAo76DUvXuP2Ym5OoayYJjI"
+    "JWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InRoZWNoYW5tYW4ucG90YXRvQGdtYWlsLmNvbSIsIkFkbWluIjpmYWxzZSwiaWF0IjoxNjE5MTUxMTU4LCJleHAiOjE2MTkxNTQ3NTh9.HwIadBQ9y0SBuzMA-P5XeVgGNS1DDJV5pLw8M2XhwAs"
 }
 
 ###
@@ -75,7 +75,7 @@ POST {{host}}/Users/devDelete
 Content-Type: application/json
 
 {
-    "Email" : "ttt@ttt.com"
+    "Email" : "thechanman.potato@gmail.com"
 }
 
 ### Punch in email and give it a password to reset
