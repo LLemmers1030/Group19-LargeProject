@@ -15,7 +15,7 @@ exports.verify = async (req, res) => {
         await user.save()
 
         // make JWT
-        await jwt.sign({ Email: Email, Admin: user.Admin },
+        await jwt.sign({ Email: user.Email, Admin: user.Admin },
             process.env.JWT_SECRET,
             { expiresIn: '1h' },
             async (err, token) => {
