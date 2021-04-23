@@ -62,8 +62,12 @@ const sendEmail = (email, uniqueString, req) => {
         }
     });
 
-    const PORT = process.env.PORT || 3000;
-    var url = req.protocol + '://' + req.host + ':' + PORT + '/verify/' + uniqueString
+    var url
+    if (process.env.NODE_ENV === 'production') {
+        var url = req.protocol + '://' + req.host + '/verify/' + uniqueString    
+    } else {
+        var url = req.protocol + '://' + req.host + ':3000' + '/verify/' + uniqueString
+    }
     // console.log(url)
 
     var mailOptions = {
