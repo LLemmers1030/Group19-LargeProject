@@ -37,11 +37,9 @@ class VerificationScreen extends Component {
             //setErrors(error.response.data);
             this.setState({ errors: error.response.data })
             setTimeout(() => {
-                this.this.setState("");
+                this.setState("");
             }, 5000)
         }
-
-
     }
 
     render() {
@@ -49,7 +47,6 @@ class VerificationScreen extends Component {
 
             <div className="verifypassword-screen">
                 <form>
-                    om
                     <div className="verifypassword-screen__form">
                         <h3 className="verifypassword-screen__title">Your account has been verified. Proceed to login.</h3>
 

@@ -38,7 +38,7 @@ class ForgotPasswordScreen extends Component {
       this.setState({ success: "Check email to reset password" });
     } catch (error) {
       //setError(error.response.data.error);
-      this.setState({ error: error.response.data.error });
+      this.setState({ error: error.response.data });
       //this.setState({ email: email });
       setTimeout(() => {
         this.setState({ error: "" });
