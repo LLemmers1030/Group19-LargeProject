@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../components/NavbarD";
 import Sidebar from "../components/SidebarD";
 
 {/* function UserDashboard(props) { */ }
+//const UserDashboard = (props) => {
 const UserDashboard = (props) => {
   const [sidebarOpen, setsidebarOpen] = useState(false);
 
@@ -13,6 +14,13 @@ const UserDashboard = (props) => {
   const closeSidebar = () => {
     setsidebarOpen(false);
   };
+
+  useEffect(() => {
+
+    if (!localStorage.getItem("authToken")) {
+      props.history.push("/signin");
+    }
+  }, [props.history]);
 
 
 
