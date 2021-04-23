@@ -49,9 +49,10 @@ class ResetPasswordScreen extends Component {
     const Token = this.state.token;
 
     try {
+      // Local: http://localhost:8080/Passwords/resetValidate
       // need to send email, new password, and email specific token
       const { data } = await axios.post(
-        "http://localhost:8080/Passwords/resetValidate",
+        "/Passwords/resetValidate",
         {
           Email, Password, Token
         },

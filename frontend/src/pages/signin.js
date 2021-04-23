@@ -105,8 +105,9 @@ const SignInPage = ({ history }) => {
         }
 
         try {
+            // Development: http://localhost:8080/Users/register
             // For production: /Users/register 
-            const { data } = await axios.post("http://localhost:8080/Users/register", { Username, Email, Password },
+            const { data } = await axios.post("/Users/register", { Username, Email, Password },
                 config);
 
             localStorage.setItem("authToken", data.JWT);

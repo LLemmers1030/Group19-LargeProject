@@ -28,9 +28,11 @@ class ForgotPasswordScreen extends Component {
     };
 
     try {
+
+      // http://localhost:8080/Passwords/reset
       console.log(this.state.email);
       const { data } = await axios.post(
-        "http://localhost:8080/Passwords/reset",
+        "/Passwords/reset",
         { Email },
         config
       );
