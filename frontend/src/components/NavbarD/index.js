@@ -23,8 +23,9 @@ const Navbar = ({ sidebarOpen, openSidebar }) => {
       },
     };
     try {
+      // For local: http://localhost:8080/Users"
       // For production: /Users/get 
-      const { data } = await axios.post("http://localhost:8080/Users",
+      const { data } = await axios.post("/Users",
         { JWT },
         config);
 

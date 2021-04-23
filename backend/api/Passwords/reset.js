@@ -55,7 +55,8 @@ const sendEmail = (email, resetToken) => {
         from: sender,
         to: email,
         subject: "Password Reset",
-        html: `Click <a href=http://localhost:3000/Passwords/reset/${resetToken}/${email}> here </a> to reset your password`
+        html: `Click <a href=https://group19-housingmanager.herokuapp.com/Passwords/reset/${resetToken}/${email}> here </a> to reset your password`
+        // Local html: `Click <a href=http://localhost:3000/Passwords/reset/${resetToken}/${email}> here </a> to reset your password`
         //html: `Click <a href=http://localhost:3000/Passwords/reset_token=${resetToken}> here </a> to reset your password`
     };
 
