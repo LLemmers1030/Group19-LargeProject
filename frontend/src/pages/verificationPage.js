@@ -28,10 +28,12 @@ class VerificationScreen extends Component {
                 { uniqueString },
                 config);
 
+            // that might fix it
             console.log(data);
+            console.log("are you working >:(");
 
-            //localStorage.setItem("authToken", data.JWT);
-            localStorage.removeItem("authToken");
+            localStorage.setItem("authToken", data.JWT);
+            //localStorage.removeItem("authToken");
             //history.push("/dashboard");
         } catch (error) {
             //setErrors(error.response.data);
@@ -40,8 +42,6 @@ class VerificationScreen extends Component {
                 this.setState("");
             }, 5000)
         }
-
-
     }
 
     render() {
@@ -50,12 +50,12 @@ class VerificationScreen extends Component {
             <div className="verifypassword-screen">
                 <form>
                     <div className="verifypassword-screen__form">
-                        <h3 className="verifypassword-screen__title">Your account has been verified. Proceed to login.</h3>
+                        <h3 className="verifypassword-screen__title">Your account has been verified. Click here to view your dashboard.</h3>
 
                         <div className="button-area">
                             <Link to="/signin">
                                 <button type="submit" className="btn btn-primary ">
-                                    Return to login
+                                    View Dashboard
                             </button>
                             </Link>
                         </div>
