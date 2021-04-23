@@ -70,7 +70,7 @@ const sendEmail = (email, uniqueString) => {
         from: sender,
         to: email,
         subject: "Email Confirmation",
-        html: `Press <a href=https://group19-housinngmanager.app.com/verify/${uniqueString}> here </a> to verity your email. Thanks`
+        html: `Press <a href=https://group19-housinngmanager.herokuapp.com/verify/${uniqueString}> here </a> to verity your email. Thanks`
         // Local html: `Press <a href=http://localhost:3000/verify/${uniqueString}> here </a> to verity your email. Thanks`
         //html: `Paste this token into the login page for the first time: ${uniqueString}`
     };
