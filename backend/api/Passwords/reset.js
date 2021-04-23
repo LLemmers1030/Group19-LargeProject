@@ -29,6 +29,7 @@ exports.reset = async (req, res) => {
     const hash = await bcrypt.hash(resetToken, 10)
 
     await new Token({
+        // @ts-ignore
         email: user.Email,
         token: hash,
         createdAt: Date.now(),
