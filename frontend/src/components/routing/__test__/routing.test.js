@@ -2,7 +2,7 @@ import React from 'react';
 // used to render things
 import ReactDOM from 'react-dom';
 // the component we are testing
-import routing from './../PrivateRoute';
+import Routing from './../PrivateRoute';
 // react testing library
 import { render, cleanup } from '@testing-library/react';
 // jest dom which has extend and expect. new version
@@ -20,6 +20,6 @@ afterEach(cleanup);
 it("renders without crashing", () => {
     const div = document.createElement("div");
     ReactDOM.render(<Router>
-        <routing></routing>
+        <Routing></Routing>
     </Router>, div);
 });

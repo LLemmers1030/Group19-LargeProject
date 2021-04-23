@@ -9,6 +9,8 @@ import { render, cleanup } from '@testing-library/react';
 import "@testing-library/jest-dom/extend-expect";
 // for snapshot testing
 // import renderer from "react-test-renderer";
+import { BrowserRouter as Router } from 'react-router-dom';
+
 
 // second parameter is a callback function where you write the test
 
@@ -18,5 +20,8 @@ afterEach(cleanup);
 // Creates a div and attatches our component to that div
 it("renders without crashing", () => {
     const div = document.createElement("div");
-    ReactDOM.render(<HeroSection></HeroSection>, div);
+    ReactDOM.render(
+        <Router>
+            <HeroSection></HeroSection>
+        </Router>, div);
 });
