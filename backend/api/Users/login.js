@@ -18,12 +18,7 @@ exports.login = async (req, res) => {
             try {
                 if (await bcrypt.compare(body.Password, result.Password)) {
                     if (result.isValid == false) {
-                        if (result.uniqueString == Verification) {
-                            result.isValid = true
-                            await result.save()
-                        } else {
-                            return res.status(400).send('Account is not verified')
-                        }
+                        return res.status(400).send('Account is not verified')
                     }
 
                     // make JWT
