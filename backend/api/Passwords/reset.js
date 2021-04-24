@@ -35,12 +35,12 @@ exports.reset = async (req, res) => {
         createdAt: Date.now(),
     }).save();
 
-    res.send(resetToken)
-    sendEmail(Email, resetToken)
+    res.status(200).json({ Error: false })
+    sendEmail(Email, resetToken, req)
 }
 
 
-const sendEmail = (email, resetToken) => {
+const sendEmail = (email, resetToken, req) => {
     var Transport = nodemailer.createTransport({
         service: "Gmail",
         auth: {
@@ -49,15 +49,20 @@ const sendEmail = (email, resetToken) => {
         }
     });
 
-    var mailOptions;
-    let sender = "Jack's Mobile Homepark";
-    mailOptions = {
-        from: sender,
+    var url
+    if (process.env.NODE_ENV === 'production') {
+        var url = req.protocol + '://' + req.host + '/Passwords/reset/' + resetToken + '/' + email
+    } else {
+        var url = req.protocol + '://' + req.host + ':3000' + '/Passwords/reset/' + resetToken + '/' + email
+    }
+
+    var mailOptions = {
+        from: "Jack's Mobile Homepark",
         to: email,
         subject: "Password Reset",
-        html: `Click <a href=https://group19-housingmanager.herokuapp.com/Passwords/reset/${resetToken}/${email}> here </a> to reset your password`
+        html: `Click <a href=${url}> here </a> to reset your password`
+        // html: `Click <a href=https://group19-housingmanager.herokuapp.com/Passwords/reset/${resetToken}/${email}> here </a> to reset your password`
         // Local html: `Click <a href=http://localhost:3000/Passwords/reset/${resetToken}/${email}> here </a> to reset your password`
-        //html: `Click <a href=http://localhost:3000/Passwords/reset_token=${resetToken}> here </a> to reset your password`
     };
 
     Transport.sendMail(mailOptions, function (error, respnse) {
