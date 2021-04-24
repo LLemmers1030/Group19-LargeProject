@@ -44,6 +44,7 @@ const HouseListings = () => {
                                 <Col span={12}>
                                     <h2 className="house-description">House Description</h2>
                                     <p className="panel-paragraph"> 3 Bedroom<br /> 2 Bathroom<br /> $800/Month</p>
+                                    <p className="available">Available</p>
                                 </Col>
                                 <Col span={12}>
                                     <img className="house" src={home1} alt="house test" ></img>
@@ -57,6 +58,7 @@ const HouseListings = () => {
                                 <Col span={12}>
                                     <h2 className="house-description">House Description</h2>
                                     <p className="panel-paragraph"> 2 Bedroom<br /> 1.5 Bathroom<br /> $650/Month</p>
+                                    <p className="unavailable">Unavailable</p>
                                 </Col>
                                 <Col span={12}>
                                     <img className="house" src={home2} alt="house test" ></img>
@@ -70,6 +72,7 @@ const HouseListings = () => {
                                 <Col span={12}>
                                     <h2 className="house-description">House Description</h2>
                                     <p className="panel-paragraph"> 2 Bedroom<br /> 1 Bathroom<br /> $600/Month</p>
+                                    <p className="available">Available</p>
                                 </Col>
                                 <Col span={12}>
                                     <img className="house" src={home3} alt="house test" ></img>
@@ -82,6 +85,7 @@ const HouseListings = () => {
                                 <Col span={12}>
                                     <h2 className="house-description">House Description</h2>
                                     <p className="panel-paragraph"> 2 Bedroom<br /> 1.5 Bathroom<br /> $650/Month</p>
+                                    <p className="und-maintenance">Under Maintenance</p>
                                 </Col>
                                 <Col span={12}>
                                     <img className="house" src={home4} alt="house test" ></img>
@@ -94,6 +98,7 @@ const HouseListings = () => {
                                 <Col span={12}>
                                     <h2 className="house-description">House Description</h2>
                                     <p className="panel-paragraph"> 2 Bedroom<br /> 1 Bathroom<br /> $600/Month</p>
+                                    <p className="available">Available</p>
                                 </Col>
                                 <Col span={12}>
                                     <img className="house" src={home5} alt="house test" ></img>
@@ -107,6 +112,7 @@ const HouseListings = () => {
                                 <Col span={12}>
                                     <h2 className="house-description">House Description</h2>
                                     <p className="panel-paragraph"> 2 Bedroom<br /> 1 Bathroom<br /> $675/Month</p>
+                                    <p className="available">Available</p>
                                 </Col>
                                 <Col span={12}>
                                     <img className="house" src={home6} alt="house test" ></img>
@@ -119,6 +125,7 @@ const HouseListings = () => {
                                 <Col span={12}>
                                     <h2 className="house-description">House Description</h2>
                                     <p className="panel-paragraph"> 2 Bedroom<br /> 1 Bathroom<br /> $650/Month</p>
+                                    <p className="unavailable">Unavailable</p>
                                 </Col>
                                 <Col span={12}>
                                     <img className="house" src={home7} alt="house test" ></img>
@@ -132,6 +139,7 @@ const HouseListings = () => {
                                 <Col span={12}>
                                     <h2 className="house-description">House Description</h2>
                                     <p className="panel-paragraph"> 2 Bedroom<br /> 1 Bathroom<br /> $600/Month</p>
+                                    <p className="available">Available</p>
                                 </Col>
                                 <Col span={12}>
                                     <img className="house" src={home8} alt="house test" ></img>
@@ -145,6 +153,7 @@ const HouseListings = () => {
                                 <Col span={12}>
                                     <h2 className="house-description">House Description</h2>
                                     <p className="panel-paragraph"> 2 Bedroom<br /> 1 Bathroom<br /> $625/Month</p>
+                                    <p className="unavailable">Unavailable</p>
                                 </Col>
                                 <Col span={12}>
                                     <img className="house" src={home9} alt="house test" ></img>
@@ -157,6 +166,7 @@ const HouseListings = () => {
                                 <Col span={12}>
                                     <h2 className="house-description">House Description</h2>
                                     <p className="panel-paragraph"> 2 Bedroom<br /> 1 Bathroom<br /> $675/Month</p>
+                                    <p className="available">Available</p>
                                 </Col>
                                 <Col span={12}>
                                     <img className="house" src={home10} alt="house test" ></img>
@@ -170,6 +180,7 @@ const HouseListings = () => {
                                 <Col span={12}>
                                     <h2 className="house-description">House Description</h2>
                                     <p className="panel-paragraph"> 3 Bedroom<br /> 2 Bathroom<br /> $750/Month</p>
+                                    <p className="available">Available</p>
                                 </Col>
                                 <Col span={12}>
                                     <img className="house" src={home11} alt="house test" ></img>
@@ -183,6 +194,7 @@ const HouseListings = () => {
                                 <Col span={12}>
                                     <h2 className="house-description">House Description</h2>
                                     <p className="panel-paragraph"> 2 Bedroom<br /> 1 Bathroom<br /> $650/Month</p>
+                                    <p className="und-maintenance">Under Maintenance</p>
                                 </Col>
                                 <Col span={12}>
                                     <img className="house" src={home12} alt="house test" ></img>
@@ -195,6 +207,7 @@ const HouseListings = () => {
                                 <Col span={12}>
                                     <h2 className="house-description">House Description</h2>
                                     <p className="panel-paragraph"> 2 Bedroom<br /> 1 Bathroom<br /> $625/Month</p>
+                                    <p className="und-maintenance">Under Maintenance</p>
                                 </Col>
                                 <Col span={12}>
                                     <img className="house" src={home13} alt="house test" ></img>
@@ -208,6 +221,7 @@ const HouseListings = () => {
                                 <Col span={12}>
                                     <h2 className="house-description">House Description</h2>
                                     <p className="panel-paragraph"> 2 Bedroom<br /> 1 Bathroom<br /> $600/Month</p>
+                                    <p className="available">Available</p>
                                 </Col>
                                 <Col span={12}>
                                     <img className="house" src={home14} alt="house test" ></img>
@@ -221,6 +235,7 @@ const HouseListings = () => {
                                 <Col span={12}>
                                     <h2 className="house-description">House Description</h2>
                                     <p className="panel-paragraph"> 2 Bedroom<br /> 1 Bathroom<br /> $600/Month</p>
+                                    <p className="und-maintenance">Under Maintenance</p>
                                 </Col>
                                 <Col span={12}>
                                     <img className="house" src={home15} alt="house test" ></img>
@@ -233,6 +248,7 @@ const HouseListings = () => {
                                 <Col span={12}>
                                     <h2 className="house-description">House Description</h2>
                                     <p className="panel-paragraph"> 3 Bedroom<br /> 1.5 Bathroom<br /> $750/Month</p>
+                                    <p className="unavailable">Unavailable</p>
                                 </Col>
                                 <Col span={12}>
                                     <img className="house" src={home16} alt="house test" ></img>
@@ -246,6 +262,7 @@ const HouseListings = () => {
                                 <Col span={12}>
                                     <h2 className="house-description">House Description</h2>
                                     <p className="panel-paragraph"> 2 Bedroom<br /> 1 Bathroom<br /> $650/Month</p>
+                                    <p className="available">Available</p>
                                 </Col>
                                 <Col span={12}>
                                     <img className="house" src={home17} alt="house test" ></img>
@@ -259,6 +276,7 @@ const HouseListings = () => {
                                 <Col span={12}>
                                     <h2 className="house-description">House Description</h2>
                                     <p className="panel-paragraph"> 2 Bedroom<br /> 1 Bathroom<br /> $500/Month</p>
+                                    <p className="und-maintenance">Under Maintenance</p>
                                 </Col>
                                 <Col span={12}>
                                     <img className="house" src={home18} alt="house test" ></img>
@@ -272,6 +290,7 @@ const HouseListings = () => {
                                 <Col span={12}>
                                     <h2 className="house-description">House Description</h2>
                                     <p className="panel-paragraph"> 2 Bedroom<br /> 2 Bathroom<br /> $700/Month</p>
+                                    <p className="available">Available</p>
                                 </Col>
                                 <Col span={12}>
                                     <img className="house" src={home19} alt="house test" ></img>

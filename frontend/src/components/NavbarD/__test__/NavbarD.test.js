@@ -7,8 +7,6 @@ import NavbarD from './../index';
 import { render, cleanup } from '@testing-library/react';
 // jest dom which has extend and expect. new version
 import "@testing-library/jest-dom/extend-expect";
-// for snapshot testing
-// import renderer from "react-test-renderer";
 
 // second parameter is a callback function where you write the test
 
