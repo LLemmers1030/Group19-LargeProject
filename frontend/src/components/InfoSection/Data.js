@@ -7,8 +7,8 @@ export const homeObjOne = {
     // lightTextDesc: true,
     topLine: 'About Us',
     headline: 'The Family Behind Jack Mobile Home Park',
-    description: 'Being in the mobile home business for over 20 years, we strive to provide affordable housing and a friendly relationship between us and our tennants.',
-    buttonLabel: 'Get Started',
+    description: 'Being in the mobile home business for over 20 years, we strive to provide affordable housing and a friendly relationship between us and our tennants. Scroll down to view our listings or create an account here.',
+    buttonLabel: 'Create Account',
     // true: image will be on the left and text will be on the right
     // false: image will be on the right and the text will be on the left
     imgStart: false,
@@ -50,7 +50,7 @@ export const homeObjThree = {
     topLine: 'Contact Us',
     headline: 'Get Started By Creating An Account Or Contacting Us',
     description: 'Phone Number: (352)-390-7495',
-    buttonLabel: 'Get Started',
+    buttonLabel: 'Create Account',
     // true: image will be on the left and text will be on the right
     // false: image will be on the right and the text will be on the left
     imgStart: false,

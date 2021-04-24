@@ -65,7 +65,8 @@ letter-spacing: 1.4px;
 text-transform: uppercase;
 margin-bottom: 16px;
 font-weight: bold;
-/* color: ${({ topLight }) => (topLight ? '#01bf71' : '#0B2545')}; */
+padding-top: 20px;
+
 -webkit-text-stroke:0.4px #0B2545
 `;
 
@@ -100,11 +101,12 @@ height: 100%;
 `;
 
 export const Img = styled.img`
-width: 90%;
-height: 100%;
+width: 85%;
+height: 70%;
 margin: 0 0 10px 0;
 padding-right: 0;
 border-radius: 10px;
+margin-top: -40px;
 `;
 
 export const NavBtnLink = styled(Link)`

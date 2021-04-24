@@ -180,7 +180,6 @@ const SignInPage = ({ history }) => {
                                     placeholder="Password"
                                     value={Password}
                                     onChange={(e) => setPassword(e.target.value)}
-
                                 />
                             </div>
 
@@ -190,10 +189,9 @@ const SignInPage = ({ history }) => {
                                 <input
                                     type="password"
                                     required id="name"
-                                    placeholder="Confirm password"
+                                    placeholder="Confirm Password"
                                     value={confirmpassword}
                                     onChange={(e) => setConfirmPassword(e.target.value)}
-
                                 />
                             </div>
                             {errors && <p className="danger">{errors}</p>}
