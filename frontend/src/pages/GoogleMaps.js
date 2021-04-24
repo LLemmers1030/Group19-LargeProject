@@ -104,6 +104,7 @@ export class MapContainer extends Component {
                         bed="3 Bedroom"
                         bath="2 Bathroom"
                         rent="$800/Month"
+                        avail="Available"
                         homePicture={home1}
                         position={{
                             lat: 29.118902807729818,
@@ -119,6 +120,7 @@ export class MapContainer extends Component {
                         bed="2 Bedroom"
                         bath="1.5 Bathroom"
                         rent="$650/Month"
+                        avail="Unavailable"
                         position={{
                             lat: 29.118687282511313,
                             lng: -82.10072498277634
@@ -133,6 +135,7 @@ export class MapContainer extends Component {
                         bed="2 Bedroom"
                         bath="1 Bathroom"
                         rent="$600/Month"
+                        avail="Available"
                         position={{
                             lat: 29.118581837812673,
                             lng: -82.10065792760207
@@ -147,6 +150,7 @@ export class MapContainer extends Component {
                         bed="2 Bedroom"
                         bath="1.5 Bathroom"
                         rent="$650/Month"
+                        avail="Under Maintenance"
                         position={{
                             lat: 29.118471701944134,
                             lng: -82.10061868804938
@@ -160,6 +164,7 @@ export class MapContainer extends Component {
                         bed="2 Bedroom"
                         bath="1 Bathroom"
                         rent="$600/Month"
+                        avail="Available"
                         position={{
                             lat: 29.11836567110728,
                             lng: -82.10051005862071
@@ -174,6 +179,7 @@ export class MapContainer extends Component {
                         bed="2 Bedroom"
                         bath="1 Bathroom"
                         rent="$675/Month"
+                        avail="Available"
                         position={{
                             lat: 29.118143650781686,
                             lng: -82.10058717221882
@@ -187,6 +193,7 @@ export class MapContainer extends Component {
                         bed="2 Bedroom"
                         bath="1 Bathroom"
                         rent="$650/Month"
+                        avail="Unavailable"
                         position={{
                             lat: 29.118112017273248,
                             lng: -82.1007018364859
@@ -200,6 +207,7 @@ export class MapContainer extends Component {
                         bed="2 Bedroom"
                         bath="1 Bathroom"
                         rent="$600/Month"
+                        avail="Available"
                         position={{
                             lat: 29.11771027045072,
                             lng: -82.10086205540007
@@ -213,6 +221,7 @@ export class MapContainer extends Component {
                         bed="2 Bedroom"
                         bath="1 Bathroom"
                         rent="$625/Month"
+                        avail="Unavailable"
                         position={{
                             lat: 29.117599552441213,
                             lng: -82.10084260939917
@@ -226,6 +235,7 @@ export class MapContainer extends Component {
                         bed="2 Bedroom"
                         bath="1 Bathroom"
                         rent="$675/Month"
+                        avail="Available"
                         position={{
                             lat: 29.117515573093534,
                             lng: -82.10086034870861
@@ -239,6 +249,7 @@ export class MapContainer extends Component {
                         bed="3 Bedroom"
                         bath="2 Bathroom"
                         rent="$750/Month"
+                        avail="Available"
                         position={{
                             lat: 29.11740389210246,
                             lng: -82.10094788602672
@@ -252,6 +263,7 @@ export class MapContainer extends Component {
                         bed="2 Bedroom"
                         bath="1 Bathroom"
                         rent="$650/Month"
+                        avail="Under Maintenance"
                         position={{
                             lat: 29.117391004075245,
                             lng: -82.1012905381193
@@ -265,6 +277,7 @@ export class MapContainer extends Component {
                         bed="2 Bedroom"
                         bath="1 Bathroom"
                         rent="$625/Month"
+                        avail="Under Maintenance"
                         position={{
                             lat: 29.117516953226236,
                             lng: -82.10130327865525
@@ -278,6 +291,7 @@ export class MapContainer extends Component {
                         bed="2 Bedroom"
                         bath="1 Bathroom"
                         rent="$600/Month"
+                        avail="Available"
                         position={{
                             lat: 29.11761888416635,
                             lng: -82.10130059649691
@@ -291,6 +305,7 @@ export class MapContainer extends Component {
                         bed="2 Bedroom"
                         bath="1 Bathroom"
                         rent="$600/Month"
+                        avail="Under Maintenance"
                         position={{
                             lat: 29.11772198673081,
                             lng: -82.10130126710315
@@ -304,6 +319,7 @@ export class MapContainer extends Component {
                         bed="3 Bedroom"
                         bath="1.5 Bathroom"
                         rent="$750/Month"
+                        avail="Unavailable"
                         position={{
                             lat: 29.11783387609505,
                             lng: -82.10129187931746
@@ -317,6 +333,7 @@ export class MapContainer extends Component {
                         bed="2 Bedroom"
                         bath="1 Bathroom"
                         rent="$650/Month"
+                        avail="Available"
                         position={{
                             lat: 29.117965097111952,
                             lng: -82.10130059648132
@@ -330,6 +347,7 @@ export class MapContainer extends Component {
                         bed="2 Bedroom"
                         bath="1 Bathroom"
                         rent="$500/Month"
+                        avail="Under Maintenance"
                         position={{
                             lat: 29.118075229074833,
                             lng: -82.10130327871471
@@ -343,6 +361,7 @@ export class MapContainer extends Component {
                         bed="2 Bedroom"
                         bath="2 Bathroom"
                         rent="$700/Month"
+                        avail="Available"
                         position={{
                             lat: 29.118188875919436,
                             lng: -82.1012932204196
@@ -360,7 +379,11 @@ export class MapContainer extends Component {
                                 <img className="window-house" src={this.state.selectedPlace.homePicture} alt="house test" ></img>
                             </div>
                             <div className="left-window">
-                                <p className="window-text">{this.state.selectedPlace.bed} <br /> {this.state.selectedPlace.bath} <br /> {this.state.selectedPlace.rent}</p>
+                                <p className="window-text">
+                                    {this.state.selectedPlace.bed} <br />
+                                    {this.state.selectedPlace.bath} <br />
+                                    {this.state.selectedPlace.rent}</p>
+                                <p className="window-avail">{this.state.selectedPlace.avail}</p>
                             </div>
                         </div>
                     </InfoWindow>
