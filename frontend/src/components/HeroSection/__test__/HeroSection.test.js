@@ -4,13 +4,10 @@ import ReactDOM from 'react-dom';
 // the component we are testing
 import HeroSection from './../index';
 // react testing library
-import { render, cleanup } from '@testing-library/react';
+import { cleanup } from '@testing-library/react';
 // jest dom which has extend and expect. new version
 import "@testing-library/jest-dom/extend-expect";
-// for snapshot testing
-// import renderer from "react-test-renderer";
 import { BrowserRouter as Router } from 'react-router-dom';
-
 
 // second parameter is a callback function where you write the test
 
