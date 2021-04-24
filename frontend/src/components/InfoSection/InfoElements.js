@@ -97,10 +97,6 @@ justify-content: flex-start;
 export const ImgWrap = styled.div`
 max-width: 555px;
 height: 100%;
-
-/* May need or not need to keep */
-/* @media screen and (max-width: 768px){
-    height: 200px;} */
 `;
 
 export const Img = styled.img`
@@ -108,6 +104,7 @@ width: 90%;
 height: 100%;
 margin: 0 0 10px 0;
 padding-right: 0;
+border-radius: 10px;
 `;
 
 export const NavBtnLink = styled(Link)`
