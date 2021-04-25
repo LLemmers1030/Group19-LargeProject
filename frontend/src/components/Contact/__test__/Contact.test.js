@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 // the component we are testing
 import Contact from './../index';
 // react testing library
-import { render, cleanup } from '@testing-library/react';
+import { cleanup } from '@testing-library/react';
 // jest dom which has extend and expect. new version
 import "@testing-library/jest-dom/extend-expect";
 

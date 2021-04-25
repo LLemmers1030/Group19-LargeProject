@@ -86,6 +86,8 @@ margin: 40px auto 0 auto;
 `;
 
 export const SocialLogo = styled(Link)`
+@import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap");
+font-family: "Sansita Swashed", cursive;
 color: #fff;
 justify-self: start;
 cursor: pointer;
