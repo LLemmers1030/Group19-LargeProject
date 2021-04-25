@@ -243,7 +243,7 @@ const Settings = () => {
             </Col>
           </Row>
 
-          <Row>
+          <Row className="main__greeting">
             <Col>
               <Form
                 {...layout}
