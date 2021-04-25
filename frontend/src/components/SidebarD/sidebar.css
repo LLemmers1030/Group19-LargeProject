@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap");
+
+
 #sidebar {
   background: #0b132b;
   grid-area: sidebar;
@@ -26,6 +29,7 @@
 }
 
 .sidebar__title > div > h1 {
+  font-family: "Sansita Swashed", cursive;
   font-size: 18px;
   display: inline;
 }
@@ -49,7 +53,7 @@
   color: #f3f4f6;
   padding: 10px;
   border-radius: 3px;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   display: flex;
   text-decoration: none;
   align-items: center;

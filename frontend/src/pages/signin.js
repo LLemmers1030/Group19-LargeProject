@@ -5,9 +5,13 @@ import image2 from '../images/svg-reg.svg'
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser, faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
 
 const SignInPage = ({ history }) => {
     //class SignInPage extends Component {
+    const [first, setFirst] = useState("");
+    const [last, setLast] = useState("");
     const [regEmail, setRegEmail] = useState("");
     const [loginEmail, setLoginEmail] = useState("");
     const [regUsername, setRegUsername] = useState("");
@@ -88,6 +92,8 @@ const SignInPage = ({ history }) => {
         e.preventDefault();
         const Username = regUsername;
         const Email = regEmail;
+        const FirstName = first;
+        const LastName = last;
 
         const config = {
             headers: {
@@ -107,7 +113,7 @@ const SignInPage = ({ history }) => {
         try {
             // Development: http://localhost:8080/Users/register
             // For production: /Users/register 
-            const { data } = await axios.post("/Users/register", { Username, Email, Password },
+            const { data } = await axios.post("/Users/register", { FirstName, LastName, Email, Password },
                 config);
 
             localStorage.setItem("authToken", data.JWT);
@@ -132,7 +138,10 @@ const SignInPage = ({ history }) => {
                         <form className="sign-in-form" onSubmit={LoginHandler}>
                             <h2 className="title">Sign in</h2>
                             <div className="input-field">
-                                <i className="fas fa-user" />
+                                {/* <i className="fas fa-user" /> */}
+                                <div className="social-icon">
+                                    <FontAwesomeIcon icon={faEnvelope} />
+                                </div>
                                 <input
                                     type="email"
                                     required id="email"
@@ -143,7 +152,9 @@ const SignInPage = ({ history }) => {
                                 />
                             </div>
                             <div className="input-field">
-                                <i className="fas fa-lock" />
+                                <div className="social-icon">
+                                    <FontAwesomeIcon icon={faLock} />
+                                </div>
                                 <input
                                     type="password"
                                     required id="name"
@@ -161,7 +172,34 @@ const SignInPage = ({ history }) => {
                             <h2 className="title">Sign up</h2>
 
                             <div className="input-field">
-                                <i className="fas fa-user" />
+                                <div className="social-icon">
+                                    <FontAwesomeIcon icon={faUser} />
+                                </div>
+                                <input
+                                    type="text"
+                                    required id="text"
+                                    placeholder="First Name"
+                                    value={first}
+                                    onChange={(e) => setFirst(e.target.value)}
+                                />
+                            </div>
+                            <div className="input-field">
+                                <div className="social-icon">
+                                    <FontAwesomeIcon icon={faUser} />
+                                </div>
+                                <input
+                                    type="text"
+                                    required id="text"
+                                    placeholder="Last Name"
+                                    value={last}
+                                    onChange={(e) => setLast(e.target.value)}
+                                />
+                            </div>
+
+                            <div className="input-field">
+                                <div className="social-icon">
+                                    <FontAwesomeIcon icon={faEnvelope} />
+                                </div>
                                 <input
                                     type="email"
                                     required id="email"
@@ -172,8 +210,9 @@ const SignInPage = ({ history }) => {
                             </div>
 
                             <div className="input-field">
-                                <i className="fas fa-lock" />
-
+                                <div className="social-icon">
+                                    <FontAwesomeIcon icon={faLock} />
+                                </div>
                                 <input
                                     type="password"
                                     required id="name"
@@ -184,8 +223,9 @@ const SignInPage = ({ history }) => {
                             </div>
 
                             <div className="input-field">
-                                <i className="fas fa-lock" />
-
+                                <div className="social-icon">
+                                    <FontAwesomeIcon icon={faLock} />
+                                </div>
                                 <input
                                     type="password"
                                     required id="name"

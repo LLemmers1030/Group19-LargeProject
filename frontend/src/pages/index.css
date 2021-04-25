@@ -146,8 +146,9 @@ form.sign-up-form {
 .social-icon {
   height: 46px;
   width: 46px;
-  border: 1px solid;
+  /* border: 1px solid; */
   margin: 0 0.45rem;
+  margin-top: 0.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -158,10 +159,10 @@ form.sign-up-form {
   transition: 0.3s;
 }
 
-.social-icon:hover {
+/* .social-icon:hover {
   color: #4481eb;
   border-color: #4481eb;
-}
+} */
 
 .panels-container {
   position: absolute;

@@ -5,6 +5,7 @@ import { Link as LinkR } from 'react-router-dom'
 // Link Scroll 46.26
 import { Link as LinkS } from 'react-scroll'
 
+
 // Navbar 
 export const Nav = styled.nav`
 background: ${({ scrollNav }) => (scrollNav ? '#0B2545' : 'transparent')};
@@ -39,10 +40,16 @@ z-index: 1;
 width: 100%;
 padding: 0 24px;
 max-width: 1100px;
+
+
+
 `;
 
 // Logo
 export const NavLogo = styled(LinkR)`
+@import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap");
+
+font-family: "Sansita Swashed", cursive;
 color: #EEF4ED;
 justify-self: flex-start;
 cursor: pointer;
