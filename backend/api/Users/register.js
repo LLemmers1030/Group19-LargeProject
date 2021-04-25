@@ -74,7 +74,7 @@ const sendEmail = (email, uniqueString, req) => {
         from: "Jack's Mobile Homepark",
         to: email,
         subject: "Email Confirmation",
-        html: `Press <a href=${url}> here </a> to verity your email. Thanks`
+        html: `Press <a href=${url}> here </a> to verify your email. Thanks`
         //html: `Press <a href=https://group19-housingmanager.herokuapp.com/verify/${uniqueString}> here </a> to verity your email. Thanks`
         // Local html: `Press <a href=http://localhost:3000/verify/${uniqueString}> here </a> to verity your email. Thanks`
     };
