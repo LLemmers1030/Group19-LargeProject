@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
 
 
 #sidebar {
@@ -29,8 +29,8 @@
 }
 
 .sidebar__title > div > h1 {
-  font-family: "Sansita Swashed", cursive;
-  font-size: 18px;
+  font-family: "Rancho", cursive;
+  font-size: 25px;
   display: inline;
 }
 

@@ -43,8 +43,9 @@ max-width: 1100px;
 
 // Logo
 export const NavLogo = styled(LinkR)`
-@import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap");
-font-family: "Sansita Swashed", cursive;
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+
+font-family: "Rancho", cursive;
 color: #EEF4ED;
 justify-self: flex-start;
 cursor: pointer;
