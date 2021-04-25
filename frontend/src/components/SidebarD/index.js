@@ -9,14 +9,17 @@ import {
   faPhoneAlt,
   faPowerOff,
   faHouseUser,
+  faTrashAlt
 } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
+import { Modal, Button } from "antd";
 
 {/* function Sidebar(props, { sidebarOpen, closeSidebar }) { */ }
 const Sidebar = ({ sidebarOpen, closeSidebar }) => {
   const [errors, setErrors] = useState("");
+  const [visible, setVisible] = useState(false);
 
   let history = useHistory();
 
@@ -24,6 +27,14 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
     localStorage.removeItem("authToken");
     // or /login
     history.push("/");
+  }
+
+  const showModal = () => {
+    setVisible(true);
+  }
+
+  const handleCancel = () => {
+    setVisible(false);
   }
 
   const deleteHandler = async () => {
@@ -49,6 +60,7 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
     } catch (error) {
       setErrors(error.response.data);
       setTimeout(() => {
+        setVisible(false);
         setErrors("");
       }, 5000)
     }
@@ -94,10 +106,26 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
           <p>Logout</p>
         </button>
         {/* Delete Account Button */}
-        <button onClick={deleteHandler} className="sidebar__delete">
-          <FontAwesomeIcon icon={faPowerOff} />
+        <button onClick={showModal} className="sidebar__delete">
+          <FontAwesomeIcon icon={faTrashAlt} />
           <p>Delete Account</p>
         </button>
+        <Modal 
+          title="Delete Account" 
+          visible={visible} 
+          onOk={deleteHandler} 
+          onCancel={handleCancel}
+          footer={[
+            <Button key="no" onClick={handleCancel}>
+              NO
+            </Button>,
+            <Button key="yes" type="primary" onClick={deleteHandler} danger>
+              DELETE MY ACCOUNT
+            </Button>
+          ]} 
+        >
+          <p>Are you sure you want to delete your account? This action cannot be undone.</p>
+        </Modal>
       </div>
     </div>
   );
