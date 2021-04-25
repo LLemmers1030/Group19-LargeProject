@@ -86,11 +86,14 @@ margin: 40px auto 0 auto;
 `;
 
 export const SocialLogo = styled(Link)`
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+
+font-family: "Rancho", cursive;
 color: #fff;
 justify-self: start;
 cursor: pointer;
 text-decoration: none;
-font-size: 1.5rem;
+font-size: 1.8rem;
 display: flex;
 align-items: center;
 margin-bottom: 16px;
