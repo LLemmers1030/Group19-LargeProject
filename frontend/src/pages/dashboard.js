@@ -9,27 +9,16 @@ class UserDashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sidebarOpen: false,
-      setsidebarOpen: false
+      sidebarOpen: false
     }
   }
 
-  //const [sidebarOpen, setsidebarOpen] = useState(false);
-
-  // const openSidebar = () => {
-  //   setsidebarOpen(true);
-  // };
-
-  // const closeSidebar = () => {
-  //   setsidebarOpen(false);
-  // };
-
   openSidebar = () => {
-    this.setState({ setsidebarOpen: true })
+    this.setState({ sidebarOpen: true })
   };
 
   closeSidebar = () => {
-    this.setState({ setsidebarOpen: false })
+    this.setState({ sidebarOpen: false })
   };
 
   componentWillMount() {
@@ -38,23 +27,14 @@ class UserDashboard extends Component {
     }
   }
 
-
-  // useEffect(() => {
-
-  //   if (!localStorage.getItem("authToken")) {
-  //     props.history.push("/signin");
-  //   }
-  // }, [props.history]);
-
-
   render() {
     return (
       <div className="containerDash">
 
-        <Navbar sidebarOpen={this.sidebarOpen} openSidebar={this.openSidebar} />
+        <Navbar sidebarOpen={this.state.sidebarOpen} openSidebar={this.openSidebar} />
         {this.props.children}
 
-        <Sidebar sidebarOpen={this.sidebarOpen} closeSidebar={this.closeSidebar} />
+        <Sidebar sidebarOpen={this.state.sidebarOpen} closeSidebar={this.closeSidebar} />
 
       </div>
     );
