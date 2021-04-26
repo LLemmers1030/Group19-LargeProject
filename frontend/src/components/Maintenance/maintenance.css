@@ -19,6 +19,7 @@ main {
     object-fit: contain;
     margin-right: 20px;
     align-items: center;
+    height: 80vh;
   }
   
   .main__greeting > h1 {

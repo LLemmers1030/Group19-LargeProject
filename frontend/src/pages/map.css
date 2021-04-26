@@ -57,13 +57,16 @@
   height: 100px;
   max-height: 100%;
   align-items: center;
-  padding-left: 10px;
+  /* padding-left: 10px; */
+  margin-left: 8px;
+  border-radius: 5px;
 }
 
 .house {
   max-width: 100%;
   height: auto;
   max-height: 100%;
+  border-radius: 10px;
 }
 
 .listings-header {
